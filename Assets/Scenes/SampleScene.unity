@@ -892,7 +892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbcb2b1552eba40ff8a38b2fe1a6dbb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LaunchForce: 1500
+  LaunchForce: 600
   Arrow: {fileID: 4729067003003144497, guid: bb9edaf7f31bc411db017039a36fad02, type: 3}
 --- !u!114 &991162276
 MonoBehaviour:
