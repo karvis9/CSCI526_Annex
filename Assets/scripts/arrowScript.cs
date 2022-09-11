@@ -10,7 +10,6 @@ public class arrowScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
     }
 
     // Update is called once per frame
@@ -36,8 +35,11 @@ public class arrowScript : MonoBehaviour
         hasHit = true;
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
-        if(collision.collider.gameObject.name == "Aim")
+        if(collision.collider.gameObject.name == "Aim"){
             Debug.Log("Got point, reveal alphabet");
+            ScoreManager.sm.increasePoint();
+        }
+        Debug.Log(ScoreManager.sm.getCurrentPoint());
         Destroy(this.gameObject);
     }
 }

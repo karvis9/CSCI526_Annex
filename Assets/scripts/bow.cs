@@ -5,7 +5,7 @@ using UnityEngine;
 public class bow : MonoBehaviour
 {
     public Vector2 direction;
-    public float slowedFactor = 2;
+    public float slowedFactor = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
