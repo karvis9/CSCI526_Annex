@@ -32,8 +32,12 @@ public class arrowScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log( "Collided with : " + collision.collider.gameObject.name );
         hasHit = true;
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
+        if(collision.collider.gameObject.name == "Aim")
+            Debug.Log("Got point, reveal alphabet");
+        Destroy(this.gameObject);
     }
 }
