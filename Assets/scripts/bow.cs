@@ -5,6 +5,7 @@ using UnityEngine;
 public class bow : MonoBehaviour
 {
     public Vector2 direction;
+    public float slowedFactor = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +18,13 @@ public class bow : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 bowPos = transform.position;
         direction = mousePos - bowPos;
-        faceMouse();
+        StartCoroutine(faceMouse());
     }
 
-    void faceMouse()
+    IEnumerator faceMouse()
     {
-        transform.right = direction;
+        Vector2 startPosition = transform.right;
+        transform.right = Vector2.Lerp(startPosition, direction, Time.deltaTime / slowedFactor);
+        yield return null;
     }
 }
