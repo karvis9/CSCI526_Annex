@@ -37,6 +37,9 @@ public class arrowScript : MonoBehaviour
         rb.isKinematic = true;
         if(collision.collider.gameObject.name == "Aim"){
             Debug.Log("Got point, reveal alphabet");
+
+            WordBlanks.wb.TargetHit();
+
             ScoreManager.sm.increasePoint();
         }
         Debug.Log(ScoreManager.sm.getCurrentPoint());
