@@ -16,7 +16,7 @@ public class ScoreManager : MonoBehaviour
         return points;
     }
     public void increasePoint(){
-        if(points<=maxPoints)
+        if(points<maxPoints)
             points++; 
     }
 }
