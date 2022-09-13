@@ -5,10 +5,17 @@ using UnityEngine.UI;
 
 public class CountDownTimer : MonoBehaviour
 {
+    public static CountDownTimer countDownTimerObj;
+
     // Start is called before the first frame update
     float curTime;
     float startingTime = 60f;
     public Text CountDownText;
+
+    private CountDownTimer ()
+    {
+        
+    }
 
     void Start()
     {
