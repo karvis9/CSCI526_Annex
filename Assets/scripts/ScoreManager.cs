@@ -8,6 +8,12 @@ public class ScoreManager : MonoBehaviour
     public int points = 0;
     public int maxPoints = 3;
 
+
+    private ScoreManager ()
+    {
+        
+    }
+
     void Start()
     {
         sm = this;
