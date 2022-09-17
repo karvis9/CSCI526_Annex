@@ -40,6 +40,8 @@ public class arrowScript : MonoBehaviour
 
             WordBlanks.wb.TargetHit();
 
+            AnalyticsManager.analyticsManager.SendEvent("Target hit");
+
             ScoreManager.sm.increasePoint();
         }
         Debug.Log(ScoreManager.sm.getCurrentPoint());
