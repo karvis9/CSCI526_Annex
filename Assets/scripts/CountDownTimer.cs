@@ -27,7 +27,7 @@ public class CountDownTimer : MonoBehaviour
     {
         curTime -= 1 * Time.deltaTime;
         if (curTime <= 0)
-            curTime = 0
+            curTime = 0;
 
         CountDownText.text = curTime.ToString ("0");
 
