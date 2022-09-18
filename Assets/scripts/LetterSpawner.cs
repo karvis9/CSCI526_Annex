@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LetterSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject letterPrefab;
+    [SerializeField] GameObject[] letterPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,6 @@ public class LetterSpawner : MonoBehaviour
 
     void Spawn()
     {
-        Instantiate(letterPrefab, transform.position, transform.rotation);
+        Instantiate(letterPrefab[Random.Range(0, 3)], transform.position, transform.rotation);
     }
 }
