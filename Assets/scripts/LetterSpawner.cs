@@ -4,11 +4,28 @@ using UnityEngine;
 
 public class LetterSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject[] letterPrefab;
+    //[SerializeField] GameObject[] letterPrefab;
+    public List<GameObject> letterPrefab; /*** Extend this list to add letters ***/
+    public Queue<char> spawnList;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Spawn", 0.0f, 0.6f);
+        spawnList = new Queue<char>();
+        spawnList.Enqueue('A');
+        spawnList.Enqueue('A');
+        spawnList.Enqueue('A');
+        spawnList.Enqueue('A');
+        spawnList.Enqueue('A');
+        spawnList.Enqueue('A');
+        spawnList.Enqueue('A');
+        spawnList.Enqueue('B');
+        spawnList.Enqueue('B');
+        spawnList.Enqueue('B');
+        spawnList.Enqueue('B');
+        InvokeRepeating("PopSpawn", 0.0f, 0.6f);
+
     }
 
     // Update is called once per frame
@@ -16,10 +33,17 @@ public class LetterSpawner : MonoBehaviour
     {
         
     }
-
-    void Spawn()
+    //pops an character from list and spawns it
+    void PopSpawn() 
     {
-        GameObject go = Instantiate(letterPrefab[Random.Range(0, 3)], transform.position, transform.rotation);
-        go.SetActive(true);
+        if(spawnList.Count == 0) {
+            // Randomly spawns from List
+            GameObject go = Instantiate(letterPrefab[Random.Range(0, letterPrefab.Count)], transform.position, transform.rotation);
+            go.SetActive(true);
+        }
+        else {
+            GameObject go = Instantiate(letterPrefab[spawnList.Dequeue() - 'A'], transform.position, transform.rotation);
+            go.SetActive(true);
+        }
     }
 }

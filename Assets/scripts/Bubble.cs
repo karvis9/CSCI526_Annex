@@ -9,6 +9,7 @@ public class Bubble : MonoBehaviour
     [SerializeField] Sprite[] bubbleSprites;
     [SerializeField] Sprite bubbleSprite;
 
+    public char symbol;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
 
