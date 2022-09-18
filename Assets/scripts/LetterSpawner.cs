@@ -19,6 +19,7 @@ public class LetterSpawner : MonoBehaviour
 
     void Spawn()
     {
-        Instantiate(letterPrefab[Random.Range(0, 3)], transform.position, transform.rotation);
+        GameObject go = Instantiate(letterPrefab[Random.Range(0, 3)], transform.position, transform.rotation);
+        go.SetActive(true);
     }
 }
