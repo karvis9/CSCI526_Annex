@@ -305,6 +305,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: bc74a122e415cdf40b164338f03ce1be, type: 3}
     - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
+      propertyPath: symbol
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: bubbleSprite
       value: 
       objectReference: {fileID: 21300000, guid: bc74a122e415cdf40b164338f03ce1be, type: 3}
@@ -761,13 +765,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Words:
-  - abruptly
-  - absurd
-  - luxury
-  - funny
-  - zombie
+  - ababaa
+  - aaaaaa
   letterList: []
   textPrefab: {fileID: 709384965945857663, guid: 5a0e180dd6a350545be54d1e47a39db7, type: 3}
+  masked: 
+  maskedCnt: 0
   letterHolder: {fileID: 1737379244}
   word: 
 --- !u!4 &681002600
@@ -1806,6 +1809,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d667d6c1cdc57b042bb7844367bb7d98, type: 3}
     - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
+      propertyPath: symbol
+      value: 67
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: bubbleSprite
       value: 
       objectReference: {fileID: 21300000, guid: d667d6c1cdc57b042bb7844367bb7d98, type: 3}
@@ -2054,6 +2061,10 @@ PrefabInstance:
     - target: {fileID: 6197677257193445802, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
+      propertyPath: symbol
+      value: 65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f448cfaa32f3747afb499264cae12445, type: 3}
