@@ -61,6 +61,6 @@ crashlytics-build.properties
 .DS_Store
 
 ## Added by Alex
-/[Pp]roject[Ss]ettings/
+## /[Pp]roject[Ss]ettings/ # I think this shouldn't be in gitignore
 /[Uu]ser[Ss]ettings/
 /.vscode/

@@ -41,7 +41,7 @@ public class arrowScript : MonoBehaviour
             //Debug.Log("Target Hit: " + symbol);
             WordBlanks.wb.TargetHit(symbol);
             Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
             ScoreManager.sm.increasePoint();
         }
         //Debug.Log(ScoreManager.sm.getCurrentPoint());

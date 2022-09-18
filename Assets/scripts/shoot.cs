@@ -22,10 +22,17 @@ public class shoot : MonoBehaviour
         // }
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            LaunchForce = 600;
+            ;//LaunchForce = 600;
         }
         if(Input.GetKeyUp(KeyCode.Space))
         {
+            LaunchForce = 600;
+            Shoot();
+        }
+
+        if(Input.GetKeyUp("mouse 0"))
+        {
+            LaunchForce = 600;
             Shoot();
         }
     }
