@@ -35,14 +35,15 @@ public class arrowScript : MonoBehaviour
         hasHit = true;
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
-        if(collision.collider.gameObject.name == "Aim"){
+        if(collision.collider.gameObject.tag == "Letter"){
             Debug.Log("Got point, reveal alphabet");
-
+            Debug.Log("name: " + collision.collider.gameObject.name);
             WordBlanks.wb.TargetHit();
-
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
             ScoreManager.sm.increasePoint();
         }
         Debug.Log(ScoreManager.sm.getCurrentPoint());
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
     }
 }
