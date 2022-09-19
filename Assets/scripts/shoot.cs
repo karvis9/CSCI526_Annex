@@ -10,23 +10,19 @@ public class shoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LaunchForce = 100;
+        LaunchForce = 150;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if(Input.GetKey(KeyCode.Space))
-        // {
-        //     LaunchForce += 400 * Time.deltaTime;
-        // }
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space))
         {
-            ;//LaunchForce = 600;
+            LaunchForce += 400 * Time.deltaTime;
         }
         if(Input.GetKeyUp(KeyCode.Space))
         {
-            LaunchForce = 600;
+            LaunchForce = Mathf.Min(700,LaunchForce);
             Shoot();
         }
 
