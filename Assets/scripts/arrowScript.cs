@@ -41,7 +41,9 @@ public class arrowScript : MonoBehaviour
             //Debug.Log("Target Hit: " + symbol);
             WordBlanks.wb.TargetHit(symbol);
             Destroy(collision.gameObject);
-            //Destroy(this.gameObject);
+        }
+        if(collision.gameObject.name == "Terrains"){
+            Destroy(this.gameObject);
         }
         //Debug.Log(ScoreManager.sm.getCurrentPoint());
         //Destroy(this.gameObject);
