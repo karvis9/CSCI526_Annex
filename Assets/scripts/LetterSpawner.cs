@@ -13,18 +13,18 @@ public class LetterSpawner : MonoBehaviour
     void Start()
     {
         spawnList = new Queue<char>();
-        spawnList.Enqueue('A');
-        spawnList.Enqueue('A');
-        spawnList.Enqueue('A');
-        spawnList.Enqueue('A');
-        spawnList.Enqueue('A');
-        spawnList.Enqueue('A');
-        spawnList.Enqueue('A');
-        spawnList.Enqueue('B');
-        spawnList.Enqueue('B');
-        spawnList.Enqueue('B');
-        spawnList.Enqueue('B');
-        InvokeRepeating("PopSpawn", 0.0f, 0.6f);
+        // spawnList.Enqueue('A');
+        // spawnList.Enqueue('A');
+        // spawnList.Enqueue('A');
+        // spawnList.Enqueue('A');
+        // spawnList.Enqueue('A');
+        // spawnList.Enqueue('A');
+        // spawnList.Enqueue('A');
+        // spawnList.Enqueue('B');
+        // spawnList.Enqueue('B');
+        // spawnList.Enqueue('B');
+        // spawnList.Enqueue('B');
+        InvokeRepeating("PopSpawn", 0.0f, 1f);
 
     }
 
