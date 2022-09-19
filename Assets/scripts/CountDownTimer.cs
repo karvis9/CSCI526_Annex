@@ -20,6 +20,7 @@ public class CountDownTimer : MonoBehaviour
     void Start()
     {
         curTime = startingTime;
+        countDownTimerObj = this;
     }
 
     // Update is called once per frame
@@ -27,10 +28,19 @@ public class CountDownTimer : MonoBehaviour
     {
         curTime -= 1 * Time.deltaTime;
         if (curTime <= 0)
-            curTime = 0;
+            GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), false);
 
         CountDownText.text = "Time Left: " + curTime.ToString ("0") + " Secs";
 
+      
+    }
+
+    public int getTimeLeft()
+    {
+        if (curTime > 0)
+            return (int) curTime;
+
+        return 0;
         
     }
 }
