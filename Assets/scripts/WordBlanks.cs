@@ -67,7 +67,7 @@ public class WordBlanks : MonoBehaviour
             ScoreManager.sm.increasePoint();
             if (maskedCnt == 0)
             {
-                GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), true);
+                GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), true, word);
             }
         }
     }

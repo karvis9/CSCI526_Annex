@@ -12,6 +12,8 @@ public class GameOverScreen : MonoBehaviour
     public TextMeshProUGUI gameResult;
     public static GameOverScreen gm;
 
+    public bool gameEnded = false;
+
     public void Awake()
     {
         Debug.Log("Setting GameOver screen to inactive");
@@ -20,17 +22,18 @@ public class GameOverScreen : MonoBehaviour
 
     }
 
-    public void EndGame(int Score, bool PlayerWon)
+    public void EndGame(int Score, bool PlayerWon, string chosenWord)
     {
         Debug.Log("Ending game!");
+        gameEnded = true;
         gameObject.SetActive(true);
         pointsText.text = Score.ToString() + " points";
         if (PlayerWon)
         {
-            gameResult.text = "WINNER!!!";
+            gameResult.text = "YAYYY!!, you correctly guessed the word - " + chosenWord.ToUpper();
         } else
         {
-            gameResult.text = "OOPS, you lost!!!";
+            gameResult.text = "OOPS!, you couldn't guess the word - " + chosenWord.ToUpper();
         }
     }
 
