@@ -29,7 +29,7 @@ public class CountDownTimer : MonoBehaviour
         if (curTime <= 0)
             curTime = 0;
 
-        CountDownText.text = curTime.ToString ("0");
+        CountDownText.text = "Time Left: " + curTime.ToString ("0") + " Secs";
 
         
     }
