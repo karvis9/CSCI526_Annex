@@ -1275,15 +1275,15 @@ PrefabInstance:
     - target: {fileID: 6982998400792199848, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 56d5507adfdac834886ba115ba8e8288, type: 3}
+      objectReference: {fileID: 21300000, guid: f6062ae0bff644947acc93e5e3971801, type: 3}
     - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: symbol
-      value: 68
+      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: bubbleSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 56d5507adfdac834886ba115ba8e8288, type: 3}
+      objectReference: {fileID: 21300000, guid: f6062ae0bff644947acc93e5e3971801, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f448cfaa32f3747afb499264cae12445, type: 3}
 --- !u!4 &516246763 stripped
@@ -2781,15 +2781,15 @@ PrefabInstance:
     - target: {fileID: 6982998400792199848, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 56d5507adfdac834886ba115ba8e8288, type: 3}
+      objectReference: {fileID: 21300000, guid: ea91ddd650c345544a4b4c5c97c346bd, type: 3}
     - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: symbol
-      value: 68
+      value: 87
       objectReference: {fileID: 0}
     - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: bubbleSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 56d5507adfdac834886ba115ba8e8288, type: 3}
+      objectReference: {fileID: 21300000, guid: ea91ddd650c345544a4b4c5c97c346bd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f448cfaa32f3747afb499264cae12445, type: 3}
 --- !u!4 &1109005166 stripped
@@ -3263,15 +3263,15 @@ PrefabInstance:
     - target: {fileID: 6982998400792199848, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 56d5507adfdac834886ba115ba8e8288, type: 3}
+      objectReference: {fileID: 21300000, guid: d26f030a6c22b2a4f9b58c96610919e7, type: 3}
     - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: symbol
-      value: 68
+      value: 89
       objectReference: {fileID: 0}
     - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: bubbleSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 56d5507adfdac834886ba115ba8e8288, type: 3}
+      objectReference: {fileID: 21300000, guid: d26f030a6c22b2a4f9b58c96610919e7, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f448cfaa32f3747afb499264cae12445, type: 3}
 --- !u!4 &1328495020 stripped
@@ -5111,15 +5111,23 @@ PrefabInstance:
     - target: {fileID: 6982998400792199848, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 56d5507adfdac834886ba115ba8e8288, type: 3}
+      objectReference: {fileID: 21300000, guid: 1d62dc2a864372346954091778ec4974, type: 3}
     - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: symbol
-      value: 68
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: bubbleSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 56d5507adfdac834886ba115ba8e8288, type: 3}
+      objectReference: {fileID: 21300000, guid: 1d62dc2a864372346954091778ec4974, type: 3}
+    - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
+      propertyPath: bubbleSprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585796423159699591, guid: f448cfaa32f3747afb499264cae12445, type: 3}
+      propertyPath: bubbleSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1d62dc2a864372346954091778ec4974, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f448cfaa32f3747afb499264cae12445, type: 3}
 --- !u!4 &2130329934 stripped
