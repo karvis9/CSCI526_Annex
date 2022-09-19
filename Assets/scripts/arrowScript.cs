@@ -31,20 +31,21 @@ public class arrowScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log( "Collided with : " + collision.collider.gameObject.name );
-        hasHit = true;
-        rb.velocity = Vector2.zero;
-        rb.isKinematic = true;
-        if(collision.collider.gameObject.name == "Aim"){
-            Debug.Log("Got point, reveal alphabet");
-
-            WordBlanks.wb.TargetHit();
-
+        //Debug.Log( "Collided with : " + collision.collider.gameObject.name );
+        //hasHit = true;
+        //rb.velocity = Vector2.zero;
+        //rb.isKinematic = true;
+        if(collision.collider.gameObject.tag == "Letter"){
+            //Debug.Log("Got point, reveal alphabet");
+            char symbol = collision.collider.gameObject.GetComponent<Bubble>().symbol;// might fix this later
+            //Debug.Log("Target Hit: " + symbol);
+            WordBlanks.wb.TargetHit(symbol);
             AnalyticsManager.analyticsManager.SendEvent("Target hit");
 
-            ScoreManager.sm.increasePoint();
+            Destroy(collision.gameObject);
+            //Destroy(this.gameObject);
         }
-        Debug.Log(ScoreManager.sm.getCurrentPoint());
-        Destroy(this.gameObject);
+        //Debug.Log(ScoreManager.sm.getCurrentPoint());
+        //Destroy(this.gameObject);
     }
 }

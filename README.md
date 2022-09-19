@@ -1,5 +1,5 @@
 # CSCI526_Annex
-Github Repo for Games Course (Team Annex)
+Github Repo for Games Course (Team Annex) Tuesday Class.
 
 Core idea : Pocket tanks war with word guessing/Hangman.
 
