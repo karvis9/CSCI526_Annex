@@ -64,6 +64,11 @@ public class WordBlanks : MonoBehaviour
             maskedCnt--;
             masked[index] = false;
             letterList[index].text = word[index].ToString().ToUpper();
+            ScoreManager.sm.increasePoint();
+            if (maskedCnt == 0)
+            {
+                GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), true);
+            }
         }
     }
 

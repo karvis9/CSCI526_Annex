@@ -6,7 +6,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager sm;
     public int points = 0;
-    public int maxPoints = 3;
+    public int timeLeftWeightage = 2;
 
 
     private ScoreManager ()
@@ -22,7 +22,12 @@ public class ScoreManager : MonoBehaviour
         return points;
     }
     public void increasePoint(){
-        if(points<maxPoints)
-            points++; 
+         points++; 
+    }
+
+    public int getFinalScore()
+    {
+        int timeLeft = CountDownTimer.countDownTimerObj.getTimeLeft();
+        return points + timeLeft * timeLeftWeightage;
     }
 }
