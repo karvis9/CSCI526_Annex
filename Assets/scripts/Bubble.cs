@@ -20,8 +20,8 @@ public class Bubble : MonoBehaviour
         //spriteRenderer.sprite = bubbleSprites[Random.Range(0, 4)];
         //Debug.Log("Sprite: " + spriteRenderer.sprite.name);
         spriteRenderer.sprite = bubbleSprite;
-        transform.position = new Vector3(Random.Range(-6.1f, 9.18f), transform.position.y, transform.position.z);
-        force = new Vector3(Random.Range(-50, 50), Random.Range(50, 100) ,0);
+        transform.position = new Vector3(Random.Range(-4f, 9f), Random.Range(-2.0f, 3.5f), transform.position.z);
+        force = new Vector3(Random.Range(-20, 20), Random.Range(20, 50) ,0);
         rb.AddForce(force);
     }
 
