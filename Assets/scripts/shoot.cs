@@ -7,10 +7,17 @@ public class shoot : MonoBehaviour
     public float LaunchForce;
     public GameObject Arrow;
     public bool spaceDown = true;
+
+    public static shoot shootController;
+
+    private int _arrowsCount;
+
     // Start is called before the first frame update
     void Start()
     {
+        shootController = this;
         LaunchForce = 100;
+        _arrowsCount = 0;
     }
 
     // Update is called once per frame
@@ -41,5 +48,8 @@ public class shoot : MonoBehaviour
     {
         GameObject ArrowIns = Instantiate(Arrow, transform.position, transform.rotation);
         ArrowIns.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
+        _arrowsCount++;
     }
+
+    public int getArrowsCount() { return _arrowsCount; }
 }

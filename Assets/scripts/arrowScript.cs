@@ -40,7 +40,6 @@ public class arrowScript : MonoBehaviour
             char symbol = collision.collider.gameObject.GetComponent<Bubble>().symbol;// might fix this later
             //Debug.Log("Target Hit: " + symbol);
             WordBlanks.wb.TargetHit(symbol);
-            AnalyticsManager.analyticsManager.SendEvent("Target hit");
 
             Destroy(collision.gameObject);
             //Destroy(this.gameObject);

@@ -153,4 +153,6 @@ public class WordBlanks : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public string getWord() { return word;}
 }
