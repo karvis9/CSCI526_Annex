@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour
         return points;
     }
     public void increasePoint(){
-         points++; 
+         points+=100; 
     }
 
     public int getFinalScore()
