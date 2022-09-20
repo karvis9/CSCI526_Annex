@@ -31,9 +31,11 @@ public class GameOverScreen : MonoBehaviour
         if (PlayerWon)
         {
             gameResult.text = "YAYYY!!, you correctly guessed the word - " + chosenWord.ToUpper();
+            AnalyticsManager.analyticsManager.SendEvent("Level Cleared");
         } else
         {
             gameResult.text = "OOPS!, you couldn't guess the word - " + chosenWord.ToUpper();
+            AnalyticsManager.analyticsManager.SendEvent("Level failed");
         }
     }
 

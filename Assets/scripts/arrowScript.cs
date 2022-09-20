@@ -40,6 +40,7 @@ public class arrowScript : MonoBehaviour
             char symbol = collision.collider.gameObject.GetComponent<Bubble>().symbol;// might fix this later
             //Debug.Log("Target Hit: " + symbol);
             WordBlanks.wb.TargetHit(symbol);
+
             Destroy(collision.gameObject);
         }
         if(collision.gameObject.name == "Terrains"){

@@ -8,13 +8,16 @@ public class shoot : MonoBehaviour
     public float LaunchForce;
     private float MaxLaunchForce = 700;
     public GameObject Arrow;
-    public bool spaceDown = true;
+    public static shoot shootController;
+    private int _arrowsCount;
     public Image powerBar;
     private IEnumerator UpdatePowerBarCoRoutine;
     
     // Start is called before the first frame update
     void Start()
     {
+        shootController = this;
+        _arrowsCount = 0;
         LaunchForce = 200;
         UpdatePowerBarCoRoutine = UpdatePowerBar();
     }
@@ -64,5 +67,8 @@ public class shoot : MonoBehaviour
     {
         GameObject ArrowIns = Instantiate(Arrow, transform.position, transform.rotation);
         ArrowIns.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
+        _arrowsCount++;
     }
+
+    public int getArrowsCount() { return _arrowsCount; }
 }
