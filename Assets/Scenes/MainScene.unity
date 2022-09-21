@@ -541,6 +541,9 @@ MonoBehaviour:
   - {fileID: 1900377501}
   - {fileID: 781205350}
   - {fileID: 668253134}
+  spawnList: 
+  duplicateCharList: 
+  count: 0
 --- !u!4 &188316902
 Transform:
   m_ObjectHideFlags: 0
@@ -1897,8 +1900,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Words:
-  - ANNEX
-  - GAMES
+  - RABBIT
+  - RABBIT
   letterList: []
   textPrefab: {fileID: 709384965945857663, guid: 5a0e180dd6a350545be54d1e47a39db7, type: 3}
   masked: 
