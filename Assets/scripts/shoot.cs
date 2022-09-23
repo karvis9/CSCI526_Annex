@@ -12,7 +12,10 @@ public class shoot : MonoBehaviour
     private int _arrowsCount;
     public Image powerBar;
     private IEnumerator UpdatePowerBarCoRoutine;
-    
+    public GameObject PointPrefab;
+    public GameObject[] Points;
+    public int numberofPoints;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,21 @@ public class shoot : MonoBehaviour
         _arrowsCount = 0;
         LaunchForce = 200;
         UpdatePowerBarCoRoutine = UpdatePowerBar();
+        Points = new GameObject[numberofPoints];
+        for (int i = 0; i < numberofPoints; i++)
+        {
+            Points[i] = Instantiate(PointPrefab, transform.position, Quaternion.identity);
+        }
+    }
+
+    Vector2 PointPosition(float t)
+    {
+        Vector2 direction = this.gameObject.GetComponent<bow>().direction;
+        Vector2 startPosition = transform.right;
+        transform.right = Vector2.Lerp(startPosition, direction, Time.deltaTime / 1.2f);
+        Vector2 currentPointPos = (Vector2)transform.position + (direction.normalized * LaunchForce * t) + 0.5f * Physics2D.gravity * t * t;
+        Debug.Log(currentPointPos);
+        return currentPointPos;
     }
 
     // Update is called once per frame
@@ -52,6 +70,12 @@ public class shoot : MonoBehaviour
             powerBar.fillAmount = 0;
             LaunchForce = 200;
             StopCoroutine(UpdatePowerBarCoRoutine);
+        }
+
+        for (int i = 0; i < Points.Length; i++)
+        {
+            Vector2 pos = PointPosition(i * 0.001f);
+            Points[i].transform.position = pos;
         }
     }
 
