@@ -9,6 +9,7 @@ TagManager:
   - Letter
   - TopWall
   - A
+  - plus
   layers:
   - Default
   - TransparentFX

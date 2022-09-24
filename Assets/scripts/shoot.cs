@@ -36,7 +36,7 @@ public class shoot : MonoBehaviour
         Vector2 startPosition = transform.right;
         transform.right = Vector2.Lerp(startPosition, direction, Time.deltaTime / 1.2f);
         Vector2 currentPointPos = (Vector2)transform.position + (direction.normalized * LaunchForce * t) + 0.5f * Physics2D.gravity * t * t;
-        Debug.Log(currentPointPos);
+        // Debug.Log(currentPointPos);
         return currentPointPos;
     }
 
@@ -82,7 +82,7 @@ public class shoot : MonoBehaviour
     IEnumerator UpdatePowerBar(){
         while(true){
             powerBar.fillAmount = (LaunchForce-200)/(MaxLaunchForce-200);
-            Debug.Log(LaunchForce/MaxLaunchForce);
+            //Debug.Log(LaunchForce/MaxLaunchForce);
             yield return new WaitForSeconds(0.06f);
         }
         yield return null;

@@ -40,7 +40,7 @@ public class LetterSpawner : MonoBehaviour
         for (int i = 0; i < word_len; i++) {
             spawnList.Add (WordBlanks.wb.word[i]);
             actualSet.Add (WordBlanks.wb.word[i]);
-            Debug.Log ("letter " + WordBlanks.wb.word[i]);
+            //Debug.Log ("letter " + WordBlanks.wb.word[i]);
         }
 
         while (duplicateSet.Count < word_len) {
@@ -76,7 +76,9 @@ public class LetterSpawner : MonoBehaviour
             GameObject go = Instantiate(letterPrefab[prefab_index], transform.position, transform.rotation);
             go.SetActive(true);
         }
-
+        //Debug.Log(letterPrefab[26]);
+        //GameObject go1 = Instantiate(letterPrefab[26], transform.position, transform.rotation);
+        //go1.SetActive(true);
         // spawn non-actual chars based on totalCharsEverySec
         for (int i = no_actual; i < totalCharsEverySec; i++) {
             int idx = UnityEngine.Random.Range(0, word_len);

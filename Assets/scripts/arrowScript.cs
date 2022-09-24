@@ -43,6 +43,11 @@ public class arrowScript : MonoBehaviour
 
             Destroy(collision.gameObject);
         }
+        if(collision.collider.gameObject.tag == "plus")
+        {
+            CountDownTimer.countDownTimerObj.updateTime();
+            Destroy(collision.gameObject);
+        }
         if(collision.gameObject.name == "Terrains"){
             Destroy(this.gameObject);
         }
