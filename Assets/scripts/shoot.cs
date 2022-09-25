@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class shoot : MonoBehaviour
 {
     public float LaunchForce;
-    private float MaxLaunchForce = 700;
+    private float MaxLaunchForce = 16;
     public GameObject Arrow;
     public static shoot shootController;
     private int _arrowsCount;
@@ -21,7 +21,7 @@ public class shoot : MonoBehaviour
     {
         shootController = this;
         _arrowsCount = 0;
-        LaunchForce = 200;
+        LaunchForce = 5;
         UpdatePowerBarCoRoutine = UpdatePowerBar();
         Points = new GameObject[numberofPoints];
         for (int i = 0; i < numberofPoints; i++)
@@ -33,9 +33,9 @@ public class shoot : MonoBehaviour
     Vector2 PointPosition(float t)
     {
         Vector2 direction = this.gameObject.GetComponent<bow>().direction;
-        Vector2 startPosition = transform.right;
-        transform.right = Vector2.Lerp(startPosition, direction, Time.deltaTime / 1.2f);
-        Vector2 currentPointPos = (Vector2)transform.position + (direction.normalized * LaunchForce * t) + 0.5f * Physics2D.gravity * t * t;
+        //Vector2 startPosition = transform.right;
+        //transform.right = Vector2.Lerp(startPosition, direction, Time.deltaTime / 1.2f);
+        Vector2 currentPointPos = (Vector2)transform.position + (LaunchForce * t * direction.normalized) + 0.5f * Physics2D.gravity * t * t;
         // Debug.Log(currentPointPos);
         return currentPointPos;
     }
@@ -43,45 +43,61 @@ public class shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-            LaunchForce += 400 * Time.deltaTime;
+            LaunchForce += 8 * Time.deltaTime;
+            LaunchForce = Mathf.Min(MaxLaunchForce, LaunchForce);
             StartCoroutine(UpdatePowerBarCoRoutine);
+            for (int i = 0; i < Points.Length; i++)
+            {
+                Points[i].SetActive(true);
+                Vector2 pos = PointPosition(i * 0.05f);
+                Points[i].transform.position = pos;
+            }
         }
-        if(Input.GetKey("mouse 0"))
+        if (Input.GetKey("mouse 0"))
         {
-            LaunchForce += 400 * Time.deltaTime;
+            LaunchForce += 8 * Time.deltaTime;
+            LaunchForce = Mathf.Min(MaxLaunchForce, LaunchForce);
             StartCoroutine(UpdatePowerBarCoRoutine);
+            for (int i = 0; i < Points.Length; i++)
+            {
+                Points[i].SetActive(true);
+                Vector2 pos = PointPosition(i * 0.05f);
+                Points[i].transform.position = pos;
+            }
         }
 
-        if(Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
-            LaunchForce = Mathf.Min(MaxLaunchForce,LaunchForce);
             Shoot();
             powerBar.fillAmount = 0;
-            LaunchForce = 200;
+            LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
+            for (int i = 0; i < Points.Length; i++)
+            {
+                Points[i].SetActive(false);
+            }
         }
 
-        if(Input.GetKeyUp("mouse 0"))
+        if (Input.GetKeyUp("mouse 0"))
         {
-            LaunchForce = Mathf.Min(MaxLaunchForce,LaunchForce);
             Shoot();
             powerBar.fillAmount = 0;
-            LaunchForce = 200;
+            LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
-        }
-
-        for (int i = 0; i < Points.Length; i++)
-        {
-            Vector2 pos = PointPosition(i * 0.001f);
-            Points[i].transform.position = pos;
+            for (int i = 0; i < Points.Length; i++)
+            {
+                Points[i].SetActive(false);
+            }
         }
     }
 
-    IEnumerator UpdatePowerBar(){
-        while(true){
-            powerBar.fillAmount = (LaunchForce-200)/(MaxLaunchForce-200);
+    IEnumerator UpdatePowerBar()
+    {
+        while (true)
+        {
+            powerBar.fillAmount = (LaunchForce - 5) / (MaxLaunchForce - 5);
             //Debug.Log(LaunchForce/MaxLaunchForce);
             yield return new WaitForSeconds(0.06f);
         }
@@ -90,7 +106,8 @@ public class shoot : MonoBehaviour
     void Shoot()
     {
         GameObject ArrowIns = Instantiate(Arrow, transform.position, transform.rotation);
-        ArrowIns.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
+        //ArrowIns.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
+        ArrowIns.GetComponent<Rigidbody2D>().velocity = transform.right * LaunchForce;
         _arrowsCount++;
     }
 
