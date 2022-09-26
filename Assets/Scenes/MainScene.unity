@@ -1219,7 +1219,7 @@ GameObject:
   - component: {fileID: 446677525}
   m_Layer: 0
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6306,7 +6306,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2124156106237974524, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3770908148702434234, guid: f448cfaa32f3747afb499264cae12445, type: 3}
       propertyPath: m_Name
