@@ -6,14 +6,15 @@ using Cinemachine;
 public class vCamScript : MonoBehaviour
 {
     public GameObject arrow;
-    public Transform tFollowTarget;
     private CinemachineVirtualCamera vcam;
-    public Transform initialTransform;
-    public float initialLensOrth;
+    private Transform initialTransform;
+    private float initialLensOrth;
  
     void Start()
     {
         vcam = GetComponent<CinemachineVirtualCamera>();
+        initialTransform = vcam.transform;
+        initialLensOrth = 5f;
     }
  
     void Update()
@@ -24,17 +25,19 @@ public class vCamScript : MonoBehaviour
             if (arrow == null){
                 setInitialPosition();
             }
-            else{
-                tFollowTarget = arrow.transform;
-                vcam.LookAt = tFollowTarget;
-                vcam.Follow = tFollowTarget;
-                float init = vcam.m_Lens.OrthographicSize;
-                vcam.m_Lens.OrthographicSize = Mathf.Lerp(init, 2.5f, Time.deltaTime / 5.0f);
-            }
+        }
+        else{
+            vcam.LookAt = arrow.transform;
+            vcam.Follow = arrow.transform;
+            vcam.m_Lens.OrthographicSize = Mathf.Lerp(vcam.m_Lens.OrthographicSize, 2.5f, Time.deltaTime / 5.0f);
         }
         
     }
     void setInitialPosition(){
+        vcam.LookAt = null;
+        vcam.Follow = null;
+        vcam.transform.position = initialTransform.position;
+        vcam.m_Lens.OrthographicSize = Mathf.Lerp(vcam.m_Lens.OrthographicSize, initialLensOrth, 0.5f);
         Debug.Log("Set Init Pos");
     }
 }
