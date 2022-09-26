@@ -27,17 +27,15 @@ public class vCamScript : MonoBehaviour
             }
         }
         else{
+            vcam.m_Priority = 3;
             vcam.LookAt = arrow.transform;
             vcam.Follow = arrow.transform;
-            vcam.m_Lens.OrthographicSize = Mathf.Lerp(vcam.m_Lens.OrthographicSize, 2.5f, Time.deltaTime / 5.0f);
+            vcam.m_Lens.OrthographicSize = Mathf.Lerp(vcam.m_Lens.OrthographicSize, 2.3f, Time.deltaTime / 1.0f);
         }
         
     }
     void setInitialPosition(){
-        vcam.LookAt = null;
-        vcam.Follow = null;
-        vcam.transform.position = initialTransform.position;
+        vcam.m_Priority = 1;
         vcam.m_Lens.OrthographicSize = Mathf.Lerp(vcam.m_Lens.OrthographicSize, initialLensOrth, 0.5f);
-        Debug.Log("Set Init Pos");
     }
 }
