@@ -53,6 +53,9 @@ public class arrowScript : MonoBehaviour
         if(collision.gameObject.name == "Terrains"){
             Destroy(this.gameObject);
         }
+        if(collision.gameObject.name == "RightWall"){
+            Destroy(this.gameObject);
+        }
         //Debug.Log(ScoreManager.sm.getCurrentPoint());
         //Destroy(this.gameObject);
     }
