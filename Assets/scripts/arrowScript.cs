@@ -29,20 +29,22 @@ public class arrowScript : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
+    private void OnTriggerEnter2D(Collider2D other) {
+        // Debug.Log("Entered the trigger");
+        if(other.gameObject.tag == "Letter"){
+            char symbol = other.gameObject.GetComponent<Bubble>().symbol;// might fix this later
+            WordBlanks.wb.TargetHit(symbol);
+            Destroy(other.gameObject);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log( "Collided with : " + collision.collider.gameObject.name );
         //hasHit = true;
         //rb.velocity = Vector2.zero;
         //rb.isKinematic = true;
-        if(collision.collider.gameObject.tag == "Letter"){
-            //Debug.Log("Got point, reveal alphabet");
-            char symbol = collision.collider.gameObject.GetComponent<Bubble>().symbol;// might fix this later
-            //Debug.Log("Target Hit: " + symbol);
-            WordBlanks.wb.TargetHit(symbol);
-
-            Destroy(collision.gameObject);
-        }
+        
         if(collision.collider.gameObject.tag == "plus")
         {
             CountDownTimer.countDownTimerObj.updateTime();
