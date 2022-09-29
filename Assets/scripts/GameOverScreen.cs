@@ -45,4 +45,10 @@ public class GameOverScreen : MonoBehaviour
         Debug.Log("Restarting game!");
         SceneManager.LoadScene("MainScene");
     }
+
+    public void LoadFirstScene() 
+    {
+        Debug.Log("Loading first scene");
+        SceneManager.LoadScene("FirstScene");
+    }
 }

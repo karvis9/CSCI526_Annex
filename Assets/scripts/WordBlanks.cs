@@ -11,8 +11,26 @@ public class WordBlanks : MonoBehaviour
 {
     public static WordBlanks wb;
 
+    private static string[] cat1Words = {"abruptly", "absurd"};
+
+    private static string[] cat2Words = {"character", "broadcast"};
+
+    private static string[] cat3Words = {"zombie", "zebra"};
+
+    private static string[] cat4Words = {"jesus", "christ"};
+
+    Dictionary<string, string[]> categoryWords = new Dictionary<string, string[]>() {
+        {"Category1", cat1Words},
+        {"Category2", cat2Words},
+        {"Category3", cat3Words},
+        {"Category4", cat4Words}
+    };
+
+    public static string category;
+
     //private string[] Words = {"ababaa", "aaaaaa"};// Testing Words
     public string[] Words = {};
+    // public string[] Words = { "abruptly", "absurd", "character", "broadcast", "zombie"};
 
     public List<TMP_Text> letterList = new List<TMP_Text>();
     public GameObject textPrefab;
@@ -39,12 +57,18 @@ public class WordBlanks : MonoBehaviour
 
     }
 
-    void Initialize()
-    {
-        int index = Random.Range(0, Words.Length);
+    public static void callback(string category) {
+        Debug.Log("Entered the callback");
+        WordBlanks.category = category;
+    }
 
-        word = Words[index].ToLower();
-        Debug.Log("Selected word " + word.ToString());
+    public void Initialize()
+    {
+        string[] words = categoryWords[category];
+        int index = Random.Range(0, words.Length);
+
+        word = words[index].ToLower();
+        Debug.Log("Selected word " + word.ToString() + "from category " + category);
 
         char[] tokens = word.ToCharArray();
 
@@ -158,3 +182,4 @@ public class WordBlanks : MonoBehaviour
 
     public string getWord() { return word;}
 }
+
