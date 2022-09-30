@@ -4,15 +4,14 @@ using UnityEngine;
 using TMPro;
 public class BubbleSpawner : MonoBehaviour
 {
-    // public TMP_Text characterText;
-    public GameObject child;
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        child = transform.GetChild(0).gameObject;
-        Debug.Log(child.name);
+        GameObject child = transform.GetChild(0).gameObject;
         TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
-        textmeshPro.text = "L";
+        textmeshPro.text = "A";
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -20,4 +19,14 @@ public class BubbleSpawner : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {   
+        if(collision.gameObject.tag == "Arrow")
+        {
+            anim.Play("BubblePop");
+            Destroy(this.gameObject,0.6f);
+        }
+    }
+
 }
