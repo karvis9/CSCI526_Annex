@@ -29,12 +29,12 @@ public class Bubble : MonoBehaviour
         if(collision.gameObject.tag == "TopWall")
         {
             anim.Play("BubblePop");
-            Destroy(this.gameObject,0.6f);
+            Destroy(this.gameObject,1.2f);
         }
         if(collision.gameObject.tag == "Arrow")
         {
             anim.Play("BubblePop");
-            Destroy(this.gameObject,0.6f);
+            Destroy(this.gameObject,1.2f);
         }
     }
 
