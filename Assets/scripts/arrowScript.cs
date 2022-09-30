@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class arrowScript : MonoBehaviour
 {
     Rigidbody2D rb;
@@ -32,9 +32,11 @@ public class arrowScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         // Debug.Log("Entered the trigger");
         if(other.gameObject.tag == "Letter"){
-            char symbol = other.gameObject.GetComponent<Bubble>().symbol;// might fix this later
-            WordBlanks.wb.TargetHit(symbol);
-            Destroy(other.gameObject);
+            //char symbol = other.gameObject.GetComponent<Bubble>().symbol;// might fix this later
+            GameObject child = other.transform.GetChild(0).gameObject;
+            TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
+            Debug.Log("Hit: "+textmeshPro.text);
+            WordBlanks.wb.TargetHit(textmeshPro.text[0]);
         }
     }
 

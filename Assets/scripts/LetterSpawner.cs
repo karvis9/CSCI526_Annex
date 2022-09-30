@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class LetterSpawner : MonoBehaviour
 {
     //[SerializeField] GameObject[] letterPrefab;
-    public List<GameObject> letterPrefab; /*** Extend this list to add letters ***/
+    // public List<GameObject> letterPrefab; /*** Extend this list to add letters ***/
+    public GameObject bubblePrefab;
     public List<char> spawnList;
     public List<char> duplicateCharList;
 
@@ -73,8 +74,13 @@ public class LetterSpawner : MonoBehaviour
             char alphabet = spawnList[idx];
             int prefab_index = (int) alphabet - (int) 'a';
             
-            GameObject go = Instantiate(letterPrefab[prefab_index], transform.position, transform.rotation);
+            //GameObject go = Instantiate(letterPrefab[prefab_index], transform.position, transform.rotation);
+            GameObject go = Instantiate(bubblePrefab, transform.position, transform.rotation);
+            //go.SetActive(true);
             go.SetActive(true);
+            GameObject child = go.transform.GetChild(0).gameObject;
+            TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
+            textmeshPro.text = alphabet.ToString();
         }
         //Debug.Log(letterPrefab[26]);
         //GameObject go1 = Instantiate(letterPrefab[26], transform.position, transform.rotation);
@@ -85,8 +91,13 @@ public class LetterSpawner : MonoBehaviour
             char alphabet = duplicateCharList[idx];
             int prefab_index = (int) alphabet - (int) 'a';
 
-            GameObject go = Instantiate(letterPrefab[prefab_index], transform.position, transform.rotation);
+            // GameObject go = Instantiate(letterPrefab[prefab_index], transform.position, transform.rotation);
+            // go.SetActive(true);
+            GameObject go = Instantiate(bubblePrefab, transform.position, transform.rotation);
             go.SetActive(true);
+            GameObject child = go.transform.GetChild(0).gameObject;
+            TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
+            textmeshPro.text = alphabet.ToString();
         }
     }
 }
