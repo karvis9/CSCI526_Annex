@@ -12,7 +12,7 @@ public class WordBlanks : MonoBehaviour
     public static WordBlanks wb;
 
     //private string[] Words = {"ababaa", "aaaaaa"};// Testing Words
-    public string[] Words = { "abruptly", "absurd", "character", "broadcast", "zombie"};
+    public string[] Words = {};
 
     public List<TMP_Text> letterList = new List<TMP_Text>();
     public GameObject textPrefab;
@@ -27,6 +27,8 @@ public class WordBlanks : MonoBehaviour
     void Start()
     {
         wb = this;
+        string[] testWords = { "RABBIT", "TOWER", "POWER", "ZOMBIE", "TROJAN" };
+        Words = testWords;
         Initialize();
         //StartCoroutine(Upload());
     }
