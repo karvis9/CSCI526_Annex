@@ -29,7 +29,9 @@ public class GameOverScreen : MonoBehaviour
         gameEnded = true;
         gameObject.SetActive(true);
         pointsText.text = Score.ToString() + " points";
-        if (PlayerWon)
+
+        // Since we are doing a marathon, I comment out the player winning funciton
+        /*if (PlayerWon)
         {
             gameResult.text = "YAYYY!!, you correctly guessed the word - " + chosenWord.ToUpper();
             AnalyticsManager.analyticsManager.SendEvent("Level Cleared");
@@ -37,7 +39,11 @@ public class GameOverScreen : MonoBehaviour
         {
             gameResult.text = "OOPS!, you couldn't guess the word - " + chosenWord.ToUpper();
             AnalyticsManager.analyticsManager.SendEvent("Level failed");
-        }
+        }*/
+
+        
+        gameResult.text = "YAYYY!!, you correctly guessed " + chosenWord + " words!";
+        AnalyticsManager.analyticsManager.SendEvent("Level Cleared");
     }
 
     public void RestartGame()
