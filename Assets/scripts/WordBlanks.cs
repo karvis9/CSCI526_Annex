@@ -11,19 +11,19 @@ public class WordBlanks : MonoBehaviour
 {
     public static WordBlanks wb;
 
-    private static string[] cat1Words = {"abruptly", "absurd"};
+    private static string[] movies = {"avengers", "titanic"};
 
-    private static string[] cat2Words = {"character", "broadcast"};
+    private static string[] fruits = {"apple", "grapes"};
 
-    private static string[] cat3Words = {"zombie", "zebra"};
+    private static string[] places = {"california", "texas"};
 
-    private static string[] cat4Words = {"jesus", "christ"};
+    private static string[] animals = {"cat", "dog"};
 
     Dictionary<string, string[]> categoryWords = new Dictionary<string, string[]>() {
-        {"Category1", cat1Words},
-        {"Category2", cat2Words},
-        {"Category3", cat3Words},
-        {"Category4", cat4Words}
+        {"Movies", movies},
+        {"Fruits", fruits},
+        {"Places", places},
+        {"Animals", animals}
     };
 
     public static string category;
