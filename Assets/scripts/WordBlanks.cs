@@ -101,6 +101,7 @@ public class WordBlanks : MonoBehaviour
             ScoreManager.sm.increasePoint();
             if (maskedCnt == 0) {
                 wb.Initialize();
+                AnalyticsManager.analyticsManager.SendEvent("Word Guessed");
                 //GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), true, word);
             }
         }
