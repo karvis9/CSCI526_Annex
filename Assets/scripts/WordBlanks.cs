@@ -17,7 +17,7 @@ public class WordBlanks : MonoBehaviour
 
     private static string[] places = {"california", "texas"};
 
-    private static string[] animals = {"cat", "dog"};
+    private static string[] animals = {"cat", "dog", "rat", "frog", "cow", "animal"};
 
     Dictionary<string, string[]> categoryWords = new Dictionary<string, string[]>() {
         {"Movies", movies},
@@ -28,9 +28,7 @@ public class WordBlanks : MonoBehaviour
 
     public static string category;
 
-    //private string[] Words = {"ababaa", "aaaaaa"};// Testing Words
-    public string[] Words = {};
-    // public string[] Words = { "abruptly", "absurd", "character", "broadcast", "zombie"};
+    public string[] Words;
 
     public List<TMP_Text> letterList = new List<TMP_Text>();
     public GameObject textPrefab;
@@ -40,13 +38,15 @@ public class WordBlanks : MonoBehaviour
     // Layout
     public Transform letterHolder;
     public string word;
+    private List<GameObject> letterObjectList;
 
     // Start is called before the first frame update
     void Start()
     {
         wb = this;
-        string[] testWords = { "RABBIT", "TOWER", "POWER", "ZOMBIE", "TROJAN" };
+        string[] testWords = { "TEST" };
         Words = testWords;
+        letterObjectList = new List<GameObject>();
         Initialize();
         //StartCoroutine(Upload());
     }
@@ -64,6 +64,13 @@ public class WordBlanks : MonoBehaviour
 
     public void Initialize()
     {
+        foreach (GameObject letter in letterObjectList) {
+            Destroy(letter);
+        }
+
+        letterObjectList.Clear();
+        letterList.Clear();
+        masked.Clear();
         string[] words = categoryWords[category];
         int index = Random.Range(0, words.Length);
 
@@ -74,8 +81,9 @@ public class WordBlanks : MonoBehaviour
 
         foreach (char letter in tokens)
         {
-            GameObject temp = Instantiate(textPrefab, letterHolder, false);
-            letterList.Add(temp.GetComponent<TMP_Text>());
+            GameObject go = Instantiate(textPrefab, letterHolder, false);
+            letterObjectList.Add(go);
+            letterList.Add(go.GetComponent<TMP_Text>());
             masked.Add(true);
         }
         maskedCnt = masked.Count;
@@ -91,9 +99,9 @@ public class WordBlanks : MonoBehaviour
             masked[index] = false;
             letterList[index].text = word[index].ToString().ToUpper();
             ScoreManager.sm.increasePoint();
-            if (maskedCnt == 0)
-            {
-                GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), true, word);
+            if (maskedCnt == 0) {
+                wb.Initialize();
+                //GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), true, word);
             }
         }
     }
