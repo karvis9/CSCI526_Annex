@@ -36,6 +36,7 @@ public class AnalyticsManager : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("entry.880690018", _sessionID);
         form.AddField("entry.1308275481", eventType);
+        form.AddField("entry.1107566471", WordBlanks.category);
 
         if (!eventType.Equals("Game Start"))
         {
@@ -43,7 +44,6 @@ public class AnalyticsManager : MonoBehaviour
             form.AddField("entry.19206144", ScoreManager.sm.getFinalScore());
             form.AddField("entry.1514343154", CountDownTimer.countDownTimerObj.getTimeLeft());
             form.AddField("entry.1890577055", shoot.shootController.getArrowsCount());
-            form.AddField("entry.1107566471", WordBlanks.category);
         }
         StartCoroutine(SendData(form));
     }
