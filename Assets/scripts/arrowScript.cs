@@ -36,6 +36,10 @@ public class arrowScript : MonoBehaviour
             GameObject child = other.transform.GetChild(0).gameObject;
             TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
             Debug.Log("Hit: "+textmeshPro.text);
+            if(textmeshPro.text.Equals("+5"))
+            {
+                CountDownTimer.countDownTimerObj.updateTime();
+            }
             WordBlanks.wb.TargetHit(textmeshPro.text[0]);
         }
     }
@@ -47,11 +51,11 @@ public class arrowScript : MonoBehaviour
         //rb.velocity = Vector2.zero;
         //rb.isKinematic = true;
         
-        if(collision.collider.gameObject.tag == "plus")
-        {
-            CountDownTimer.countDownTimerObj.updateTime();
-            Destroy(collision.gameObject);
-        }
+        //if(collision.collider.gameObject.tag == "plus")
+        //{
+        //    CountDownTimer.countDownTimerObj.updateTime();
+        //    Destroy(collision.gameObject);
+        //}
         if(collision.gameObject.name == "Terrains"){
             Destroy(this.gameObject);
         }

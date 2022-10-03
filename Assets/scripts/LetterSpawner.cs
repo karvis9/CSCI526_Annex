@@ -13,7 +13,8 @@ public class LetterSpawner : MonoBehaviour
     public HashSet<char> actualSet;
     public HashSet<char> duplicateSet;
     public int count;
-    public static int totalCharsEverySec = 2; 
+    public static int totalCharsEverySec = 2;
+    public static int seconds = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -82,9 +83,19 @@ public class LetterSpawner : MonoBehaviour
             TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
             textmeshPro.text = alphabet.ToString();
         }
-        //Debug.Log(letterPrefab[26]);
-        //GameObject go1 = Instantiate(letterPrefab[26], transform.position, transform.rotation);
-        //go1.SetActive(true);
+
+        if(seconds >= 20)
+        {
+            GameObject go = Instantiate(bubblePrefab, transform.position, transform.rotation);
+            go.SetActive(true);
+            GameObject child = go.transform.GetChild(0).gameObject;
+            TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
+            textmeshPro.text = "+5";
+            seconds = 0;
+        } else
+        {
+            seconds += 2;
+        }
         // spawn non-actual chars based on totalCharsEverySec
         for (int i = no_actual; i < totalCharsEverySec; i++) {
             int idx = UnityEngine.Random.Range(0, word_len);

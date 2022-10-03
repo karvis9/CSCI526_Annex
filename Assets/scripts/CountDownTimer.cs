@@ -36,9 +36,7 @@ public class CountDownTimer : MonoBehaviour
 
     public void updateTime()
     {
-        Debug.Log("found");
         Debug.Log("before time is " + curTime);
-
         curTime += 5;
         Debug.Log("current time is "+ curTime);
 
