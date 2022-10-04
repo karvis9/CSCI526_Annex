@@ -88,6 +88,13 @@ public class WordBlanks : MonoBehaviour
         }
         maskedCnt = masked.Count;
     }
+
+    IEnumerator waiter(int index){
+            Vector3 vector = letterList[index].transform.localScale;
+            letterList[index].transform.localScale = new Vector3(2.8f, 2f, 2f);
+            yield return new WaitForSeconds(1);
+            letterList[index].transform.localScale = vector;
+    }
     
     private void _reveal_index(int index) {
         if(!masked[index]) {
@@ -98,6 +105,8 @@ public class WordBlanks : MonoBehaviour
             maskedCnt--;
             masked[index] = false;
             letterList[index].text = word[index].ToString().ToUpper();
+            StartCoroutine(waiter(index));
+            // letterList[index].transform.localScale = ;
             ScoreManager.sm.increasePoint();
             if (maskedCnt == 0) {
                 wb.Initialize();
