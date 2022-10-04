@@ -11,13 +11,13 @@ public class WordBlanks : MonoBehaviour
 {
     public static WordBlanks wb;
 
-    private static string[] movies = {"avengers", "titanic"};
+    private static string[] movies = {"avengers", "titanic" ,"zodiac" ,"godzilla","deadpool" ,"scarface"};
 
-    private static string[] fruits = {"apple", "grapes"};
+    private static string[] fruits = {"apple", "grapes","orange","pear","mango","berry"};
 
-    private static string[] places = {"california", "texas"};
+    private static string[] places = {"california", "texas","india","canada","ethiopia","taiwan","london"};
 
-    private static string[] animals = {"cat", "dog", "rat", "frog", "cow", "animal"};
+    private static string[] animals = {"cat", "dog", "frog", "cheetah","horse", "tiger"};
 
     Dictionary<string, string[]> categoryWords = new Dictionary<string, string[]>() {
         {"Movies", movies},
