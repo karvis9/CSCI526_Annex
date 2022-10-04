@@ -19,11 +19,6 @@ public class LetterSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnList = new List<char>();
-        duplicateCharList = new List<char> ();
-
-        actualSet = new HashSet<char> ();
-        duplicateSet = new HashSet<char> ();
 
         count = 0;
         InvokeRepeating("PopSpawn", 0.0f, 2f);
@@ -37,6 +32,11 @@ public class LetterSpawner : MonoBehaviour
 
     void Initialize ()
     {
+        spawnList = new List<char>();
+        duplicateCharList = new List<char>();
+
+        actualSet = new HashSet<char>();
+        duplicateSet = new HashSet<char>();
         int word_len = WordBlanks.wb.word.Length;
 
         for (int i = 0; i < word_len; i++) {
