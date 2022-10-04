@@ -105,13 +105,17 @@ public class WordBlanks : MonoBehaviour
             maskedCnt--;
             masked[index] = false;
             letterList[index].text = word[index].ToString().ToUpper();
-            StartCoroutine(waiter(index));
             // letterList[index].transform.localScale = ;
+            AnalyticsManager.analyticsManager.SendEvent("Char Revealed");
             ScoreManager.sm.increasePoint();
             if (maskedCnt == 0) {
-                wb.Initialize();
                 AnalyticsManager.analyticsManager.SendEvent("Word Guessed");
+                wb.Initialize();
                 //GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), true, word);
+            }
+            else
+            {
+                StartCoroutine(waiter(index));
             }
         }
     }
