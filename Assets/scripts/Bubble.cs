@@ -18,7 +18,7 @@ public class Bubble : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         transform.position = new Vector3(Random.Range(-4f, 9f), Random.Range(-2.0f, 3.5f), transform.position.z);
-        force = new Vector3(Random.Range(-20, 20), Random.Range(20, 50) ,0);
+        force = new Vector3(Random.Range(-30, 30), Random.Range(20, 50) ,0);
         rb.AddForce(force);
         anim = GetComponent<Animator>();
     }
@@ -28,7 +28,6 @@ public class Bubble : MonoBehaviour
         
         if(collision.gameObject.tag == "TopWall")
         {
-            anim.Play("BubblePop");
             Destroy(this.gameObject,0.6f);
         }
         if(collision.gameObject.tag == "Arrow")
