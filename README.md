@@ -15,3 +15,5 @@ For generating the corpus of words, we plan on scraping the English dictionary f
  
 In the below diagrams, we can see a rough sketch, where the player is trying to hit the target with a weapon and based on the hit score, the clues of the word get unboxed.
 
+GDD : https://docs.google.com/document/d/1HRto0uA2G6PbvSqq6L8PJw33nUCTbYQKOtgvwyj9xgM/edit
+
