@@ -42,7 +42,7 @@ public class GameOverScreen : MonoBehaviour
         }*/
 
         
-        gameResult.text = "YAYYY!!, you correctly guessed " + chosenWord + " words!";
+        //gameResult.text = "YAYYY!!, you correctly guessed " + chosenWord + " words!";
         AnalyticsManager.analyticsManager.SendEvent("Level Cleared");
     }
 
