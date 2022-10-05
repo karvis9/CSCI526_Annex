@@ -196,6 +196,16 @@ public class WordBlanks : MonoBehaviour
         //letterList[index].text = word[index].ToString().ToUpper();
     }
 
+    public List<char> getRemain() {
+        List<char> remain = new List<char>();
+        for(int i = 0; i < masked.Count; i++) {
+            if(masked[i]) {
+                remain.Add(word[i]);
+            }
+        }
+        return remain;
+    }
+
 
     public void onReset()
     {

@@ -7,11 +7,11 @@ public class LetterSpawner : MonoBehaviour
     //[SerializeField] GameObject[] letterPrefab;
     // public List<GameObject> letterPrefab; /*** Extend this list to add letters ***/
     public GameObject bubblePrefab;
-    public List<char> spawnList;
-    public List<char> duplicateCharList;
+    //public List<char> spawnList;
+    //public List<char> duplicateCharList;
 
-    public HashSet<char> actualSet;
-    public HashSet<char> duplicateSet;
+    //public HashSet<char> actualSet;
+    //public HashSet<char> duplicateSet;
     public int count;
     public static int totalCharsEverySec = 2;
     public static int seconds = 0;
@@ -32,6 +32,7 @@ public class LetterSpawner : MonoBehaviour
 
     void Initialize ()
     {
+        /*
         spawnList = new List<char>();
         duplicateCharList = new List<char>();
 
@@ -54,6 +55,7 @@ public class LetterSpawner : MonoBehaviour
                 duplicateCharList.Add (alphabet);
             }
         }
+        */
     }
 
     //pops an character from list and spawns it
@@ -66,18 +68,35 @@ public class LetterSpawner : MonoBehaviour
 
         // randomly decide no of actual chars to spwan
         int no_actual = UnityEngine.Random.Range(1, totalCharsEverySec);
-        int word_len = WordBlanks.wb.word.Length;
+        //int word_len = WordBlanks.wb.word.Length;
+
+        List<char> remainList = WordBlanks.wb.getRemain();
+        List<char> notRemain = new List<char>();
+
+        for(int i = 'a'; i <= 'z'; i++) {
+            bool remain = false;
+            for(int j = 0; j < remainList.Count; j++) {
+                if(remainList[j] == i) {
+                    remain = true;
+                    break;
+                }
+            }
+            if(!remain) {
+                notRemain.Add((char) i);
+            }
+        }
 
         // spawn the actual chars based on above random number
         for (int i = 0; i < no_actual; i++) {
 
-            int idx = UnityEngine.Random.Range(0, word_len);
-            char alphabet = spawnList[idx];
+            //int idx = UnityEngine.Random.Range(0, word_len);
+            int idx = UnityEngine.Random.Range(0, remainList.Count);
+            //char alphabet = spawnList[idx];
+            char alphabet = remainList[idx];
             int prefab_index = (int) alphabet - (int) 'a';
             
             //GameObject go = Instantiate(letterPrefab[prefab_index], transform.position, transform.rotation);
             GameObject go = Instantiate(bubblePrefab, transform.position, transform.rotation);
-            //go.SetActive(true);
             go.SetActive(true);
             GameObject child = go.transform.GetChild(0).gameObject;
             TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
@@ -98,8 +117,10 @@ public class LetterSpawner : MonoBehaviour
         }
         // spawn non-actual chars based on totalCharsEverySec
         for (int i = no_actual; i < totalCharsEverySec; i++) {
-            int idx = UnityEngine.Random.Range(0, word_len);
-            char alphabet = duplicateCharList[idx];
+            //int idx = UnityEngine.Random.Range(0, word_len);
+            int idx = UnityEngine.Random.Range(0, notRemain.Count);
+            //char alphabet = duplicateCharList[idx];
+            char alphabet = notRemain[idx];
             int prefab_index = (int) alphabet - (int) 'a';
 
             // GameObject go = Instantiate(letterPrefab[prefab_index], transform.position, transform.rotation);
