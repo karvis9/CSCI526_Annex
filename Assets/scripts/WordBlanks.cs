@@ -11,13 +11,13 @@ public class WordBlanks : MonoBehaviour
 {
     public static WordBlanks wb;
 
-    private static string[] movies = {"avengers", "titanic" ,"zodiac" ,"godzilla","deadpool" ,"scarface"};
+    private static string[] movies = {"avengers", "titanic", "zodiac", "godzilla", "deadpool", "scarface", "saw"};
 
-    private static string[] fruits = {"apple", "grapes","orange","pear","mango","berry"};
+    private static string[] fruits = {"apple", "grapes", "orange", "pear", "mango", "berry", "kiwi", "banana", ""};
 
-    private static string[] places = {"california", "texas","india","canada","ethiopia","taiwan","london"};
+    private static string[] places = {"california", "texas", "india", "canada", "ethiopia", "taiwan", "london"};
 
-    private static string[] animals = {"cat", "dog", "frog", "cheetah","horse", "tiger"};
+    private static string[] animals = {"cat", "dog", "frog", "cheetah", "horse", "tiger"};
 
     Dictionary<string, string[]> categoryWords = new Dictionary<string, string[]>() {
         {"Movies", movies},
@@ -75,7 +75,7 @@ public class WordBlanks : MonoBehaviour
         int index = Random.Range(0, words.Length);
 
         word = words[index].ToLower();
-        Debug.Log("Selected word " + word.ToString() + "from category " + category);
+        Debug.Log("Selected word " + word.ToString() + " from category " + category);
 
         char[] tokens = word.ToCharArray();
 
@@ -90,10 +90,22 @@ public class WordBlanks : MonoBehaviour
     }
 
     IEnumerator waiter(int index){
-            Vector3 vector = letterList[index].transform.localScale;
-            letterList[index].transform.localScale = new Vector3(2.8f, 2f, 2f);
-            yield return new WaitForSeconds(1);
-            letterList[index].transform.localScale = vector;
+        /*Vector3 vector = letterList[index].transform.localScale;
+        letterList[index].transform.localScale = new Vector3(2.8f, 2f, 2f);
+        yield return new WaitForSeconds(1);
+        letterList[index].transform.localScale = vector;*/
+
+        // make it more interesting
+        Vector3 baseline = letterList[index].transform.localScale;
+        Vector3 highpoint = new Vector3(2.8f, 2f, 2f); // can adjust
+        float totalAnimationTime = 1.0f; // can adjust
+        int totalFrames = 50; // can adjust
+        for(int i = 0; i < totalFrames; i++) {
+            letterList[index].transform.localScale = 4 * (baseline - highpoint) * (i - totalFrames / 2) * (i - totalFrames / 2) / (totalFrames * totalFrames) + highpoint;
+            yield return new WaitForSeconds(totalAnimationTime / (float) totalFrames);
+        }
+        letterList[index].transform.localScale = baseline;
+        
     }
     
     private void _reveal_index(int index) {
@@ -162,7 +174,7 @@ public class WordBlanks : MonoBehaviour
             }
         }
         if(cnt == 0) {
-            Debug.Log("All " + c + "'s are revealed!");
+            //Debug.Log("All " + c + "'s are revealed!");
             return;
         }
         int order = UnityEngine.Random.Range(0, cnt);
@@ -194,6 +206,16 @@ public class WordBlanks : MonoBehaviour
             }
         }
         //letterList[index].text = word[index].ToString().ToUpper();
+    }
+
+    public List<char> getRemain() {
+        List<char> remain = new List<char>();
+        for(int i = 0; i < masked.Count; i++) {
+            if(masked[i]) {
+                remain.Add(word[i]);
+            }
+        }
+        return remain;
     }
 
 

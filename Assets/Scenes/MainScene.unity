@@ -634,8 +634,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubblePrefab: {fileID: 9033520418834658368, guid: df77c0ade2c334383a9566586b16405b, type: 3}
-  spawnList: 
-  duplicateCharList: 
   count: 0
 --- !u!4 &188316902
 Transform:
@@ -3190,6 +3188,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1456031435}
+  ActualScore: 0
+  DisplayScore: 0
+  AdjustingTime: 1
 --- !u!114 &1456031435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3219,8 +3220,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

@@ -35,7 +35,7 @@ public class arrowScript : MonoBehaviour
             //char symbol = other.gameObject.GetComponent<Bubble>().symbol;// might fix this later
             GameObject child = other.transform.GetChild(0).gameObject;
             TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
-            Debug.Log("Hit: "+textmeshPro.text);
+            //Debug.Log("Hit: "+textmeshPro.text);
             if(textmeshPro.text.Equals("+5"))
             {
                 CountDownTimer.countDownTimerObj.updateTime();
