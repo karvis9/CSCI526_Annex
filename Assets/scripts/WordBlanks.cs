@@ -90,10 +90,22 @@ public class WordBlanks : MonoBehaviour
     }
 
     IEnumerator waiter(int index){
-            Vector3 vector = letterList[index].transform.localScale;
-            letterList[index].transform.localScale = new Vector3(2.8f, 2f, 2f);
-            yield return new WaitForSeconds(1);
-            letterList[index].transform.localScale = vector;
+        /*Vector3 vector = letterList[index].transform.localScale;
+        letterList[index].transform.localScale = new Vector3(2.8f, 2f, 2f);
+        yield return new WaitForSeconds(1);
+        letterList[index].transform.localScale = vector;*/
+
+        // make it more interesting
+        Vector3 baseline = letterList[index].transform.localScale;
+        Vector3 highpoint = new Vector3(2.8f, 2f, 2f); // can adjust
+        float totalAnimationTime = 1.0f; // can adjust
+        int totalFrames = 50; // can adjust
+        for(int i = 0; i < totalFrames; i++) {
+            letterList[index].transform.localScale = 4 * (baseline - highpoint) * (i - totalFrames / 2) * (i - totalFrames / 2) / (totalFrames * totalFrames) + highpoint;
+            yield return new WaitForSeconds(totalAnimationTime / (float) totalFrames);
+        }
+        letterList[index].transform.localScale = baseline;
+        
     }
     
     private void _reveal_index(int index) {
