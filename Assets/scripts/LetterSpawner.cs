@@ -58,6 +58,16 @@ public class LetterSpawner : MonoBehaviour
         */
     }
 
+
+
+    void SpawnBonusTime() {
+        GameObject go = Instantiate(bubblePrefab, transform.position, transform.rotation);
+        go.SetActive(true);
+        GameObject child = go.transform.GetChild(0).gameObject;
+        TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
+        textmeshPro.text = "+5";
+    }
+
     //pops an character from list and spawns it
     void PopSpawn() 
     {
@@ -66,7 +76,7 @@ public class LetterSpawner : MonoBehaviour
             Initialize ();
         }
 
-        // randomly decide no of actual chars to spwan
+        // randomly decide no of actual chars to spwan [1, totalCharsEverySec)
         int no_actual = UnityEngine.Random.Range(1, totalCharsEverySec);
         //int word_len = WordBlanks.wb.word.Length;
 
@@ -103,7 +113,7 @@ public class LetterSpawner : MonoBehaviour
             textmeshPro.text = alphabet.ToString();
         }
 
-        if(seconds >= 20)
+        /*if(seconds >= 20)
         {
             GameObject go = Instantiate(bubblePrefab, transform.position, transform.rotation);
             go.SetActive(true);
@@ -114,7 +124,7 @@ public class LetterSpawner : MonoBehaviour
         } else
         {
             seconds += 2;
-        }
+        }*/
         // spawn non-actual chars based on totalCharsEverySec
         for (int i = no_actual; i < totalCharsEverySec; i++) {
             //int idx = UnityEngine.Random.Range(0, word_len);

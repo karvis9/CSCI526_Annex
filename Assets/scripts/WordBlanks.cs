@@ -11,13 +11,13 @@ public class WordBlanks : MonoBehaviour
 {
     public static WordBlanks wb;
 
-    private static string[] movies = {"avengers", "titanic" ,"zodiac" ,"godzilla","deadpool" ,"scarface"};
+    private static string[] movies = {"avengers", "titanic", "zodiac", "godzilla", "deadpool", "scarface", "saw"};
 
-    private static string[] fruits = {"apple", "grapes","orange","pear","mango","berry"};
+    private static string[] fruits = {"apple", "grapes", "orange", "pear", "mango", "berry", "kiwi", "banana", ""};
 
-    private static string[] places = {"california", "texas","india","canada","ethiopia","taiwan","london"};
+    private static string[] places = {"california", "texas", "india", "canada", "ethiopia", "taiwan", "london"};
 
-    private static string[] animals = {"cat", "dog", "frog", "cheetah","horse", "tiger"};
+    private static string[] animals = {"cat", "dog", "frog", "cheetah", "horse", "tiger"};
 
     Dictionary<string, string[]> categoryWords = new Dictionary<string, string[]>() {
         {"Movies", movies},
@@ -75,7 +75,7 @@ public class WordBlanks : MonoBehaviour
         int index = Random.Range(0, words.Length);
 
         word = words[index].ToLower();
-        Debug.Log("Selected word " + word.ToString() + "from category " + category);
+        Debug.Log("Selected word " + word.ToString() + " from category " + category);
 
         char[] tokens = word.ToCharArray();
 
@@ -162,7 +162,7 @@ public class WordBlanks : MonoBehaviour
             }
         }
         if(cnt == 0) {
-            Debug.Log("All " + c + "'s are revealed!");
+            //Debug.Log("All " + c + "'s are revealed!");
             return;
         }
         int order = UnityEngine.Random.Range(0, cnt);
