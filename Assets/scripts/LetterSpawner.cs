@@ -22,6 +22,7 @@ public class LetterSpawner : MonoBehaviour
 
         count = 0;
         InvokeRepeating("PopSpawn", 0.0f, 2f);
+        InvokeRepeating("SpawnBonusTime", 0.0f, 20f);
     }
 
     // Update is called once per frame
