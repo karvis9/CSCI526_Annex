@@ -34,7 +34,7 @@ public class AnalyticsManager : MonoBehaviour
 
     public void SendEvent(string eventType)
     {
-        WWWForm form = new WWWForm();
+       /* WWWForm form = new WWWForm();
         form.AddField("entry.880690018", _sessionID);
         form.AddField("entry.1107566471", WordBlanks.category);
 
@@ -57,7 +57,7 @@ public class AnalyticsManager : MonoBehaviour
 
         form.AddField("entry.1308275481", eventType);
 
-        StartCoroutine(SendData(form));
+        StartCoroutine(SendData(form));*/
     }
 
     IEnumerator SendData(WWWForm form)

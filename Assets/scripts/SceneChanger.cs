@@ -6,7 +6,7 @@ public class SceneChanger : MonoBehaviour
     public void switchToMainScene(string category) {
         Debug.Log("Switching to main scene with category " + category);
         WordBlanks.callback(category);
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainScene_Arjun");
     }
 
     public void LoadFirstScene() 
