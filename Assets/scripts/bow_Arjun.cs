@@ -16,7 +16,7 @@ public class bow_Arjun : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 bowPos = transform.position;
         direction = mousePos - bowPos;
-        StartCoroutine(faceMouse());
+        //StartCoroutine(faceMouse());
 
         Debug.Log("Arjun  ");
         Vector3 pos = transform.position;

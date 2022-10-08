@@ -17,8 +17,17 @@ public class Bubble : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        transform.position = new Vector3(Random.Range(-4f, 9f), Random.Range(-2.0f, 3.5f), transform.position.z);
-        force = new Vector3(Random.Range(-30, 30), Random.Range(20, 50) ,0);
+
+        if (true)
+        {
+            transform.position = new Vector3(Random.Range(8f, 9f), Random.Range(-2.0f, 3.5f), transform.position.z);
+            force = new Vector3(Random.Range(-200, -350), Random.Range(0, 10), 0);
+        }
+        else
+        {
+            transform.position = new Vector3(Random.Range(-4f, 9f), Random.Range(-2.0f, 3.5f), transform.position.z);
+            force = new Vector3(Random.Range(-30, 30), Random.Range(20, 50), 0);
+        }
         rb.AddForce(force);
         anim = GetComponent<Animator>();
     }
