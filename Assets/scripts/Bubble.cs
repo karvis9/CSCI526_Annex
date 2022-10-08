@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bubble : MonoBehaviour
 {
@@ -17,8 +18,10 @@ public class Bubble : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
 
-        if (true)
+        if (sceneName == "MainScene_Arjun")
         {
             transform.position = new Vector3(Random.Range(8f, 9f), Random.Range(-2.0f, 3.5f), transform.position.z);
             force = new Vector3(Random.Range(-200, -350), Random.Range(0, 10), 0);
