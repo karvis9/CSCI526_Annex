@@ -13,7 +13,7 @@ public class WordBlanks : MonoBehaviour
 
     private static string[] movies = {"avengers", "titanic", "zodiac", "godzilla", "deadpool", "scarface", "saw"};
 
-    private static string[] fruits = {"apple", "grapes", "orange", "pear", "mango", "berry", "kiwi", "banana", ""};
+    private static string[] fruits = {"apple", "grapes", "orange", "pear", "mango", "berry", "kiwi", "banana", "honeydew"};
 
     private static string[] places = {"california", "texas", "india", "canada", "ethiopia", "taiwan", "london"};
 
