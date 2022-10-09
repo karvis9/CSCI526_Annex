@@ -7,11 +7,15 @@ using UnityEngine.SceneManagement;
 public class Doublesize_powerup : MonoBehaviour
 {
     List<GameObject> bubbleObjects = new List<GameObject>();
-    public Vector3 baseline;
+    public Vector2 baseline;
+    public float scaleFactor;
+    public float totalAnimationTime;
     // Start is called before the first frame update
     void Start()
     {
-        
+        scaleFactor = 2.0f;
+        baseline = new Vector2(0.3f,0.3f);
+        totalAnimationTime = 4.0f;
     }
 
     // List<GameObject> GetAllObjectsInScene()
@@ -75,7 +79,7 @@ public class Doublesize_powerup : MonoBehaviour
         }
     }
 
-    #Coroutine for double scaling all the bubbles on screen
+    //Coroutine for double scaling all the bubbles on screen
     IEnumerator waiter(){
         /*Vector3 vector = letterList[index].transform.localScale;
         letterList[index].transform.localScale = new Vector3(2.8f, 2f, 2f);
@@ -85,24 +89,30 @@ public class Doublesize_powerup : MonoBehaviour
         // make it more interesting
 
         //setting the baseline 
-        foreach(GameObject obj in bubbleObjects){
-        baseline = obj.gameObject.transform.localScale;
-        }
+
+        //We know the baseline for now which is 0.3f so need to do loop
+        //but we can also find Mathf.min(object...) to find the baseline to start with
+
+        // foreach(GameObject obj in bubbleObjects){
+        //     baseline = obj.gameObject.transform.localScale;
+        // }
         // Vector3 baseline = bubbleObjects.transform.localScale;
-        //setting an highpoint for scaling
-        Vector3 highpoint = new Vector3(1.2f, 1.3f, 1.3f); // can adjust
-        float totalAnimationTime = 2.0f; // can adjust
+        // setting an highpoint for scaling
+
+        Vector2 highpoint = scaleFactor*baseline; // can adjust
         int totalFrames = 50; // can adjust
         for(int i = 0; i < totalFrames; i++) {
             foreach(GameObject obj in bubbleObjects){
-                obj.gameObject.transform.localScale = 2 * (baseline - highpoint) * (i - totalFrames / 2) * (i - totalFrames / 2) / (totalFrames * totalFrames) + highpoint;;
+                if (obj != null)
+                    obj.gameObject.transform.localScale =  (baseline - highpoint) * (i - totalFrames / 2) * (i - totalFrames / 2) / (totalFrames * totalFrames) + highpoint;
             }
             // bubbleObjects.transform.localScale = 4 * (baseline - highpoint) * (i - totalFrames / 2) * (i - totalFrames / 2) / (totalFrames * totalFrames) + highpoint;
             yield return new WaitForSeconds(totalAnimationTime / (float) totalFrames);
         }
         //return to baseline
         foreach(GameObject obj in bubbleObjects){
-        obj.gameObject.transform.localScale = baseline;
+            if (obj != null)
+                obj.gameObject.transform.localScale = baseline;
         }
         // bubbleObjects.transform.localScale = baseline;
         
