@@ -2470,38 +2470,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!1 &711334895
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 711334896}
-  m_Layer: 3
-  m_Name: Hand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &711334896
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711334895}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 991162274}
-  m_Father: {fileID: 1545470689}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &737272647
 GameObject:
   m_ObjectHideFlags: 0
@@ -2711,13 +2679,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991162272}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.20199999, y: 0.125, z: 0}
+  m_LocalPosition: {x: 0.045, y: 0.206, z: 0}
   m_LocalScale: {x: 0.01666667, y: 0.03333334, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 446677526}
-  m_Father: {fileID: 711334896}
-  m_RootOrder: 0
+  m_Father: {fileID: 1545470689}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &991162275
 MonoBehaviour:
@@ -3613,7 +3581,7 @@ Transform:
   m_Children:
   - {fileID: 457460428}
   - {fileID: 959661254}
-  - {fileID: 711334896}
+  - {fileID: 991162274}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3631,7 +3599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1545470694}
   rb: {fileID: 0}
-  hand: {fileID: 711334896}
+  hand: {fileID: 0}
   runSpeed: 40
 --- !u!58 &1545470691
 CircleCollider2D:
@@ -3662,7 +3630,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000017881393, y: 0.07683018}
+  m_Offset: {x: -0.00000017881393, y: 0.050657347}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3673,7 +3641,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.28415453, y: 0.24633962}
+  m_Size: {x: 0.28415453, y: 0.19399396}
   m_EdgeRadius: 0
 --- !u!50 &1545470693
 Rigidbody2D:
