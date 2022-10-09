@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class bow_Arjun : MonoBehaviour
+public class bow_Level1 : MonoBehaviour
 {
     public Vector2 direction;
     public float slowedFactor = 1.2f;
