@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
 			jump = true;
 		}
 		//RotateHand();
-
+		//bow.bw.transform.RotateAround(transform.position, transform.up, 10 * Time.deltaTime);
 
     }
 	void RotateHand()

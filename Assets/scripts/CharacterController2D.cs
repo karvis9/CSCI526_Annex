@@ -76,19 +76,30 @@ public class CharacterController2D : MonoBehaviour
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref velocity, m_MovementSmoothing);
 
-			// If the input is moving the player right and the player is facing left...
-			if (move > 0 && !m_FacingRight)
-			{
-				// ... flip the player.
-				Flip();
-			}
-			// Otherwise if the input is moving the player left and the player is facing right...
-			else if (move < 0 && m_FacingRight)
-			{
-				// ... flip the player.
-				Flip();
-			}
-		}
+            // If the input is moving the player right and the player is facing left...
+            //if (move > 0 && !m_FacingRight)
+            //{
+            //    // ... flip the player.
+            //    Flip();
+            //}
+            //// Otherwise if the input is moving the player left and the player is facing right...
+            //else if (move < 0 && m_FacingRight)
+            //{
+            //    // ... flip the player.
+            //    Flip();
+            //}
+
+			// Using rotateAround, but not able to stop it at 180 degrees.
+            //if(move > 0f)
+            //         {
+            //	bow.bw.transform.RotateAround(bow.bw.transform.parent.position, bow.bw.transform.parent.forward, move * 90f * Time.deltaTime);
+            //}
+            //else if(move < 0f)
+            //         {
+            //	bow.bw.transform.RotateAround(bow.bw.transform.parent.position, bow.bw.transform.parent.forward, move * -90f * Time.deltaTime);
+            //}
+
+        }
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
@@ -108,8 +119,9 @@ public class CharacterController2D : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
-		Vector3 bowScale = bow.bw.transform.localScale;
-		bowScale.x *= -1;
-		bow.bw.transform.localScale = bowScale;
+		// Bow flip logic -> not needed with the existing code.
+		//Vector3 bowScale = bow.bw.transform.localScale;
+		//bowScale.x *= -1;
+		//bow.bw.transform.localScale = bowScale;
 	}
 }
