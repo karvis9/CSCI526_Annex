@@ -15,7 +15,7 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
-	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+	public static bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 velocity = Vector3.zero;
 
 	private void Awake()
@@ -54,7 +54,7 @@ public class CharacterController2D : MonoBehaviour
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
-			Debug.Log("MGroud " + m_Grounded);
+			//Debug.Log("MGroud " + m_Grounded);
 			// If crouching
 			if (crouch)
 			{
@@ -108,5 +108,8 @@ public class CharacterController2D : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+		Vector3 bowScale = bow.bw.transform.localScale;
+		bowScale.x *= -1;
+		bow.bw.transform.localScale = bowScale;
 	}
 }

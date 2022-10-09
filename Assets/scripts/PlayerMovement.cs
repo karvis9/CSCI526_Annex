@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 	public CharacterController2D controller;
 
 	public Rigidbody2D rb;
-	[SerializeField] Transform hand;
+	//[SerializeField] Transform hand;
 
 	public float runSpeed = 40f;
 
@@ -23,14 +23,18 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			jump = true;
 		}
-		RotateHand();
+		//RotateHand();
 
 
-	}
+    }
 	void RotateHand()
 	{
-		float angle = Utility.AngleTowardsMouse(hand.position);
-		hand.rotation = Quaternion.Euler(new Vector3(-180f, 0f, angle));
+        //float angle = Utility.AngleTowardsMouse(bow.bw.transform.position);
+        //      bow.bw.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, angle));
+        Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        transform.rotation = rotation;
 	}
 
 	void FixedUpdate ()

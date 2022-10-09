@@ -1302,7 +1302,7 @@ Transform:
   m_GameObject: {fileID: 446677524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.1000004, y: 0.24999991, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 991162274}
@@ -2679,7 +2679,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991162272}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.045, y: 0.206, z: 0}
+  m_LocalPosition: {x: 0.142, y: 0.044, z: 0}
   m_LocalScale: {x: 0.01666667, y: 0.03333334, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3599,7 +3599,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1545470694}
   rb: {fileID: 0}
-  hand: {fileID: 0}
   runSpeed: 40
 --- !u!58 &1545470691
 CircleCollider2D:
