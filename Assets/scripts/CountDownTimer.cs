@@ -42,6 +42,13 @@ public class CountDownTimer : MonoBehaviour
 
     }
 
+    public void reduceTime(int time)
+    {
+        Debug.Log("before time is " + curTime);
+        curTime -= time;
+        Debug.Log("current time is " + curTime);
+    }
+
     public int getTimeLeft()
     {
         if (curTime > 0)

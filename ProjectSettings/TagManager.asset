@@ -12,6 +12,8 @@ TagManager:
   - plus
   - Undefined
   - Arrow
+  - bow
+  - Shark
   layers:
   - Default
   - TransparentFX
