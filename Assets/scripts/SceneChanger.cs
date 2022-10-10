@@ -11,6 +11,7 @@ public class SceneChanger : MonoBehaviour
     //     //SceneManager.LoadScene("Level_1");
     // }
     public static SceneChanger sc;
+    public static int curLevel;
 
     void Start()
     {
@@ -31,6 +32,16 @@ public class SceneChanger : MonoBehaviour
         PlayerPrefs.SetString("Category", Category);
         SceneManager.LoadScene(SceneName);
     }
+
+    public void switchToNextLevel() {
+        curLevel += 1;
+        SceneManager.LoadScene("Level_" + curLevel);
+    }
+
+    public Scene getCurrentScene() {
+        return SceneManager.GetActiveScene();
+    }
+
     // public void switchToMainScene(string category) {
     //     Debug.Log("Switching to main scene with category " + category);
     //     WordBlanks.callback(category);

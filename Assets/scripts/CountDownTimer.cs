@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class CountDownTimer : MonoBehaviour
 {
     public static CountDownTimer countDownTimerObj;
 
     // Start is called before the first frame update
     static float curTime;
-    float startingTime = 10f;
+    float startingTime = 120f;
     public Text CountDownText;
 
     private CountDownTimer ()
@@ -28,8 +28,25 @@ public class CountDownTimer : MonoBehaviour
     {
         // if (!GameOverScreen.gm.gameEnded) {
             curTime -= (1 * Time.deltaTime);
-            if (curTime <= 0)
-                GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+            if (curTime <= 0){
+                if (ScoreManager.sm.getFinalScore() >= 400) {
+                    Debug.Log("Entere here ===================");
+                    Scene scene = SceneChanger.sc.getCurrentScene();
+                    Debug.Log("Current scene macha " + scene.name);
+                    string level = scene.name.Split("_")[1];
+                    Debug.Log("Current level macha " + level);
+                    if (level == "2"){
+                        GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+                    } else {
+                        // Change this to call loadNextLevel or something
+                    SceneChanger.sc.switchToScene("Level_2");
+                    }
+                }
+                else {
+                    GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+                }
+            }
+                
             CountDownText.text = "Time Left: " + curTime.ToString ("0") + " Secs";
         // }
     }

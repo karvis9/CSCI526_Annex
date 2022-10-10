@@ -18,7 +18,7 @@ public class Level_Zero : MonoBehaviour
     void Update()
     {
         if(GameObject.FindGameObjectsWithTag("Letter").Length == 0)
-            SceneManager.LoadScene("Level_2");
+            SceneChanger.sc.switchToScene("Level_1");
     }
 
 
