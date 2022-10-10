@@ -449,7 +449,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -93, y: -168}
+  m_AnchoredPosition: {x: 0, y: -138}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504987030
@@ -497,8 +497,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 504987033}
-        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
-        m_MethodName: LoadMainScreen
+        m_TargetAssemblyTypeName: EndScene, Assembly-CSharp
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -555,12 +555,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 504987028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9afa44fb4c4f49a2a7fad4be1e621b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 99d5bc94f2a3b44428cc48bb930cb202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsText: {fileID: 0}
+  pointsText: {fileID: 617714637}
   gameResult: {fileID: 0}
-  gameEnded: 0
 --- !u!1 &617714635
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -115}
+  m_AnchoredPosition: {x: 0, y: -76}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &617714637
@@ -706,12 +705,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 617714635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9afa44fb4c4f49a2a7fad4be1e621b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 99d5bc94f2a3b44428cc48bb930cb202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pointsText: {fileID: 617714637}
-  gameResult: {fileID: 1903275802}
-  gameEnded: 0
+  gameResult: {fileID: 0}
 --- !u!1 &723559641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1625229997
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1173,8 +1171,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1625230001}
-        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
-        m_MethodName: RestartGame
+        m_TargetAssemblyTypeName: EndScene, Assembly-CSharp
+        m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1231,12 +1229,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1625229996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9afa44fb4c4f49a2a7fad4be1e621b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 99d5bc94f2a3b44428cc48bb930cb202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsText: {fileID: 0}
+  pointsText: {fileID: 617714637}
   gameResult: {fileID: 0}
-  gameEnded: 0
 --- !u!1 &1665256899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,7 +1245,7 @@ GameObject:
   - component: {fileID: 1665256900}
   - component: {fileID: 1665256903}
   - component: {fileID: 1665256902}
-  - component: {fileID: 1665256901}
+  - component: {fileID: 1665256904}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -1277,21 +1274,6 @@ RectTransform:
   m_AnchoredPosition: {x: 413, y: 197.5}
   m_SizeDelta: {x: 1254.6835, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1665256901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1665256899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9afa44fb4c4f49a2a7fad4be1e621b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointsText: {fileID: 617714637}
-  gameResult: {fileID: 1903275802}
-  gameEnded: 0
 --- !u!114 &1665256902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,6 +1312,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665256899}
   m_CullTransparentMesh: 1
+--- !u!114 &1665256904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665256899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d5bc94f2a3b44428cc48bb930cb202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsText: {fileID: 617714637}
+  gameResult: {fileID: 0}
 --- !u!1 &1903275800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,7 +1337,6 @@ GameObject:
   - component: {fileID: 1903275801}
   - component: {fileID: 1903275803}
   - component: {fileID: 1903275802}
-  - component: {fileID: 1903275804}
   m_Layer: 5
   m_Name: Result
   m_TagString: Untagged
@@ -1466,18 +1461,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903275800}
   m_CullTransparentMesh: 1
---- !u!114 &1903275804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903275800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9afa44fb4c4f49a2a7fad4be1e621b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointsText: {fileID: 617714637}
-  gameResult: {fileID: 1903275802}
-  gameEnded: 0

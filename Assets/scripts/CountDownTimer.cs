@@ -9,7 +9,7 @@ public class CountDownTimer : MonoBehaviour
 
     // Start is called before the first frame update
     static float curTime;
-    float startingTime = 120f;
+    float startingTime = 10f;
     public Text CountDownText;
 
     private CountDownTimer ()
@@ -26,12 +26,12 @@ public class CountDownTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameOverScreen.gm.gameEnded) {
+        // if (!GameOverScreen.gm.gameEnded) {
             curTime -= (1 * Time.deltaTime);
             if (curTime <= 0)
-                GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+                GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
             CountDownText.text = "Time Left: " + curTime.ToString ("0") + " Secs";
-        }
+        // }
     }
 
     public void updateTime()

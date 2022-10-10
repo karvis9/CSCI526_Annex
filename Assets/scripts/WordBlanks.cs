@@ -71,6 +71,9 @@ public class WordBlanks : MonoBehaviour
         letterObjectList.Clear();
         letterList.Clear();
         masked.Clear();
+        category = PlayerPrefs.GetString("Category");
+        // string[] words = categoryWords[category];
+        // int index = Random.Range(0, words.Length);
 
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
