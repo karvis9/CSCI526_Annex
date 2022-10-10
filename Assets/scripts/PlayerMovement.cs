@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -13,16 +14,28 @@ public class PlayerMovement : MonoBehaviour {
 
 	float horizontalMove = 0f;
 	bool jump = false;
+
+	float verticalMove = 0f;
 	
 	// Update is called once per frame
 	void Update () {
+		Scene currentScene = SceneManager.GetActiveScene();
+		string name = currentScene.name;
+		Debug.Log(name);
+		if(name.Equals("Level_0"))
+        {
+			horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-
-		if (Input.GetButtonDown("JumpPlayer"))
-		{
-			jump = true;
+			if (Input.GetButtonDown("JumpPlayer"))
+			{
+				jump = true;
+			}
 		}
+		else if(name.Equals("MainScene_Arjun"))
+        {
+			verticalMove = Input.GetAxisRaw("Vertical") * runSpeed;
+		}
+
 		//RotateHand();
 		//bow.bw.transform.RotateAround(transform.position, transform.up, 10 * Time.deltaTime);
 
