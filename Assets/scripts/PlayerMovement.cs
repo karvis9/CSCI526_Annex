@@ -11,18 +11,23 @@ public class PlayerMovement : MonoBehaviour {
 	//[SerializeField] Transform hand;
 
 	public float runSpeed = 40f;
-
+	public float verticalSpeed = 5f;
 	float horizontalMove = 0f;
 	bool jump = false;
 
-	float verticalMove = 0f;
-	
-	// Update is called once per frame
-	void Update () {
+	string sceneName;
+	Vector2 movement;
+
+    // Update is called once per frame
+
+    private void Start()
+    {
 		Scene currentScene = SceneManager.GetActiveScene();
-		string name = currentScene.name;
-		Debug.Log(name);
-		if(name.Equals("Level_0"))
+		sceneName = currentScene.name;
+    }
+    void Update () {
+		
+		if(sceneName.Equals("Level_0"))
         {
 			horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
@@ -31,29 +36,26 @@ public class PlayerMovement : MonoBehaviour {
 				jump = true;
 			}
 		}
-		else if(name.Equals("MainScene_Arjun"))
+		else if(sceneName.Equals("MainScene_Arjun"))
         {
-			verticalMove = Input.GetAxisRaw("Vertical") * runSpeed;
+			movement.y = Input.GetAxisRaw("Vertical");
 		}
 
-		//RotateHand();
 		//bow.bw.transform.RotateAround(transform.position, transform.up, 10 * Time.deltaTime);
 
     }
-	void RotateHand()
-	{
-        //float angle = Utility.AngleTowardsMouse(bow.bw.transform.position);
-        //      bow.bw.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, angle));
-        Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-        transform.rotation = rotation;
-	}
 
 	void FixedUpdate ()
 	{
 		// Move our character
-		controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
-		jump = false;
+		if(sceneName.Equals("Level_0"))
+        {
+			controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+			jump = false;
+		}
+		else if(sceneName.Equals("MainScene_Arjun"))
+        {
+			rb.MovePosition(rb.position + movement * verticalSpeed * Time.fixedDeltaTime);
+        }
 	}
 }
