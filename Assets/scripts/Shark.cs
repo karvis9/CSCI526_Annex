@@ -11,9 +11,12 @@ public class Shark : MonoBehaviour
     private float speed = 1.5f;
 
     private GameObject player;
+
     // Start is called before the first frame update
 
     private float elapsed = 0;
+    private float freezeTime = 0;
+    private bool freeze = false;
 
     void Start()
     {
@@ -23,6 +26,13 @@ public class Shark : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (freeze && freezeTime <= 5)
+        {
+            freezeTime += Time.deltaTime;
+            return;
+        }
+        freeze = false;
+        freezeTime = 0;
         Swarm();
     }
 
@@ -38,6 +48,12 @@ public class Shark : MonoBehaviour
         {
             Debug.Log("Player hit");
             CountDownTimer.countDownTimerObj.reduceTime(15);
+        }
+        if (collision.CompareTag("Arrow") && !freeze)
+        {
+            Debug.Log("Arrow hit");
+            freeze = true;
+            freezeTime = 0;
         }
     }
 
