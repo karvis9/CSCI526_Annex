@@ -12,6 +12,7 @@ TagManager:
   - plus
   - Undefined
   - Arrow
+  - destroyArrow
   layers:
   - Default
   - TransparentFX
