@@ -12,6 +12,9 @@ public class Shark : MonoBehaviour
 
     private GameObject player;
     // Start is called before the first frame update
+
+    private float elapsed = 0;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("bow");
@@ -37,4 +40,27 @@ public class Shark : MonoBehaviour
             CountDownTimer.countDownTimerObj.reduceTime(15);
         }
     }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (!other.gameObject.CompareTag("bow"))
+            return;
+
+        elapsed += Time.deltaTime;
+        Debug.Log(elapsed);
+        if (elapsed >= 5)
+        {
+            CountDownTimer.countDownTimerObj.reduceTime(15);
+            elapsed = 0;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.gameObject.CompareTag("bow"))
+            return;
+
+        elapsed = 0;
+    }
+
 }
