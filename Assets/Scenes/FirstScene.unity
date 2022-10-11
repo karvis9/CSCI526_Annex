@@ -858,7 +858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1277615613
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1241,6 +1241,7 @@ GameObject:
   - component: {fileID: 1771242647}
   - component: {fileID: 1771242646}
   - component: {fileID: 1771242645}
+  - component: {fileID: 1771242649}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1334,6 +1335,14 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!222 &1771242649
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771242643}
+  m_CullTransparentMesh: 1
 --- !u!1 &1778042214
 GameObject:
   m_ObjectHideFlags: 0
