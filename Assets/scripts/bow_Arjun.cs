@@ -13,24 +13,24 @@ public class bow_Arjun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 bowPos = transform.position;
-        direction = mousePos - bowPos;
-        //StartCoroutine(faceMouse());
+        //Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //Vector2 bowPos = transform.position;
+        //direction = mousePos - bowPos;
+        ////StartCoroutine(faceMouse());
 
-        Debug.Log("Arjun  ");
-        Vector3 pos = transform.position;
+        //Debug.Log("Arjun  ");
+        //Vector3 pos = transform.position;
 
-        if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
-        {
-            pos.y += 4f * Time.deltaTime;
-        }
-        if (Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow))
-        {
-            pos.y -= 4f * Time.deltaTime;
-        }
+        //if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
+        //{
+        //    pos.y += 4f * Time.deltaTime;
+        //}
+        //if (Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow))
+        //{
+        //    pos.y -= 4f * Time.deltaTime;
+        //}
 
-        transform.position = pos;
+        //transform.position = pos;
     }
 
     IEnumerator faceMouse()
