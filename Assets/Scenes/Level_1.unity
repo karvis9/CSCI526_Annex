@@ -3861,14 +3861,14 @@ PrefabInstance:
     - target: {fileID: 252283519031862433, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
       propertyPath: powerBar
       value: 
-      objectReference: {fileID: 73960264}
+      objectReference: {fileID: 1703813022}
     - target: {fileID: 252283519031862434, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 252283519031862438, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 252283520558926300, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
       propertyPath: m_Name
@@ -3944,7 +3944,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860206981}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07106ec7c70e1cf4b9fd472c84b9ffe1, type: 3}
   m_Name: 

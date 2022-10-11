@@ -38,13 +38,9 @@ public class shoot : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
-        if (sceneName == "Level_1")
-        {
-            direction = this.gameObject.GetComponent<bow_Level1>().direction;
-        }
-        else {
-            direction = this.gameObject.GetComponent<bow>().direction;
-        }
+        
+        direction = this.gameObject.GetComponent<bow>().direction;
+        
         //Vector2 startPosition = transform.right;
         //transform.right = Vector2.Lerp(startPosition, direction, Time.deltaTime / 1.2f);
         Vector2 currentPointPos = (Vector2)transform.position + (LaunchForce * t * direction.normalized) + 0.5f * Physics2D.gravity * t * t;
