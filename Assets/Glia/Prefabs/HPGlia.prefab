@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3305013549428472249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3305013549428472255}
+  - component: {fileID: 570241667440803556}
+  m_Layer: 0
+  m_Name: HPGlia
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3305013549428472255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3305013549428472249}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &570241667440803556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3305013549428472249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2e23f718043b54e837c14aa622f55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalPort: 12352
+  useRandomLocalPort: 1
+  ServicePort: 13352
+  OnHeartRate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeartRateVariability:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPPGEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEyePupillometry:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEyeTracking:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFacialEMG:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFacialExpression:
+    m_PersistentCalls:
+      m_Calls: []
+  OnVSync:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCognitiveLoad:
+    m_PersistentCalls:
+      m_Calls: []

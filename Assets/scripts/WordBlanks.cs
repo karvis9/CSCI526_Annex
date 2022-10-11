@@ -13,7 +13,7 @@ public class WordBlanks : MonoBehaviour
 
     private static string[] movies = {"avengers", "titanic", "zodiac", "godzilla", "deadpool", "scarface", "saw"};
 
-    private static string[] fruits = {"apple", "grapes", "orange", "pear", "mango", "berry", "kiwi", "banana", ""};
+    private static string[] fruits = {"apple", "grapes", "orange", "pear", "mango", "berry", "kiwi", "banana", "honeydew"};
 
     private static string[] places = {"california", "texas", "india", "canada", "ethiopia", "taiwan", "london"};
 
@@ -71,10 +71,23 @@ public class WordBlanks : MonoBehaviour
         letterObjectList.Clear();
         letterList.Clear();
         masked.Clear();
-        string[] words = categoryWords[category];
-        int index = Random.Range(0, words.Length);
+        category = PlayerPrefs.GetString("Category");
+        // string[] words = categoryWords[category];
+        // int index = Random.Range(0, words.Length);
 
-        word = words[index].ToLower();
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName.Equals("Level_0"))
+        {
+            word = "game";
+        }
+        else
+        {
+            string[] words = categoryWords[category];
+            int index = Random.Range(0, words.Length);
+
+            word = words[index].ToLower();
+        }
         Debug.Log("Selected word " + word.ToString() + " from category " + category);
 
         char[] tokens = word.ToCharArray();

@@ -9,26 +9,39 @@ using UnityEditor;
 public class GameOverScreen : MonoBehaviour
 {
 
-    public TextMeshProUGUI pointsText;
-    public TextMeshProUGUI gameResult;
-    public static GameOverScreen gm;
+    // public TextMeshProUGUI pointsText;
+    // public TextMeshProUGUI gameResult;
+    // public static GameOverScreen gm;
 
-    public bool gameEnded = false;
+    // public bool gameEnded = false;
 
-    public void Awake()
-    {
-        Debug.Log("Setting GameOver screen to inactive");
-        gm = this;
-        gameObject.SetActive(false);
+    // public void Awake()
+    // {
+    //     Debug.Log("Setting GameOver screen to inactive");
+    //     gm = this;
+    //     // gameObject.SetActive(false);
+    // }
 
-    }
+    // public void Update()
+    //  {
+    //      Debug.Log("Setting GameOver screen to inactive");
+    //     gm = this;
+    //  }
 
-    public void EndGame(int Score, bool PlayerWon, string chosenWord)
+    // public void Start() {
+    //     Debug.Log("Setting GameOver screen to inactive");
+    //     gm = this;
+    // }
+    public static void EndGame(int Score, bool PlayerWon, string chosenWord)
     {
         Debug.Log("Ending game!");
-        gameEnded = true;
-        gameObject.SetActive(true);
-        pointsText.text = Score.ToString() + " points";
+        // gameEnded = true;
+        // gameObject.SetActive(true);
+        int prevScore = PlayerPrefs.GetInt("Score");
+        Debug.Log("Previous score is " + prevScore);
+        PlayerPrefs.SetInt("Score", Score + prevScore);
+        SceneChanger.sc.switchToScene("EndScene");
+        // pointsText.text = Score.ToString() + " points";
 
         // Since we are doing a marathon, I comment out the player winning funciton
         /*if (PlayerWon)
@@ -46,15 +59,15 @@ public class GameOverScreen : MonoBehaviour
         AnalyticsManager.analyticsManager.SendEvent("Level Cleared");
     }
 
-    public void RestartGame()
-    {
-        Debug.Log("Restarting game!");
-        SceneManager.LoadScene("MainScene");
-    }
+    // public void RestartGame()
+    // {
+    //     Debug.Log("Restarting game!");
+    //     SceneManager.LoadScene("MainScene");
+    // }
 
-    public void LoadFirstScene() 
-    {
-        Debug.Log("Loading first scene");
-        SceneManager.LoadScene("FirstScene");
-    }
+    // public void LoadFirstScene() 
+    // {
+    //     Debug.Log("Loading first scene");
+    //     SceneManager.LoadScene("FirstScene");
+    // }
 }
