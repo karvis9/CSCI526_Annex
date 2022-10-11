@@ -363,14 +363,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 667455964}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: switchToMainScene
+        m_MethodName: switchFromCategoryScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Animals
+          m_StringArgument: Animals,Level_0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &667455962
@@ -510,14 +510,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 746316464}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: switchToMainScene
+        m_MethodName: switchFromCategoryScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Fruits
+          m_StringArgument: Fruits,Level_0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &746316462
@@ -1169,14 +1169,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1381175576}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: switchToMainScene
+        m_MethodName: switchFromCategoryScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Movies
+          m_StringArgument: Movies,Level_0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1381175574
@@ -1421,14 +1421,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1778042219}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: switchToMainScene
+        m_MethodName: switchFromCategoryScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Places
+          m_StringArgument: Places,Level_0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1778042217
