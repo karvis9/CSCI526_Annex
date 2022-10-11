@@ -3,7 +3,7 @@ Github Repo for Games Course (Team Annex) Tuesday Class.
 
 Core idea : Pocket tanks war with word guessing/Hangman.
 
-Game Concept: This is a game at the intersection of concepts derived from Word Guessing (similar to the wheel of fortune TV show) and War-Action games. The end goal of the user is to guess a word at each level in the shortest amount of time, where the clue for the word would be revealed based on the target shooting accuracy of the player. 
+Game Concept: This is a game at the intersection of concepts derived from Word Guessing or the game Hangman (similar to the wheel of fortune TV show) and War-Action games. For guessing the words, the user can choose a category from given options. The end goal of the user is to guess a word at each level in the shortest amount of time. 
  
 Gameplay: Initially the player is given a war chest say 100 pts to purchase a set of weapons like (Bazooka, Fireball, Napalm etc). Each weapon has a damage number, which it inflicts on the target. There are multiple levels in this game. In the first level the player has to hit the target using physics principles, setting an initial velocity and projectile angle to hit the target located at a distance. Based on the accuracy of the player, a backend algorithm generates clues for the word to be guessed. If the player guesses the word correctly he/she gets points accordingly (and also bonus points for getting it right in one attempt and not taking multiple attempts on the target plus the time saved.) If the guess is incorrect, then the player resumes the attempts with another weapon. The level ends when the time runs out or the weapons are exhausted. 
  
