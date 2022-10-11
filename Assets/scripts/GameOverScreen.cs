@@ -37,7 +37,9 @@ public class GameOverScreen : MonoBehaviour
         Debug.Log("Ending game!");
         // gameEnded = true;
         // gameObject.SetActive(true);
-        PlayerPrefs.SetInt("Score", Score);
+        int prevScore = PlayerPrefs.GetInt("Score");
+        Debug.Log("Previous score is " + prevScore);
+        PlayerPrefs.SetInt("Score", Score + prevScore);
         SceneChanger.sc.switchToScene("EndScene");
         // pointsText.text = Score.ToString() + " points";
 

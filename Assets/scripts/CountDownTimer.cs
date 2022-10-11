@@ -30,11 +30,8 @@ public class CountDownTimer : MonoBehaviour
             curTime -= (1 * Time.deltaTime);
             if (curTime <= 0){
                 if (ScoreManager.sm.getFinalScore() >= 400) {
-                    Debug.Log("Entere here ===================");
                     Scene scene = SceneChanger.sc.getCurrentScene();
-                    Debug.Log("Current scene macha " + scene.name);
                     string level = scene.name.Split("_")[1];
-                    Debug.Log("Current level macha " + level);
                     if (level == "2"){
                         GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
                     } else {
