@@ -28,6 +28,7 @@ public class shoot : MonoBehaviour
         for (int i = 0; i < numberofPoints; i++)
         {
             Points[i] = Instantiate(PointPrefab, transform.position, Quaternion.identity);
+            Points[i].SetActive(false);
         }
     }
 
