@@ -3078,6 +3078,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 252283519031862433, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
+      propertyPath: vcam
+      value: 
+      objectReference: {fileID: 677642140}
+    - target: {fileID: 252283519031862433, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
       propertyPath: powerBar
       value: 
       objectReference: {fileID: 8141949370414883271}

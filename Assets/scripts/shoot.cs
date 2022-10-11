@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class shoot : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class shoot : MonoBehaviour
     public GameObject PointPrefab;
     public GameObject[] Points;
     public int numberofPoints;
+    public CinemachineVirtualCamera vcam;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +55,7 @@ public class shoot : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
+            vcam.m_Priority = 1;
             LaunchForce += 8 * Time.deltaTime;
             LaunchForce = Mathf.Min(MaxLaunchForce, LaunchForce);
             StartCoroutine(UpdatePowerBarCoRoutine);
@@ -65,6 +68,7 @@ public class shoot : MonoBehaviour
         }
         if (Input.GetKey("mouse 0"))
         {
+            vcam.m_Priority = 1;
             LaunchForce += 8 * Time.deltaTime;
             LaunchForce = Mathf.Min(MaxLaunchForce, LaunchForce);
             StartCoroutine(UpdatePowerBarCoRoutine);
@@ -117,6 +121,7 @@ public class shoot : MonoBehaviour
         //ArrowIns.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
         ArrowIns.GetComponent<Rigidbody2D>().velocity = transform.right * LaunchForce;
         _arrowsCount++;
+        vcam.m_Priority = 3;
     }
 
     public int getArrowsCount() { return _arrowsCount; }

@@ -1314,8 +1314,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: 2.154541, y: -3.4766014, z: 0}
-    m_Extent: {x: 16.479408, y: 3.6368787, z: 0}
+    m_Center: {x: 2.1547308, y: -3.4956896, z: 0}
+    m_Extent: {x: 16.399815, y: 3.5767448, z: 0}
 --- !u!4 &692407158
 Transform:
   m_ObjectHideFlags: 0
@@ -2207,6 +2207,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 252283519031862433, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
+      propertyPath: vcam
+      value: 
+      objectReference: {fileID: 677642140}
     - target: {fileID: 252283519031862433, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
       propertyPath: powerBar
       value: 

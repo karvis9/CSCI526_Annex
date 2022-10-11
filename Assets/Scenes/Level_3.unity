@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
-  slowedFactor: 3
+  slowedFactor: 1
 --- !u!1 &1076093360
 GameObject:
   m_ObjectHideFlags: 0

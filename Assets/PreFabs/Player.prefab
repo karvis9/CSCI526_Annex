@@ -136,6 +136,7 @@ MonoBehaviour:
   PointPrefab: {fileID: 3008133497324484187, guid: fb2235267a33f4e0f99707ccd4000b20, type: 3}
   Points: []
   numberofPoints: 10
+  vcam: {fileID: 0}
 --- !u!114 &252283519031862438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
-  slowedFactor: 3
+  slowedFactor: 1
 --- !u!1 &252283519571837385
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,3 +458,4 @@ MonoBehaviour:
   controller: {fileID: 252283520558926308}
   rb: {fileID: 0}
   runSpeed: 40
+  verticalSpeed: 5
