@@ -21,6 +21,7 @@ public class Shark : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("bow");
+        elapsed =0;
     }
 
     // Update is called once per frame
@@ -47,7 +48,7 @@ public class Shark : MonoBehaviour
         if (collision.CompareTag("bow"))
         {
             Debug.Log("Player hit");
-            CountDownTimer.countDownTimerObj.reduceTime(15);
+            CountDownTimer.countDownTimerObj.reduceTime(10);
         }
         if (collision.CompareTag("Arrow") && !freeze)
         {
@@ -66,7 +67,7 @@ public class Shark : MonoBehaviour
         Debug.Log(elapsed);
         if (elapsed >= 5)
         {
-            CountDownTimer.countDownTimerObj.reduceTime(15);
+            CountDownTimer.countDownTimerObj.reduceTime(5);
             elapsed = 0;
         }
     }
@@ -76,7 +77,7 @@ public class Shark : MonoBehaviour
         if (!other.gameObject.CompareTag("bow"))
             return;
 
-        elapsed = 0;
+        //elapsed = 0;
     }
 
 }
