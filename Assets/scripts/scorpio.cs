@@ -39,7 +39,7 @@ public class scorpio : MonoBehaviour
         Debug.Log(collision.gameObject.name);
 
         //decrease time below is increasing
-        if(collision.gameObject.name == "Bow"){
+        if(collision.gameObject.name == "Player"){
             //play animation
             anim.Play("Hit");
         }
