@@ -7,8 +7,6 @@ public class Bubble : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] Vector3 force;
-    [SerializeField] Sprite[] bubbleSprites;
-    [SerializeField] Sprite bubbleSprite;
 
     public char symbol;
     private Rigidbody2D rb;
@@ -25,6 +23,11 @@ public class Bubble : MonoBehaviour
         {
             transform.position = new Vector3(Random.Range(8f, 9f), Random.Range(-2.0f, 3.5f), transform.position.z);
             force = new Vector3(Random.Range(-200, -350), Random.Range(0, 10), 0);
+        }
+        else if (sceneName == "Level_0")
+        {
+            // transform.position = new Vector3(Random.Range(8f, 9f), Random.Range(-2.0f, 3.5f), transform.position.z);
+            // force = new Vector3(Random.Range(-200, -350), Random.Range(0, 10), 0);
         }
         else
         {
