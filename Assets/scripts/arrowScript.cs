@@ -62,6 +62,12 @@ public class arrowScript : MonoBehaviour
         if(collision.gameObject.name == "RightWall"){
             Destroy(this.gameObject);
         }
+        if(collision.gameObject.name == "LeftWall"){
+            Destroy(this.gameObject);
+        }
+        if(collision.gameObject.tag == "destroyArrow"){
+            Destroy(this.gameObject);
+        }
         //Debug.Log(ScoreManager.sm.getCurrentPoint());
         //Destroy(this.gameObject);
     }
