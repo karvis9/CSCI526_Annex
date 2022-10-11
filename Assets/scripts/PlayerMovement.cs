@@ -36,9 +36,10 @@ public class PlayerMovement : MonoBehaviour {
 				jump = true;
 			}
 		}
-		else if(sceneName.Equals("MainScene_Arjun"))
+		else if(sceneName.Equals("Level_1"))
         {
 			movement.y = Input.GetAxisRaw("Vertical");
+			movement.x = Input.GetAxisRaw("Horizontal");
 		}
 
 		//bow.bw.transform.RotateAround(transform.position, transform.up, 10 * Time.deltaTime);
@@ -53,9 +54,29 @@ public class PlayerMovement : MonoBehaviour {
 			controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
 			jump = false;
 		}
-		else if(sceneName.Equals("MainScene_Arjun"))
+		else if(sceneName.Equals("Level_1"))
         {
-			rb.MovePosition(rb.position + movement * verticalSpeed * Time.fixedDeltaTime);
-        }
+			Vector3 pos = rb.position + movement * verticalSpeed * Time.fixedDeltaTime;
+			if (pos.x > 7f)
+			{
+				pos.x = 7f;
+			}
+			else if (pos.x < -7f)
+			{
+				pos.x = -7f;
+			}
+
+			if (pos.y > 4f)
+			{
+				pos.y = 4f;
+			}
+			else if (pos.y < -4f)
+			{
+				pos.y = -4f;
+			}
+
+			rb.MovePosition(pos);
+
+		}
 	}
 }
