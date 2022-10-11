@@ -74,6 +74,9 @@ public class arrowScript : MonoBehaviour
         if(collision.gameObject.tag == "destroyArrow"){
             Destroy(this.gameObject);
         }
+        if(collision.gameObject.tag == "bomb"){
+            Destroy(this.gameObject);
+        }
         //Debug.Log(ScoreManager.sm.getCurrentPoint());
         //Destroy(this.gameObject);
     }
