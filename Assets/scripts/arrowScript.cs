@@ -30,17 +30,23 @@ public class arrowScript : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        // Debug.Log("Entered the trigger");
+         Debug.Log("Entered the trigger");
         if(other.gameObject.tag == "Letter"){
             //char symbol = other.gameObject.GetComponent<Bubble>().symbol;// might fix this later
             GameObject child = other.transform.GetChild(0).gameObject;
             TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
-            //Debug.Log("Hit: "+textmeshPro.text);
+            Debug.Log("Hit: "+textmeshPro.text);
             if(textmeshPro.text.Equals("+5"))
             {
                 CountDownTimer.countDownTimerObj.updateTime();
             }
-            WordBlanks.wb.TargetHit(textmeshPro.text[0]);
+/*            Scene currentScene = SceneManager.GetActiveScene();
+            string sceneName = currentScene.name;
+            if (sceneName)
+            {*/
+
+                WordBlanks.wb.TargetHit(textmeshPro.text[0]); 
+            //}
         }
     }
 

@@ -42,6 +42,7 @@ public class scorpio : MonoBehaviour
         if(collision.gameObject.name == "Player"){
             //play animation
             anim.Play("Hit");
+            CountDownTimer.countDownTimerObj.reduceTime(10);
         }
 
     }
