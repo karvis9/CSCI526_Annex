@@ -30,7 +30,7 @@ public class vCamScript : MonoBehaviour
             // vcam.m_Priority = 3;
             vcam.LookAt = arrow.transform;
             vcam.Follow = arrow.transform;
-            vcam.m_Lens.OrthographicSize = Mathf.Lerp(vcam.m_Lens.OrthographicSize, 4.3f, Time.deltaTime / 2.0f);
+            vcam.m_Lens.OrthographicSize = Mathf.Lerp(vcam.m_Lens.OrthographicSize, 4.0f, Time.deltaTime / 6.0f);
         }
         
     }
