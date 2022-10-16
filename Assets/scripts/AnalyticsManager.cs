@@ -65,10 +65,8 @@ public class AnalyticsManager : MonoBehaviour
                 form.AddField("entry.19206144", ScoreManager.sm.getFinalScore());
                 form.AddField("entry.1514343154", CountDownTimer.countDownTimerObj.getTimeLeft());
                 form.AddField("entry.1890577055", shoot.shootController.getArrowsCount());
-                return;
             }
         }
-
         form.AddField("entry.1308275481", eventType);
 
         StartCoroutine(SendData(form));
