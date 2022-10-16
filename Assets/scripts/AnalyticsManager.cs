@@ -18,7 +18,9 @@ public class AnalyticsManager : MonoBehaviour
         _url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf5HiL3ahuH4Opia2ssXz4uSGRPAB1V_FE0xFkqn07WIFaWLw/formResponse";
         
         Guid guid = Guid.NewGuid();
-        _sessionID = guid.ToString();
+
+        _sessionID = PlayerPrefs.GetString("Player ID", guid.ToString());
+        PlayerPrefs.SetString("Player ID", _sessionID);
     }
 
     // Start is called before the first frame update
