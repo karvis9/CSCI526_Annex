@@ -47,6 +47,8 @@ public class bomb : MonoBehaviour
 
         if (collision.gameObject.name == "Arrow(Clone)")
         {
+            AnalyticsManager.analyticsManager.SendEvent("Bomb hit");
+
             bubbles = GameObject.FindGameObjectsWithTag("Letter");
             //Debug.Log(bubbles.Length);
             foreach (var bubble in bubbles)

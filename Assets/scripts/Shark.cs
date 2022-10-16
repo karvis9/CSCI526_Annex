@@ -66,9 +66,10 @@ public class Shark : MonoBehaviour
             return;
 
         elapsed += Time.deltaTime;
-        Debug.Log(elapsed);
+        //Debug.Log(elapsed);
         if (elapsed >= 5)
         {
+
             CountDownTimer.countDownTimerObj.reduceTime(5);
             AnalyticsManager.analyticsManager.SendEvent("Enemey Touched");
 
