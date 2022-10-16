@@ -45,16 +45,18 @@ public class Shark : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.tag);
-        if (collision.CompareTag("bow"))
+        if (collision.gameObject.name == "Player")
         {
             Debug.Log("Player hit");
             CountDownTimer.countDownTimerObj.reduceTime(10);
+            AnalyticsManager.analyticsManager.SendEvent("Enemey Touched");
         }
         if (collision.CompareTag("Arrow") && !freeze)
         {
             Debug.Log("Arrow hit");
             freeze = true;
             freezeTime = 0;
+            AnalyticsManager.analyticsManager.SendEvent("Enemey Hit");
         }
     }
 
@@ -68,6 +70,8 @@ public class Shark : MonoBehaviour
         if (elapsed >= 5)
         {
             CountDownTimer.countDownTimerObj.reduceTime(5);
+            AnalyticsManager.analyticsManager.SendEvent("Enemey Touched");
+
             elapsed = 0;
         }
     }
