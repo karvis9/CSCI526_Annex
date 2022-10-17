@@ -21,7 +21,7 @@ public class LetterSpawner : MonoBehaviour
     {
 
         count = 0;
-        InvokeRepeating("PopSpawn", 0.0f, 2f);
+        InvokeRepeating("PopSpawn", 0.0f, 4f);
         InvokeRepeating("SpawnBonusTime", 0.0f, 20f);
     }
 

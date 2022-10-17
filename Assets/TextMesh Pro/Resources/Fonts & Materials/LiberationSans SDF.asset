@@ -52,8 +52,8 @@ Material:
     - _TextureHeight: 1024
     - _TextureWidth: 1024
     - _UnderlayDilate: 0.01
-    - _UnderlayOffsetX: 0.18
-    - _UnderlayOffsetY: -0.59
+    - _UnderlayOffsetX: 0.61
+    - _UnderlayOffsetY: -0.65
     - _UnderlaySoftness: 0
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
