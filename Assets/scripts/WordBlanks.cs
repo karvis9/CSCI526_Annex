@@ -134,6 +134,7 @@ public class WordBlanks : MonoBehaviour
             AnalyticsManager.analyticsManager.SendEvent("Char Revealed");
             ScoreManager.sm.increasePoint();
             if (maskedCnt == 0) {
+                Message.msg.SendMessage("Word guessed!", Color.green, 2f);
                 AnalyticsManager.analyticsManager.SendEvent("Word Guessed");
                 wb.Initialize();
                 //GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), true, word);
