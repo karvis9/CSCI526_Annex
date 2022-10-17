@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Level_Zero : MonoBehaviour
+public class Level_Zero_one : MonoBehaviour
 {
     public int CharsLength;
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class Level_Zero : MonoBehaviour
     void Update()
     {
         if(GameObject.FindGameObjectsWithTag("Letter").Length == 0)
-            SceneChanger.sc.switchToScene("Level_0_1");
+            SceneChanger.sc.switchToScene("Level_1");
     }
 
 
