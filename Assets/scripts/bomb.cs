@@ -13,7 +13,7 @@ public class bomb : MonoBehaviour
     void Start()
     {
         ps = Animator.gameObject.GetComponent<ParticleSystem>();
-        transform.position = new Vector3(Random.Range(8f, 9f), Random.Range(-2.0f, 3.5f), transform.position.z);
+        //transform.position = new Vector3(Random.Range(8f, 9f), Random.Range(-2.0f, 3.5f), transform.position.z);
     }
 
     // Update is called once per frame
@@ -61,10 +61,10 @@ public class bomb : MonoBehaviour
                 }
             }
             ps.Play();
+            Destroy(this.gameObject, 0.2f);
         }
         //ParticleSystem ps = Animator.gameObject.GetComponent<ParticleSystem>();
         //Debug.Log(ps);
-        Destroy(this.gameObject, 0.2f);
-
+        
     }
 }
