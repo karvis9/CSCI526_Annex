@@ -59,7 +59,10 @@ public class BombSpawner : MonoBehaviour
 
 
     void SpawnBonusTime() {
-        GameObject go = Instantiate(bombPrefab, transform.position, transform.rotation);
+        float x = Random.Range(-4, 6);
+        float y = Random.Range(-2, 3);
+        Vector2 pos = new Vector3(x, y);
+        GameObject go = Instantiate(bombPrefab, pos, transform.rotation);
         go.SetActive(true);
     }
 
