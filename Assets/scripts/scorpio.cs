@@ -22,14 +22,14 @@ public class scorpio : MonoBehaviour
         
         if (moveingRight == true) {
             this.transform.Translate(-1.0f*speed*Time.deltaTime,0,0);
-            if (transform.position.x <= -7) {
+            if (transform.position.x <= -8.33) {
                 transform.eulerAngles = new Vector3(0, 180, 0);
                 moveingRight = false;
             }       
         }
         else {
             this.transform.Translate(-1.0f*speed*Time.deltaTime,0,0);
-            if (transform.position.x >= 7) {
+            if (transform.position.x >= 8.33) {
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 moveingRight = true;
             }  
@@ -43,6 +43,8 @@ public class scorpio : MonoBehaviour
             //play animation
             anim.Play("Hit");
             CountDownTimer.countDownTimerObj.reduceTime(10);
+            Message.msg.SendMessage("-10 Seconds!", Color.red, 2f);
+            AnalyticsManager.analyticsManager.SendEvent("Enemey Touched");
         }
 
     }

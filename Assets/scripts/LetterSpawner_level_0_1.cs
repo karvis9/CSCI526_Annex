@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class LetterSpawner : MonoBehaviour
+public class LetterSpawner_level_0_1 : MonoBehaviour
 {
     //[SerializeField] GameObject[] letterPrefab;
     // public List<GameObject> letterPrefab; /*** Extend this list to add letters ***/
     public GameObject bubblePrefab;
-    public GameObject extraArrowPrefab;
     //public List<char> spawnList;
     //public List<char> duplicateCharList;
 
     //public HashSet<char> actualSet;
     //public HashSet<char> duplicateSet;
     public int count;
-    public static int totalCharsEverySec = 2;
+    public static int totalCharsEverySec = 3;
     public static int seconds = 0;
 
     // Start is called before the first frame update
@@ -23,8 +22,7 @@ public class LetterSpawner : MonoBehaviour
 
         count = 0;
         InvokeRepeating("PopSpawn", 0.0f, 4f);
-        InvokeRepeating("SpawnBonusTime", 0.0f, 20f);
-        InvokeRepeating("SpawnExtraArrow", 0.0f, 15f);
+        //InvokeRepeating("SpawnBonusTime", 0.0f, 20f);
     }
 
     // Update is called once per frame
@@ -69,13 +67,6 @@ public class LetterSpawner : MonoBehaviour
         GameObject child = go.transform.GetChild(0).gameObject;
         TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
         textmeshPro.text = "+5";
-    }
-
-
-    void SpawnExtraArrow() {
-        GameObject go = Instantiate(extraArrowPrefab, transform.position, transform.rotation);
-        go.SetActive(true);
-        GameObject child = go.transform.GetChild(0).gameObject;
     }
 
     //pops an character from list and spawns it
@@ -135,21 +126,5 @@ public class LetterSpawner : MonoBehaviour
         {
             seconds += 2;
         }*/
-        // spawn non-actual chars based on totalCharsEverySec
-        for (int i = no_actual; i < totalCharsEverySec; i++) {
-            //int idx = UnityEngine.Random.Range(0, word_len);
-            int idx = UnityEngine.Random.Range(0, notRemain.Count);
-            //char alphabet = duplicateCharList[idx];
-            char alphabet = notRemain[idx];
-            int prefab_index = (int) alphabet - (int) 'a';
-
-            // GameObject go = Instantiate(letterPrefab[prefab_index], transform.position, transform.rotation);
-            // go.SetActive(true);
-            GameObject go = Instantiate(bubblePrefab, transform.position, transform.rotation);
-            go.SetActive(true);
-            GameObject child = go.transform.GetChild(0).gameObject;
-            TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
-            textmeshPro.text = alphabet.ToString();
-        }
     }
 }

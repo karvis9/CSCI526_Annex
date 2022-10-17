@@ -38,6 +38,8 @@ public class arrowScript : MonoBehaviour
             Debug.Log("Hit: "+textmeshPro.text);
             if(textmeshPro.text.Equals("+5"))
             {
+                Message.msg.SendMessage("+5 Seconds!", Color.green, 2f);
+                AnalyticsManager.analyticsManager.SendEvent("Power up: +5");
                 CountDownTimer.countDownTimerObj.updateTime();
             }
 /*            Scene currentScene = SceneManager.GetActiveScene();

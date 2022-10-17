@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Message : MonoBehaviour
 {
+    public static Message msg;
     public GameObject textPrefab;
     // Start is called before the first frame update
     void Start()
     {
+        msg = this;
         //SendMessage("123", Color.blue, 5f);
     }
 

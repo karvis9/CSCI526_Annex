@@ -53,7 +53,7 @@ public class Doublesize_powerup : MonoBehaviour
             Scene scene = SceneManager.GetActiveScene();
             scene.GetRootGameObjects( rootObjects );
 
-
+            AnalyticsManager.analyticsManager.SendEvent("Power up : 2x");
             // iterate root objects and filter/find the bubble game objects
             for (int i = 0; i < rootObjects.Count; ++i)
             {

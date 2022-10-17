@@ -19,7 +19,9 @@ public class CountDownTimer : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("text"+SceneChanger.sc.getCurrentScene().ToString());
         curTime = startingTime;
+        
         countDownTimerObj = this;
     }
 
