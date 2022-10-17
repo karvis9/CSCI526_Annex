@@ -15,7 +15,7 @@ public class ArrowIndicator : MonoBehaviour
     void Start()
     {
         arrowIndicator = this;
-        arrows = 5;
+        arrows = 20;
         updateArrowCnt();
     }
 
