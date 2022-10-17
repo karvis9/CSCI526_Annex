@@ -12,8 +12,8 @@ public class AnalyticsManager : MonoBehaviour
     private static string _sessionID;
     private int previous_charArrowCount = 0;
     private int previous_timeArrowCount = 0;
-    static float curTime = 0;
-    static int timeSlot = 0;
+    float curTime;
+    int timeSlot;
 
     private void Awake()
     {
@@ -29,6 +29,9 @@ public class AnalyticsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        curTime = 0;
+        timeSlot = 0;
+
         SendEvent("Game Start");
     }
 
