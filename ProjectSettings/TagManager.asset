@@ -15,6 +15,8 @@ TagManager:
   - destroyArrow
   - bow
   - Shark
+  - bomb
+  - extraArrow
   layers:
   - Default
   - TransparentFX

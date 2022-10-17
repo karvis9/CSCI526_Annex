@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubblePrefab: {fileID: 9033520418834658368, guid: df77c0ade2c334383a9566586b16405b, type: 3}
+  extraArrowPrefab: {fileID: 9033520418834658368, guid: 5f8d4d78b559c204e87535dcb7571416, type: 3}
   count: 0
 --- !u!4 &188316902
 Transform:
@@ -1633,6 +1634,7 @@ MonoBehaviour:
   PointPrefab: {fileID: 3008133497324484187, guid: fb2235267a33f4e0f99707ccd4000b20, type: 3}
   Points: []
   numberofPoints: 10
+  vcam: {fileID: 0}
 --- !u!114 &991162276
 MonoBehaviour:
   m_ObjectHideFlags: 0

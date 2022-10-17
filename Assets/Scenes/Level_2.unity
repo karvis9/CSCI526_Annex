@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubblePrefab: {fileID: 9033520418834658368, guid: df77c0ade2c334383a9566586b16405b, type: 3}
+  extraArrowPrefab: {fileID: 9033520418834658368, guid: 5f8d4d78b559c204e87535dcb7571416, type: 3}
   count: 0
 --- !u!4 &188316902
 Transform:
@@ -3989,7 +3990,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8464354144997282226, guid: c126a434e655aa149af42220219579dd, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8464354144997282226, guid: c126a434e655aa149af42220219579dd, type: 3}
       propertyPath: m_LocalPosition.x

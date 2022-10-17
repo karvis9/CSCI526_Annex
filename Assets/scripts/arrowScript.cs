@@ -48,6 +48,9 @@ public class arrowScript : MonoBehaviour
                 WordBlanks.wb.TargetHit(textmeshPro.text[0]); 
             //}
         }
+        else if(other.gameObject.tag == "extraArrow") {
+            ArrowIndicator.arrowIndicator.Add(3);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

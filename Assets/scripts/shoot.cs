@@ -53,6 +53,9 @@ public class shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(ArrowIndicator.arrowIndicator.Get() == 0) {
+            return;
+        }
         if (Input.GetKey(KeyCode.Space))
         {
             vcam.m_Priority = 1;
@@ -83,6 +86,7 @@ public class shoot : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             Shoot();
+            ArrowIndicator.arrowIndicator.Remove(1);
             powerBar.fillAmount = 0;
             LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
@@ -95,6 +99,7 @@ public class shoot : MonoBehaviour
         if (Input.GetKeyUp("mouse 0"))
         {
             Shoot();
+            ArrowIndicator.arrowIndicator.Remove(1);
             powerBar.fillAmount = 0;
             LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
