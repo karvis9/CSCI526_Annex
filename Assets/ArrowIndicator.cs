@@ -55,11 +55,11 @@ public class ArrowIndicator : MonoBehaviour
             if (SceneChanger.sc.getCurrentScene().name == "Level_0") {
                 SceneChanger.sc.switchToScene("Level_0_1");
             }
-            else if (ScoreManager.sm.getFinalScore() >= 400) {
+            else if (ScoreManager.sm.getFinalScoreNoArrowsLeft() >= 400) {
                 Scene ss = SceneChanger.sc.getCurrentScene();
                 string scene = ss.name;
                 if (scene == "Level_2"){
-                    GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+                    GameOverScreen.EndGame(ScoreManager.sm.getFinalScoreNoArrowsLeft(), false, WordBlanks.wb.word);
                 } else if (scene == "Level_0_1"){
                     SceneChanger.sc.switchToScene("Level_1");    
                 }  
@@ -68,7 +68,7 @@ public class ArrowIndicator : MonoBehaviour
                 SceneChanger.sc.switchToScene("Level_2");
                 }
             } else {
-                GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+                GameOverScreen.EndGame(ScoreManager.sm.getFinalScoreNoArrowsLeft(), false, WordBlanks.wb.word);
             }     
         }
         updateArrowCnt();

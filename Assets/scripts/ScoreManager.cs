@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
+        points = 0;
         sm = this;
     }
     public int getCurrentPoint(){
@@ -30,4 +31,10 @@ public class ScoreManager : MonoBehaviour
         int timeLeft = CountDownTimer.countDownTimerObj.getTimeLeft();
         return points + timeLeft * timeLeftWeightage;
     }
+
+    public int getFinalScoreNoArrowsLeft ()
+    {
+        return points;
+    }
+
 }
