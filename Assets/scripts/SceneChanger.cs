@@ -34,8 +34,15 @@ public class SceneChanger : MonoBehaviour
     }
 
     public void switchToNextLevel() {
-        curLevel += 1;
-        SceneManager.LoadScene("Level_" + curLevel);
+        if (curLevel == 0)
+        {
+            SceneManager.LoadScene("Level_0_1");
+        }
+        else
+        {
+            curLevel += 1;
+            SceneManager.LoadScene("Level_" + curLevel);
+        }
     }
 
     public Scene getCurrentScene() {

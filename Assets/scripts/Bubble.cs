@@ -12,9 +12,15 @@ public class Bubble : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Animator anim;
+    private Vector3[] vector3s = new Vector3[4];
 
     void Start()
     {
+        vector3s[0] = new Vector3(-3.6f, -0.5f, transform.position.z);
+        vector3s[1] = new Vector3(-1.04f, -0.98f, transform.position.z);
+        vector3s[2] = new Vector3(6.6f, 0.4f, transform.position.z);
+        vector3s[3] = new Vector3(4.42f, 0.32f, transform.position.z);
+
         rb = GetComponent<Rigidbody2D>();
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
@@ -28,6 +34,11 @@ public class Bubble : MonoBehaviour
         {
             // transform.position = new Vector3(Random.Range(8f, 9f), Random.Range(-2.0f, 3.5f), transform.position.z);
             // force = new Vector3(Random.Range(-200, -350), Random.Range(0, 10), 0);
+        }
+        else if (sceneName == "Level_0_1")
+        {
+            transform.position = vector3s[Random.Range(0,3)];
+            force = new Vector3(Random.Range(-30, 30), Random.Range(20, 50), 0);
         }
         else
         {
