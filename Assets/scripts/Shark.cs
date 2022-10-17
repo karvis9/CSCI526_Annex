@@ -57,6 +57,7 @@ public class Shark : MonoBehaviour
             Debug.Log("Arrow hit");
             freeze = true;
             freezeTime = 0;
+            Message.msg.SendMessage("Enemy Stunned!", Color.green, 2f);
             AnalyticsManager.analyticsManager.SendEvent("Enemey Hit");
         }
     }
