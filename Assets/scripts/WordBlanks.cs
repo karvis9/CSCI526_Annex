@@ -6,24 +6,33 @@ using TMPro;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using Random=UnityEngine.Random;
+using System.IO;
 
 public class WordBlanks : MonoBehaviour
 {
     public static WordBlanks wb;
 
     private static string[] movies = {"avengers", "titanic", "zodiac", "godzilla", "deadpool", "scarface", "saw"};
+    private static List<string> moviesList = new List<string>(movies);
 
     private static string[] fruits = {"apple", "grapes", "orange", "pear", "mango", "berry", "kiwi", "banana", "honeydew"};
+    private static List<string> fruitsList = new List<string>(fruits);
 
     private static string[] places = {"california", "texas", "india", "canada", "ethiopia", "taiwan", "london"};
+    private static List<string> placesList = new List<string>(places);
 
     private static string[] animals = {"cat", "dog", "frog", "cheetah", "horse", "tiger"};
+    private static List<string> animalsList = new List<string>(animals);
+    private static string moviesFile = "Assets/wordlist/movies.txt";
+    private static string fruitsFile = "Assets/wordlist/fruits.txt";
+    private static string placesFile = "Assets/wordlist/places.txt";
+    private static string animalsFile = "Assets/wordlist/Animal.txt";
 
-    Dictionary<string, string[]> categoryWords = new Dictionary<string, string[]>() {
-        {"Movies", movies},
-        {"Fruits", fruits},
-        {"Places", places},
-        {"Animals", animals}
+    Dictionary<string, List<string>> categoryWords = new Dictionary<string, List<string>>() {
+        {"Movies", moviesList},
+        {"Fruits", fruitsList},
+        {"Places", placesList},
+        {"Animals", animalsList}
     };
 
     public static string category;
@@ -43,6 +52,22 @@ public class WordBlanks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        string[] lines = File.ReadAllLines(moviesFile);
+        foreach (string line in lines)
+            moviesList.Add(line);
+
+        lines = File.ReadAllLines(placesFile);
+        foreach (string line in lines)
+            placesList.Add(line);
+
+        lines = File.ReadAllLines(fruitsFile);
+        foreach (string line in lines)
+            fruitsList.Add(line);
+
+        lines = File.ReadAllLines(animalsFile);
+        foreach (string line in lines)
+            animalsList.Add(line);
+
         wb = this;
         string[] testWords = { "TEST" };
         Words = testWords;
@@ -83,8 +108,8 @@ public class WordBlanks : MonoBehaviour
         }
         else
         {
-            string[] words = categoryWords[category];
-            int index = Random.Range(0, words.Length);
+            List<string> words = categoryWords[category];
+            int index = Random.Range(0, words.Count);
 
             word = words[index].ToLower();
         }
