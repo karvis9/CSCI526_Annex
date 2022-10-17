@@ -49,6 +49,7 @@ public class Shark : MonoBehaviour
         {
             Debug.Log("Player hit");
             CountDownTimer.countDownTimerObj.reduceTime(10);
+            Message.msg.SendMessage("-10 Seconds!", Color.red, 2f);
             AnalyticsManager.analyticsManager.SendEvent("Enemey Touched");
         }
         if (collision.CompareTag("Arrow") && !freeze)
@@ -71,6 +72,7 @@ public class Shark : MonoBehaviour
         {
 
             CountDownTimer.countDownTimerObj.reduceTime(5);
+            Message.msg.SendMessage("-5 Seconds!", Color.red, 2f);
             AnalyticsManager.analyticsManager.SendEvent("Enemey Touched");
 
             elapsed = 0;

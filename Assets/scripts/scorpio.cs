@@ -43,6 +43,7 @@ public class scorpio : MonoBehaviour
             //play animation
             anim.Play("Hit");
             CountDownTimer.countDownTimerObj.reduceTime(10);
+            Message.msg.SendMessage("-10 Seconds!", Color.red, 2f);
             AnalyticsManager.analyticsManager.SendEvent("Enemey Touched");
         }
 
