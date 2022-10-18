@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: 3074009086284658894}
   m_Layer: 0
   m_Name: TopWall
-  m_TagString: TopWall
+  m_TagString: destroyArrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
