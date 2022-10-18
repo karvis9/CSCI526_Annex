@@ -18,6 +18,7 @@ public class shoot : MonoBehaviour
     public GameObject[] Points;
     public int numberofPoints;
     public CinemachineVirtualCamera vcam;
+    public static bool readyToShoot = true;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +53,9 @@ public class shoot : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        if(!readyToShoot)
+            return;
         if(ArrowIndicator.arrowIndicator.Get() == 0) {
             return;
         }
@@ -123,6 +126,7 @@ public class shoot : MonoBehaviour
     void Shoot()
     {
         GameObject ArrowIns = Instantiate(Arrow, transform.position, transform.rotation);
+        readyToShoot = false;
         //ArrowIns.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
         ArrowIns.GetComponent<Rigidbody2D>().velocity = transform.right * LaunchForce;
         _arrowsCount++;

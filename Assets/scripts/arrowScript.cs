@@ -68,18 +68,23 @@ public class arrowScript : MonoBehaviour
         //    Destroy(collision.gameObject);
         //}
         if(collision.gameObject.name == "Terrains"){
+            shoot.readyToShoot = true;
             Destroy(this.gameObject);
         }
         if(collision.gameObject.name == "RightWall"){
+            shoot.readyToShoot = true;
             Destroy(this.gameObject);
         }
         if(collision.gameObject.name == "LeftWall"){
+            shoot.readyToShoot = true;
             Destroy(this.gameObject);
         }
         if(collision.gameObject.tag == "destroyArrow"){
+            shoot.readyToShoot = true;
             Destroy(this.gameObject);
         }
         if(collision.gameObject.tag == "bomb"){
+            shoot.readyToShoot = true;
             Destroy(this.gameObject);
         }
         //Debug.Log(ScoreManager.sm.getCurrentPoint());
