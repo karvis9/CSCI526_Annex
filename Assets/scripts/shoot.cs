@@ -92,32 +92,32 @@ public class shoot : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            if(!readyToShoot)
+            for (int i = 0; i < Points.Length; i++)
+            {
+                Points[i].SetActive(false);
+            }
+            if (!readyToShoot)
                 return;
             Shoot();
             ArrowIndicator.arrowIndicator.Remove(1);
             powerBar.fillAmount = 0;
             LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
-            for (int i = 0; i < Points.Length; i++)
-            {
-                Points[i].SetActive(false);
-            }
         }
 
         if (Input.GetKeyUp("mouse 0"))
         {
-            if(!readyToShoot)
+            for (int i = 0; i < Points.Length; i++)
+            {
+                Points[i].SetActive(false);
+            }
+            if (!readyToShoot)
                 return;
             Shoot();
             ArrowIndicator.arrowIndicator.Remove(1);
             powerBar.fillAmount = 0;
             LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
-            for (int i = 0; i < Points.Length; i++)
-            {
-                Points[i].SetActive(false);
-            }
         }
     }
 
