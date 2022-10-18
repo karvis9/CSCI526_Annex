@@ -16,6 +16,7 @@ public class Doublesize_powerup : MonoBehaviour
         scaleFactor = 2.0f;
         baseline = new Vector2(0.3f,0.3f);
         totalAnimationTime = 4.0f;
+        //transform.position = new Vector3(Random.Range(8f, 9f), Random.Range(-2.0f, 3.5f), transform.position.z);
     }
 
     // List<GameObject> GetAllObjectsInScene()
@@ -76,7 +77,10 @@ public class Doublesize_powerup : MonoBehaviour
             }
             //performing double scaling using the startcoroutine
             StartCoroutine(waiter());
+            // Destroy(this.gameObject, 0.2f);
+            this.gameObject.SetActive(false);
         }
+        
     }
 
     //Coroutine for double scaling all the bubbles on screen
