@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10bf53e6aad41448bb6144ef56fdd4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movieDataFile: {fileID: 4900000, guid: d3b0bd2d7b00d4d42a3bf10418377065, type: 3}
+  fruitsDataFile: {fileID: 4900000, guid: c6de8fdbc1c2c499d95295fa577c537e, type: 3}
+  placesDataFile: {fileID: 4900000, guid: a51e118964d4b4fffbf10c65229afd63, type: 3}
+  animalsDataFile: {fileID: 4900000, guid: c38478fa2e79f442bacaf06e4bf8fab0, type: 3}
   Words: []
   letterList: []
   textPrefab: {fileID: 709384965945857663, guid: 5a0e180dd6a350545be54d1e47a39db7, type: 3}

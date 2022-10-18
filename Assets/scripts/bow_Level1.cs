@@ -58,8 +58,9 @@ public class bow_Level1 : MonoBehaviour
 
     IEnumerator faceMouse()
     {
-        Vector2 startPosition = transform.right;
-        transform.right = Vector2.Lerp(startPosition, direction, Time.deltaTime / slowedFactor);
+        // Vector2 startPosition = transform.right;
+        // transform.right = Vector2.Lerp(startPosition, direction, Time.deltaTime / slowedFactor);
+        transform.right = direction;
         yield return null;
     }
 }
