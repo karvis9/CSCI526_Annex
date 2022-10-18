@@ -51,31 +51,32 @@ public class ArrowIndicator : MonoBehaviour
         if(arrows <= 0) {
             arrows = 0;
             Debug.Log ("No more arrows left");
-
-            if (SceneChanger.sc.getCurrentScene().name == "Level_0") {
+            string curLevel = SceneChanger.sc.getCurrentScene ().name;
+            if (curLevel == "Level_0") {
                 // SceneChanger.sc.switchToScene("Level_1");
                 SceneChanger.sc.switchToNextLevel();
             }
-            else if (ScoreManager.sm.getFinalScoreNoArrowsLeft() >= 400) {
+            else if (curLevel == "Level_1" && ScoreManager.sm.getFinalScore() >= 1000) {
+                    SceneChanger.sc.switchToNextLevel();
+                    // Scene scene = SceneChanger.sc.getCurrentScene();
+                    // string level = scene.name.Split("_")[1];
+                    // if (level == "2"){
+                    //     GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+                    // } else {
+                    //     // Change this to call loadNextLevel or something
+                    // SceneChanger.sc.switchToScene("Level_2");
+                    // }
+            } else if (curLevel == "Level_2" && ScoreManager.sm.getFinalScore() >= 2000) {
                 SceneChanger.sc.switchToNextLevel();
-                // Scene ss = SceneChanger.sc.getCurrentScene();
-                // string scene = ss.name;
-                // if (scene == "Level_5"){
-                //     GameOverScreen.EndGame(ScoreManager.sm.getFinalScoreNoArrowsLeft(), false, WordBlanks.wb.word);
-                // } else {
-                //     SceneChanger.sc.switchToNextLevel();
-                // }
-                // } else if (scene == "Level_1"){
-                //     SceneChanger.sc.switchToScene("Level_2");    
-                // }  
-                // else {
-                //     // Change this to call loadNextLevel or something
-                // SceneChanger.sc.switchToScene("Level_3");
-                // }
-            } else {
+            } else if (curLevel == "Level_3" && ScoreManager.sm.getFinalScore() >= 3000) {
+                SceneChanger.sc.switchToNextLevel();
+            } else if (curLevel == "Level_4" && ScoreManager.sm.getFinalScore() >= 4000) {
+                SceneChanger.sc.switchToNextLevel();
+            }
+            else {
                 AnalyticsManager.analyticsManager.SendEvent("Level failed");
-                GameOverScreen.EndGame(ScoreManager.sm.getFinalScoreNoArrowsLeft(), false, WordBlanks.wb.word);
-            }     
+                GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+            }
         }
         updateArrowCnt();
     }
