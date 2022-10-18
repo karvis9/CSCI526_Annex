@@ -7,6 +7,7 @@ public class LetterSpawner : MonoBehaviour
     //[SerializeField] GameObject[] letterPrefab;
     // public List<GameObject> letterPrefab; /*** Extend this list to add letters ***/
     public GameObject bubblePrefab;
+    public GameObject extraArrowPrefab;
     //public List<char> spawnList;
     //public List<char> duplicateCharList;
 
@@ -23,6 +24,7 @@ public class LetterSpawner : MonoBehaviour
         count = 0;
         InvokeRepeating("PopSpawn", 0.0f, 4f);
         InvokeRepeating("SpawnBonusTime", 0.0f, 20f);
+        InvokeRepeating("SpawnExtraArrow", 0.0f, 15f);
     }
 
     // Update is called once per frame
@@ -67,6 +69,13 @@ public class LetterSpawner : MonoBehaviour
         GameObject child = go.transform.GetChild(0).gameObject;
         TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
         textmeshPro.text = "+5";
+    }
+
+
+    void SpawnExtraArrow() {
+        GameObject go = Instantiate(extraArrowPrefab, transform.position, transform.rotation);
+        go.SetActive(true);
+        GameObject child = go.transform.GetChild(0).gameObject;
     }
 
     //pops an character from list and spawns it

@@ -10,6 +10,9 @@ public class Shark : MonoBehaviour
     [SerializeField]
     private float speed = 1.5f;
 
+    [SerializeField]
+    private SharkData data;
+
     private GameObject player;
 
     // Start is called before the first frame update
@@ -22,6 +25,8 @@ public class Shark : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("bow");
         elapsed =0;
+
+        //setEnemyValues();
     }
 
     // Update is called once per frame
@@ -37,6 +42,12 @@ public class Shark : MonoBehaviour
         Swarm();
     }
 
+    private void setEnemyValues()
+    {
+        speed = data.speed;
+        damage = data.damage;
+    }
+
     private void Swarm()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
@@ -48,8 +59,8 @@ public class Shark : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             Debug.Log("Player hit");
-            CountDownTimer.countDownTimerObj.reduceTime(10);
-            Message.msg.SendMessage("-10 Seconds!", Color.red, 2f);
+            CountDownTimer.countDownTimerObj.reduceTime(damage);
+            Message.msg.SendMessage("-" + damage + " Seconds!", Color.red, 2f);
             AnalyticsManager.analyticsManager.SendEvent("Enemey Touched");
         }
         if (collision.CompareTag("Arrow") && !freeze)

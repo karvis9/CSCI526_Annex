@@ -11,6 +11,9 @@ public class AnalyticsManager : MonoBehaviour
     private static string _url;
     private static string _sessionID;
     private int previous_charArrowCount = 0;
+    private int previous_timeArrowCount = 0;
+    float curTime;
+    int timeSlot;
 
     private void Awake()
     {
@@ -26,13 +29,22 @@ public class AnalyticsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        curTime = 0;
+        timeSlot = 0;
+
         SendEvent("Game Start");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        curTime += (1 * Time.deltaTime);
+        if (curTime >= 15)
+        {
+            analyticsManager.SendEvent("Time Interval");
+            timeSlot++;
+            curTime = 0;
+        }
     }
 
     public void SendEvent(string eventType)
@@ -56,6 +68,22 @@ public class AnalyticsManager : MonoBehaviour
             eventType = eventType + " " + (WordBlanks.wb.word.Length - WordBlanks.wb.maskedCnt);
             form.AddField("entry.890767811", WordBlanks.wb.getWord().Length);
             previous_charArrowCount = shoot.shootController.getArrowsCount();
+        }
+        else if (eventType.Equals("Time Interval"))
+        {
+            // No need to capture for level 0.
+            if (sceneName.Equals("Level_0"))
+            {
+                return;
+            }
+            
+            eventType = eventType + " " + timeSlot.ToString();
+            form.AddField("entry.1514343154", CountDownTimer.countDownTimerObj.getTimeLeft());
+            form.AddField("entry.1890577055", shoot.shootController.getArrowsCount() - previous_timeArrowCount);
+            form.AddField("entry.19206144", ScoreManager.sm.getFinalScore());
+            form.AddField("entry.890767811", WordBlanks.wb.getWord().Length);
+
+            previous_timeArrowCount = shoot.shootController.getArrowsCount();
         }
         else if (!eventType.Equals("Game Start"))
         {

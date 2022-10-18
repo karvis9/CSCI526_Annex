@@ -18,10 +18,12 @@ public class shoot : MonoBehaviour
     public GameObject[] Points;
     public int numberofPoints;
     public CinemachineVirtualCamera vcam;
+    public static bool readyToShoot;
 
     // Start is called before the first frame update
     void Start()
     {
+        readyToShoot = true;
         shootController = this;
         _arrowsCount = 0;
         LaunchForce = 5;
@@ -52,7 +54,13 @@ public class shoot : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        Debug.Log("Ready to shoot " + readyToShoot);
+        if(!readyToShoot)
+            return;
+        if(ArrowIndicator.arrowIndicator.Get() == 0) {
+            return;
+        }
         if (Input.GetKey(KeyCode.Space))
         {
             vcam.m_Priority = 1;
@@ -83,6 +91,7 @@ public class shoot : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             Shoot();
+            ArrowIndicator.arrowIndicator.Remove(1);
             powerBar.fillAmount = 0;
             LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
@@ -95,6 +104,7 @@ public class shoot : MonoBehaviour
         if (Input.GetKeyUp("mouse 0"))
         {
             Shoot();
+            ArrowIndicator.arrowIndicator.Remove(1);
             powerBar.fillAmount = 0;
             LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
@@ -118,6 +128,7 @@ public class shoot : MonoBehaviour
     void Shoot()
     {
         GameObject ArrowIns = Instantiate(Arrow, transform.position, transform.rotation);
+        readyToShoot = false;
         //ArrowIns.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
         ArrowIns.GetComponent<Rigidbody2D>().velocity = transform.right * LaunchForce;
         _arrowsCount++;

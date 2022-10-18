@@ -56,7 +56,7 @@ public class GameOverScreen : MonoBehaviour
 
         
         //gameResult.text = "YAYYY!!, you correctly guessed " + chosenWord + " words!";
-        AnalyticsManager.analyticsManager.SendEvent("Level Cleared");
+        AnalyticsManager.analyticsManager.SendEvent("Game over");
     }
 
     // public void RestartGame()

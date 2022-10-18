@@ -11,7 +11,7 @@ public class SceneChanger : MonoBehaviour
     //     //SceneManager.LoadScene("Level_1");
     // }
     public static SceneChanger sc;
-    public static int curLevel;
+    public static int curLevel = 0;
 
     void Start()
     {
@@ -34,12 +34,15 @@ public class SceneChanger : MonoBehaviour
     }
 
     public void switchToNextLevel() {
-        if (curLevel == 0)
-        {
-            SceneManager.LoadScene("Level_0_1");
+        AnalyticsManager.analyticsManager.SendEvent("Level Cleared");
+
+        // SceneChanger.sc.switchToScene("IntermediateScene");
+        shoot.readyToShoot = true;
+        if (curLevel == 4) {
+            GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+            curLevel = 0;
         }
-        else
-        {
+        else {
             curLevel += 1;
             SceneManager.LoadScene("Level_" + curLevel);
         }

@@ -34,6 +34,8 @@ public class SwitchScreenshot : MonoBehaviour
     public void Next()
      {
         index += 1;
+        if(index >= 1)
+           index = 1 ;
     
          for(int i = 0 ; i < background.Length; i++)
          {
@@ -45,7 +47,9 @@ public class SwitchScreenshot : MonoBehaviour
     
      public void Previous()
      {
-          index -= 1;
+         index -= 1;
+         if(index < 0)
+            index = 0 ;
     
         for(int i = 0 ; i < background.Length; i++)
          {
