@@ -32,14 +32,15 @@ public class CountDownTimer : MonoBehaviour
             curTime -= (1 * Time.deltaTime);
             if (curTime <= 0){
                 if (ScoreManager.sm.getFinalScore() >= 400) {
-                    Scene scene = SceneChanger.sc.getCurrentScene();
-                    string level = scene.name.Split("_")[1];
-                    if (level == "2"){
-                        GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
-                    } else {
-                        // Change this to call loadNextLevel or something
-                    SceneChanger.sc.switchToScene("Level_2");
-                    }
+                    SceneChanger.sc.switchToNextLevel();
+                    // Scene scene = SceneChanger.sc.getCurrentScene();
+                    // string level = scene.name.Split("_")[1];
+                    // if (level == "2"){
+                    //     GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+                    // } else {
+                    //     // Change this to call loadNextLevel or something
+                    // SceneChanger.sc.switchToScene("Level_2");
+                    // }
                 }
                 else {
                     GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);

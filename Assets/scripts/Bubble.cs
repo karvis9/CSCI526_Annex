@@ -25,7 +25,7 @@ public class Bubble : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
-        if (sceneName == "Level_1")
+        if (sceneName == "Level_2")
         {
             transform.position = new Vector3(Random.Range(8f, 9f), Random.Range(-2.0f, 3.5f), transform.position.z);
             force = new Vector3(Random.Range(-200, -350), Random.Range(0, 10), 0);
@@ -35,7 +35,7 @@ public class Bubble : MonoBehaviour
             // transform.position = new Vector3(Random.Range(8f, 9f), Random.Range(-2.0f, 3.5f), transform.position.z);
             // force = new Vector3(Random.Range(-200, -350), Random.Range(0, 10), 0);
         }
-        else if (sceneName == "Level_0_1")
+        else if (sceneName == "Level_1")
         {
             transform.position = vector3s[Random.Range(0,3)];
             force = new Vector3(Random.Range(-30, 30), Random.Range(20, 50), 0);

@@ -53,20 +53,25 @@ public class ArrowIndicator : MonoBehaviour
             Debug.Log ("No more arrows left");
 
             if (SceneChanger.sc.getCurrentScene().name == "Level_0") {
-                SceneChanger.sc.switchToScene("Level_0_1");
+                // SceneChanger.sc.switchToScene("Level_1");
+                SceneChanger.sc.switchToNextLevel();
             }
             else if (ScoreManager.sm.getFinalScoreNoArrowsLeft() >= 400) {
-                Scene ss = SceneChanger.sc.getCurrentScene();
-                string scene = ss.name;
-                if (scene == "Level_2"){
-                    GameOverScreen.EndGame(ScoreManager.sm.getFinalScoreNoArrowsLeft(), false, WordBlanks.wb.word);
-                } else if (scene == "Level_0_1"){
-                    SceneChanger.sc.switchToScene("Level_1");    
-                }  
-                else {
-                    // Change this to call loadNextLevel or something
-                SceneChanger.sc.switchToScene("Level_2");
-                }
+                SceneChanger.sc.switchToNextLevel();
+                // Scene ss = SceneChanger.sc.getCurrentScene();
+                // string scene = ss.name;
+                // if (scene == "Level_5"){
+                //     GameOverScreen.EndGame(ScoreManager.sm.getFinalScoreNoArrowsLeft(), false, WordBlanks.wb.word);
+                // } else {
+                //     SceneChanger.sc.switchToNextLevel();
+                // }
+                // } else if (scene == "Level_1"){
+                //     SceneChanger.sc.switchToScene("Level_2");    
+                // }  
+                // else {
+                //     // Change this to call loadNextLevel or something
+                // SceneChanger.sc.switchToScene("Level_3");
+                // }
             } else {
                 GameOverScreen.EndGame(ScoreManager.sm.getFinalScoreNoArrowsLeft(), false, WordBlanks.wb.word);
             }     
