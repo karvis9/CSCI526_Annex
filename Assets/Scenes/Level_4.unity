@@ -1541,6 +1541,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed9639d03465246f9a3a984f31573230, type: 3}
+--- !u!224 &1019046792 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8582886840774339818, guid: ed9639d03465246f9a3a984f31573230, type: 3}
+  m_PrefabInstance: {fileID: 1019046791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1076093360
 GameObject:
   m_ObjectHideFlags: 0
@@ -2310,7 +2315,7 @@ PrefabInstance:
     - target: {fileID: 9199428539911552776, guid: df17dde75f881d943a076b1f4c29c715, type: 3}
       propertyPath: letterHolder
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1019046792}
     - target: {fileID: 9199428539911552777, guid: df17dde75f881d943a076b1f4c29c715, type: 3}
       propertyPath: m_Name
       value: WordBlanks

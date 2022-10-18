@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 252283519031862433, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
+      propertyPath: vcam
+      value: 
+      objectReference: {fileID: 677642140}
     - target: {fileID: 252283520558926300, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
       propertyPath: m_Name
       value: Player
@@ -802,6 +806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7672377154862401286, guid: 2f5291048b7cd43459d4c5a3900d7303, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7672377154862401289, guid: 2f5291048b7cd43459d4c5a3900d7303, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -888,6 +896,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f5291048b7cd43459d4c5a3900d7303, type: 3}
+--- !u!224 &525783405 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7672377155287062045, guid: 2f5291048b7cd43459d4c5a3900d7303, type: 3}
+  m_PrefabInstance: {fileID: 525783404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &541927796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,6 +1988,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9199428539911552776, guid: df17dde75f881d943a076b1f4c29c715, type: 3}
+      propertyPath: letterHolder
+      value: 
+      objectReference: {fileID: 525783405}
     - target: {fileID: 9199428539911552777, guid: df17dde75f881d943a076b1f4c29c715, type: 3}
       propertyPath: m_Name
       value: WordBlanks
