@@ -20,6 +20,9 @@ public class SceneChanger : MonoBehaviour
 
     public void switchToScene(string SceneName) {
         Debug.Log("Switching to scene " + SceneName);
+        if (SceneName == "FirstScene") {
+            curLevel = 0;
+        }
         SceneManager.LoadScene(SceneName);
     }
 
