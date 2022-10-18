@@ -23,10 +23,18 @@ public class WordBlanks : MonoBehaviour
 
     private static string[] animals = {"cat", "dog", "frog", "cheetah", "horse", "tiger"};
     private static List<string> animalsList = new List<string>(animals);
-    private static string moviesFile = "Assets/wordlist/movies.txt";
-    private static string fruitsFile = "Assets/wordlist/fruits.txt";
-    private static string placesFile = "Assets/wordlist/places.txt";
-    private static string animalsFile = "Assets/wordlist/Animal.txt";
+    
+    //private static string moviesFile = "Assets/wordlist/movies.txt";
+    public TextAsset movieDataFile;
+
+    //private static string fruitsFile = "Assets/wordlist/fruits.txt";
+    public TextAsset fruitsDataFile;
+    
+    //private static string placesFile = "Assets/wordlist/places.txt";
+    public TextAsset placesDataFile;
+    
+    //private static string animalsFile = "Assets/wordlist/Animal.txt";
+    public TextAsset animalsDataFile;
 
     Dictionary<string, List<string>> categoryWords = new Dictionary<string, List<string>>() {
         {"Movies", moviesList},
@@ -52,19 +60,24 @@ public class WordBlanks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string[] lines = File.ReadAllLines(moviesFile);
+        char newlineChar = '\n';
+        // string[] lines = File.ReadAllLines(moviesFile);
+        string[] lines = movieDataFile.text.Split(newlineChar);
         foreach (string line in lines)
             moviesList.Add(line);
 
-        lines = File.ReadAllLines(placesFile);
+        // lines = File.ReadAllLines(placesFile);
+        lines = placesDataFile.text.Split(newlineChar);
         foreach (string line in lines)
             placesList.Add(line);
 
-        lines = File.ReadAllLines(fruitsFile);
+        // lines = File.ReadAllLines(fruitsFile);
+        lines = fruitsDataFile.text.Split(newlineChar);
         foreach (string line in lines)
             fruitsList.Add(line);
 
-        lines = File.ReadAllLines(animalsFile);
+        // lines = File.ReadAllLines(animalsFile);
+        lines = animalsDataFile.text.Split(newlineChar);
         foreach (string line in lines)
             animalsList.Add(line);
 

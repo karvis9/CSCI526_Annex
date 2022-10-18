@@ -20,8 +20,10 @@ public class CountDownTimer : MonoBehaviour
     void Start()
     {
         Debug.Log("text"+SceneChanger.sc.getCurrentScene().ToString());
+        startingTime = 120f;
+        if (SceneChanger.sc.getCurrentScene().name == "Level_1")
+            startingTime = 60f;
         curTime = startingTime;
-        
         countDownTimerObj = this;
     }
 
