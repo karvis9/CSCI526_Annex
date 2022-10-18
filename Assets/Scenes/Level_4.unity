@@ -1546,6 +1546,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8582886840774339818, guid: ed9639d03465246f9a3a984f31573230, type: 3}
   m_PrefabInstance: {fileID: 1019046791}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1019046793 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8582886840740806360, guid: ed9639d03465246f9a3a984f31573230, type: 3}
+  m_PrefabInstance: {fileID: 1019046791}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1076093360
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,7 +2125,7 @@ PrefabInstance:
     - target: {fileID: 252283519031862433, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
       propertyPath: powerBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1019046793}
     - target: {fileID: 252283519031862434, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
       propertyPath: m_TagString
       value: Untagged
