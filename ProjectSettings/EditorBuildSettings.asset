@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Settings/Scenes/URP2DSceneTemplate.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 9f83ebdf9345d47969dc005407cc0cba
+  - enabled: 1
     path: Assets/Scenes/FirstScene.unity
     guid: 715a87df8626e45269f94a7cfe7ee6d6
   - enabled: 1
@@ -16,14 +19,20 @@ EditorBuildSettings:
     guid: 5d569291357e2416ba443eb22a34d8b0
   - enabled: 1
     path: Assets/Scenes/Level_1.unity
-    guid: 7fbfe8031fb50fb4dac13301869a5088
+    guid: 68c5cf35a18d95d4ebf0df1bb45087a6
   - enabled: 1
     path: Assets/Scenes/Level_2.unity
+    guid: 7fbfe8031fb50fb4dac13301869a5088
+  - enabled: 1
+    path: Assets/Scenes/Level_3.unity
     guid: 5d8220d0a388f4fdda69bcc28abe5cb0
   - enabled: 1
-    path: Assets/Scenes/EndScene.unity
-    guid: 720e3a5f1da7d44318bf99057f824108
+    path: Assets/Scenes/Level_4_unused.unity
+    guid: bffb541eecdca4cf2bf62ca6f5277d4a
   - enabled: 1
     path: Assets/Scenes/Level_4.unity
     guid: 4fe8fa7147b60fa4e953f015765ca7be
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 720e3a5f1da7d44318bf99057f824108
   m_configObjects: {}
