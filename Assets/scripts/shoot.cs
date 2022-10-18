@@ -56,14 +56,14 @@ public class shoot : MonoBehaviour
     void Update()
     {   
         // Debug.Log("Ready to shoot " + readyToShoot);
-        if(!readyToShoot)
-            return;
         if(ArrowIndicator.arrowIndicator.Get() == 0) {
             return;
         }
         if (Input.GetKey(KeyCode.Space))
         {
             vcam.m_Priority = 1;
+            if(!readyToShoot)
+                return;
             LaunchForce += 8 * Time.deltaTime;
             LaunchForce = Mathf.Min(MaxLaunchForce, LaunchForce);
             StartCoroutine(UpdatePowerBarCoRoutine);
@@ -77,6 +77,8 @@ public class shoot : MonoBehaviour
         if (Input.GetKey("mouse 0"))
         {
             vcam.m_Priority = 1;
+            if(!readyToShoot)
+                return;
             LaunchForce += 8 * Time.deltaTime;
             LaunchForce = Mathf.Min(MaxLaunchForce, LaunchForce);
             StartCoroutine(UpdatePowerBarCoRoutine);
@@ -90,6 +92,8 @@ public class shoot : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
+            if(!readyToShoot)
+                return;
             Shoot();
             ArrowIndicator.arrowIndicator.Remove(1);
             powerBar.fillAmount = 0;
@@ -103,6 +107,8 @@ public class shoot : MonoBehaviour
 
         if (Input.GetKeyUp("mouse 0"))
         {
+            if(!readyToShoot)
+                return;
             Shoot();
             ArrowIndicator.arrowIndicator.Remove(1);
             powerBar.fillAmount = 0;
