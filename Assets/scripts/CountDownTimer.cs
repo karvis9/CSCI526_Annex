@@ -9,7 +9,7 @@ public class CountDownTimer : MonoBehaviour
 
     // Start is called before the first frame update
     static float curTime;
-    float startingTime = 120f;
+    float startingTime = 5f;
     public Text CountDownText;
 
     private CountDownTimer ()
@@ -31,7 +31,7 @@ public class CountDownTimer : MonoBehaviour
         // if (!GameOverScreen.gm.gameEnded) {
             curTime -= (1 * Time.deltaTime);
             if (curTime <= 0){
-                if (ScoreManager.sm.getFinalScore() >= 400) {
+                if (ScoreManager.sm.getFinalScore() >= 0) {
                     SceneChanger.sc.switchToNextLevel();
                     // Scene scene = SceneChanger.sc.getCurrentScene();
                     // string level = scene.name.Split("_")[1];

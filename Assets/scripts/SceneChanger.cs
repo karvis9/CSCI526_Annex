@@ -34,10 +34,11 @@ public class SceneChanger : MonoBehaviour
     }
 
     public void switchToNextLevel() {
-        AnalyticsManager.analyticsManager.SendEvent("Level Cleared");
-
-        // SceneChanger.sc.switchToScene("IntermediateScene");
-        shoot.readyToShoot = true;
+        if (SceneManager.GetActiveScene().name != "IntermediateScene" && SceneManager.GetActiveScene().name != "Level_0" && SceneManager.GetActiveScene().name != "Level_4"){
+            SceneChanger.sc.switchToScene("IntermediateScene");
+        }
+        else {
+            shoot.readyToShoot = true;
         if (curLevel == 4) {
             GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
             curLevel = 0;
@@ -45,6 +46,7 @@ public class SceneChanger : MonoBehaviour
         else {
             curLevel += 1;
             SceneManager.LoadScene("Level_" + curLevel);
+        }
         }
     }
 

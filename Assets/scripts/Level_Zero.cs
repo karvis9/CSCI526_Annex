@@ -12,6 +12,7 @@ public class Level_Zero : MonoBehaviour
         //instantiate player
         //get count of bubbles to hit
         //CharsLength = GameObject.FindGameObjectsWithTag("Letter").Length;
+        PlayerPrefs.DeleteKey("Score");
     }
 
     // Update is called once per frame
