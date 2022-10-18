@@ -12,11 +12,16 @@ TagManager:
   - plus
   - Undefined
   - Arrow
+  - destroyArrow
+  - bow
+  - Shark
+  - bomb
+  - extraArrow
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class CountDownTimer : MonoBehaviour
 {
     public static CountDownTimer countDownTimerObj;
@@ -19,6 +19,10 @@ public class CountDownTimer : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("text"+SceneChanger.sc.getCurrentScene().ToString());
+        startingTime = 120f;
+        if (SceneChanger.sc.getCurrentScene().name == "Level_1")
+            startingTime = 60f;
         curTime = startingTime;
         countDownTimerObj = this;
     }
@@ -26,12 +30,28 @@ public class CountDownTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameOverScreen.gm.gameEnded) {
+        // if (!GameOverScreen.gm.gameEnded) {
             curTime -= (1 * Time.deltaTime);
-            if (curTime <= 0)
-                GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+            if (curTime <= 0){
+                if (ScoreManager.sm.getFinalScore() >= 400) {
+                    SceneChanger.sc.switchToNextLevel();
+                    // Scene scene = SceneChanger.sc.getCurrentScene();
+                    // string level = scene.name.Split("_")[1];
+                    // if (level == "2"){
+                    //     GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+                    // } else {
+                    //     // Change this to call loadNextLevel or something
+                    // SceneChanger.sc.switchToScene("Level_2");
+                    // }
+                }
+                else {
+                    AnalyticsManager.analyticsManager.SendEvent("Level failed");
+                    GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+                }
+            }
+                
             CountDownText.text = "Time Left: " + curTime.ToString ("0") + " Secs";
-        }
+        // }
     }
 
     public void updateTime()
@@ -40,6 +60,13 @@ public class CountDownTimer : MonoBehaviour
         curTime += 5;
         Debug.Log("current time is "+ curTime);
 
+    }
+
+    public void reduceTime(int time)
+    {
+        Debug.Log("before time is " + curTime);
+        curTime -= time;
+        Debug.Log("current time is " + curTime);
     }
 
     public int getTimeLeft()

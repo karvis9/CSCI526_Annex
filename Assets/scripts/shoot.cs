@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class shoot : MonoBehaviour
 {
@@ -15,10 +17,13 @@ public class shoot : MonoBehaviour
     public GameObject PointPrefab;
     public GameObject[] Points;
     public int numberofPoints;
+    public CinemachineVirtualCamera vcam;
+    public static bool readyToShoot;
 
     // Start is called before the first frame update
     void Start()
     {
+        readyToShoot = true;
         shootController = this;
         _arrowsCount = 0;
         LaunchForce = 5;
@@ -27,12 +32,19 @@ public class shoot : MonoBehaviour
         for (int i = 0; i < numberofPoints; i++)
         {
             Points[i] = Instantiate(PointPrefab, transform.position, Quaternion.identity);
+            Points[i].SetActive(false);
         }
     }
 
     Vector2 PointPosition(float t)
     {
-        Vector2 direction = this.gameObject.GetComponent<bow>().direction;
+        Vector2 direction;
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        
+        direction = this.gameObject.GetComponent<bow>().direction;
+        
         //Vector2 startPosition = transform.right;
         //transform.right = Vector2.Lerp(startPosition, direction, Time.deltaTime / 1.2f);
         Vector2 currentPointPos = (Vector2)transform.position + (LaunchForce * t * direction.normalized) + 0.5f * Physics2D.gravity * t * t;
@@ -42,9 +54,16 @@ public class shoot : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        // Debug.Log("Ready to shoot " + readyToShoot);
+        if(!readyToShoot)
+            return;
+        if(ArrowIndicator.arrowIndicator.Get() == 0) {
+            return;
+        }
         if (Input.GetKey(KeyCode.Space))
         {
+            vcam.m_Priority = 1;
             LaunchForce += 8 * Time.deltaTime;
             LaunchForce = Mathf.Min(MaxLaunchForce, LaunchForce);
             StartCoroutine(UpdatePowerBarCoRoutine);
@@ -57,6 +76,7 @@ public class shoot : MonoBehaviour
         }
         if (Input.GetKey("mouse 0"))
         {
+            vcam.m_Priority = 1;
             LaunchForce += 8 * Time.deltaTime;
             LaunchForce = Mathf.Min(MaxLaunchForce, LaunchForce);
             StartCoroutine(UpdatePowerBarCoRoutine);
@@ -71,6 +91,7 @@ public class shoot : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             Shoot();
+            ArrowIndicator.arrowIndicator.Remove(1);
             powerBar.fillAmount = 0;
             LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
@@ -83,6 +104,7 @@ public class shoot : MonoBehaviour
         if (Input.GetKeyUp("mouse 0"))
         {
             Shoot();
+            ArrowIndicator.arrowIndicator.Remove(1);
             powerBar.fillAmount = 0;
             LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
@@ -106,9 +128,11 @@ public class shoot : MonoBehaviour
     void Shoot()
     {
         GameObject ArrowIns = Instantiate(Arrow, transform.position, transform.rotation);
+        readyToShoot = false;
         //ArrowIns.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
         ArrowIns.GetComponent<Rigidbody2D>().velocity = transform.right * LaunchForce;
         _arrowsCount++;
+        vcam.m_Priority = 3;
     }
 
     public int getArrowsCount() { return _arrowsCount; }
