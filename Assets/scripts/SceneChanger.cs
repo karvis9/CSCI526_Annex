@@ -34,7 +34,9 @@ public class SceneChanger : MonoBehaviour
     }
 
     public void switchToNextLevel() {
-        if (curLevel == 5) {
+        Debug.Log("Entered the callback");
+        shoot.readyToShoot = true;
+        if (curLevel == 4) {
             GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
             curLevel = 0;
         }

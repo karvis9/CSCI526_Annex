@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour {
 				jump = true;
 			}
 		}
-		else if(sceneName.Equals("Level_2") || sceneName.Equals("Level_5"))
+		else if(sceneName.Equals("Level_2") || sceneName.Equals("Level_4"))
         {
 			movement.y = Input.GetAxisRaw("Vertical");
 			movement.x = Input.GetAxisRaw("Horizontal");
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour {
 			controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
 			jump = false;
 		}
-		else if(sceneName.Equals("Level_2") || sceneName.Equals("Level_5"))
+		else if(sceneName.Equals("Level_2") || sceneName.Equals("Level_4"))
         {
 			Vector3 pos = rb.position + movement * verticalSpeed * Time.fixedDeltaTime;
 			if (pos.x > 7f)

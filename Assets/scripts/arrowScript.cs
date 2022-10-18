@@ -79,6 +79,10 @@ public class arrowScript : MonoBehaviour
             shoot.readyToShoot = true;
             Destroy(this.gameObject);
         }
+        if(collision.gameObject.name == "BottomWall"){
+            shoot.readyToShoot = true;
+            Destroy(this.gameObject);
+        }
         if(collision.gameObject.tag == "destroyArrow"){
             shoot.readyToShoot = true;
             Destroy(this.gameObject);
