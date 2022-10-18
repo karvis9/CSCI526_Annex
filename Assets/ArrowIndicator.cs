@@ -73,6 +73,7 @@ public class ArrowIndicator : MonoBehaviour
                 // SceneChanger.sc.switchToScene("Level_3");
                 // }
             } else {
+                AnalyticsManager.analyticsManager.SendEvent("Level failed");
                 GameOverScreen.EndGame(ScoreManager.sm.getFinalScoreNoArrowsLeft(), false, WordBlanks.wb.word);
             }     
         }

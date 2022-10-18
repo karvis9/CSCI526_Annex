@@ -43,6 +43,7 @@ public class CountDownTimer : MonoBehaviour
                     // }
                 }
                 else {
+                    AnalyticsManager.analyticsManager.SendEvent("Level failed");
                     GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
                 }
             }
