@@ -38,6 +38,7 @@ public class SceneChanger : MonoBehaviour
 
     public void switchToNextLevel() {
         if (SceneManager.GetActiveScene().name != "IntermediateScene" && SceneManager.GetActiveScene().name != "Level_0" && SceneManager.GetActiveScene().name != "Level_4"){
+            AnalyticsManager.analyticsManager.SendEvent("Level Cleared");
             SceneChanger.sc.switchToScene("IntermediateScene");
         }
         else {
