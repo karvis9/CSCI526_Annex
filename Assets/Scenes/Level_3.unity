@@ -1510,6 +1510,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10bf53e6aad41448bb6144ef56fdd4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movieDataFile: {fileID: 0}
+  fruitsDataFile: {fileID: 0}
+  placesDataFile: {fileID: 0}
+  animalsDataFile: {fileID: 0}
   Words: []
   letterList: []
   textPrefab: {fileID: 709384965945857663, guid: 5a0e180dd6a350545be54d1e47a39db7, type: 3}
@@ -3859,6 +3863,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703813019}
   m_CullTransparentMesh: 1
+--- !u!1001 &1708187803
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 270638531491056168, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 270638531491056168, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1143842
+      objectReference: {fileID: 0}
+    - target: {fileID: 270638531491056168, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1311669
+      objectReference: {fileID: 0}
+    - target: {fileID: 270638531491056168, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.3394
+      objectReference: {fileID: 0}
+    - target: {fileID: 270638531491056168, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.408
+      objectReference: {fileID: 0}
+    - target: {fileID: 270638531491056168, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270638531491056168, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 270638531491056168, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270638531491056168, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270638531491056168, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270638531491056168, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270638531491056168, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 270638531491056168, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671981873035018145, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+      propertyPath: m_Name
+      value: freeze_powerup (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 182726e7ba60447c7a631719619470e5, type: 3}
 --- !u!1 &1737379243
 GameObject:
   m_ObjectHideFlags: 0

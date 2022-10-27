@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - freezePrefab: {fileID: 2481586385086101246, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+  - freezePowerup: {fileID: 2671981873035018145, guid: 182726e7ba60447c7a631719619470e5, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

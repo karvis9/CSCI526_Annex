@@ -28,20 +28,20 @@ public class Freeze_powerup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Level 2 started");
         //ps = Animator.gameObject.GetComponent<ParticleSystem>();
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        Debug.Log("Hit the freeze button on trigger!");
         //if (collision.gameObject.tag == "TopWall")
         //{
         //    Destroy(this.gameObject, 0.6f);
         //}
-        if (collision.gameObject.name == "Arrow")
+        if (collision.gameObject.tag == "Arrow")
         {
-            //Debug.Log("Freeze");
+            Debug.Log("OntriggerEnter2D - Condition arrow passed");
             FreezeEvent?.Invoke();
             //AnalyticsManager.analyticsManager.SendEvent("Freeze powerup hit");
             //Debug.Log("Freeze powerup hit");
@@ -61,12 +61,13 @@ public class Freeze_powerup : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Terrains")
+        Debug.Log("Hit the freeze button on collision!");
+        if (collision.gameObject.tag == "Terrains")
         {
             Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
 
-        if (collision.gameObject.name == "Arrow")
+        if (collision.gameObject.tag == "Arrow")
         {
             Debug.Log("Freeze");
             //FreezeEvent?.Invoke();

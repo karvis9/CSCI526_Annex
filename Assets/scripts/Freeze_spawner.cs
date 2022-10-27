@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Freeze_spawner : MonoBehaviour
 {
-    public GameObject freezePrefab;
+    public GameObject freezePowerup;
     //[SerializeField] private Vector2 spawnPosition;
     //[SerializeField] private bool random;
     // public int count = 4;
@@ -24,7 +24,7 @@ public class Freeze_spawner : MonoBehaviour
     {
         // Coroutine for spawning delay
         //StartCoroutine(SpawningDelay());
-        InvokeRepeating("SpawnFreezePowerup", 0.0f, 20f);
+        InvokeRepeating("SpawnFreezePowerup", 0.0f, 30f);
     }
 
     // Update is called once per frame
@@ -45,8 +45,8 @@ public class Freeze_spawner : MonoBehaviour
     {
         float x = Random.Range(-4, 6);
         float y = Random.Range(-2, 3);
-        Vector3 pos = new Vector3(x, y);
-        GameObject go = Instantiate(freezePrefab, pos, transform.rotation);
+        Vector2 pos = new Vector2(x, y);
+        GameObject go = Instantiate(freezePowerup, pos, transform.rotation);
         go.SetActive(true);
     }
 }
