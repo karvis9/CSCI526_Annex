@@ -76,7 +76,7 @@ public class Doublesize_powerup : MonoBehaviour
             }
             //performing double scaling using the startcoroutine
             StartCoroutine(waiter());
-             //Destroy(this.gameObject, 0.2f);
+            // Destroy(this.gameObject, 0.2f);
             this.gameObject.SetActive(false);
         }
     }

@@ -74,44 +74,4 @@ public class Bubble : MonoBehaviour
     {
         
     }
-
-    void OnEnable()
-    {
-        Freeze_powerup.FreezeEvent += Freeze;
-    }
-
-    void OnDisable()
-    {
-        Freeze_powerup.FreezeEvent -= Freeze;
-    }
-
-    void Freeze()
-    {
-        // change prop of bubble to freeze
-        Debug.Log("bubbles frozen");
-        rb = GetComponent<Rigidbody2D>();
-
-        // freezes all the bubbles which are currently in the scene
-        rb.constraints = RigidbodyConstraints2D.FreezePosition;
-
-        Invoke(nameof(Unfreeze_bubbles), 3);  //this will happen after 3 seconds
-
-        //yield return new WaitForSeconds(5.0f);
-
-        //yield return Start();
-
-        //transform.position = new Vector3(Random.Range(0f, 0f), Random.Range(0f, 0f), transform.position.z);
-        //force = new Vector3(Random.Range(0, 0), Random.Range(0, 0), 0);
-
-        //rb.AddForce(force);
-    }
-
-    void Unfreeze_bubbles()
-    {
-        Debug.Log("Unfreeze");
-        rb = GetComponent<Rigidbody2D>();
-        rb.constraints = RigidbodyConstraints2D.None;
-    }
-
-
 }
