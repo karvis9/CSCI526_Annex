@@ -11,12 +11,15 @@ public class ArrowIndicator : MonoBehaviour
     public GameObject arrowOnBow;
     public GameObject arrow1;
     public GameObject countText;
+    public bool start;
     // Start is called before the first frame update
     void Start()
     {
         arrowIndicator = this;
         arrows = 20;
+        start = true;
         updateArrowCnt();
+        start = false;
     }
 
     // Update is called once per frame
@@ -31,6 +34,8 @@ public class ArrowIndicator : MonoBehaviour
             arrow1.SetActive(true);
             countText.SetActive(true);
             countText.GetComponent<TextMeshPro>().text = arrows.ToString();
+            if (start == false)
+                ArrowsLeftText.arrowsLeftTextObj.updateArrowsLeft(arrows);
             return;
         }
         else {

@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 public class ArrowsLeftText : MonoBehaviour
 {
     public static ArrowsLeftText arrowsLeftTextObj;
 
     // Start is called before the first frame update
     
-    float arrowsLeft = 20f;
-    public Text arrowsLeftText;
+    int arrowsLeft = 20;
+    public Text arrowsLeftTextt;
     
 
     private ArrowsLeftText ()
@@ -20,7 +20,7 @@ public class ArrowsLeftText : MonoBehaviour
 
     void Start()
     {
-        arrowsLeft = 20f;
+        arrowsLeft = 20;
         arrowsLeftTextObj = this;
     }
 
@@ -30,10 +30,10 @@ public class ArrowsLeftText : MonoBehaviour
     
     }
 
-    public void updateArrowsLeft(float arrows)
+    public void updateArrowsLeft(int arrows)
     {
         arrowsLeft = arrows;
-        arrowsLeftText.text = "Arrows Left: " + arrowsLeft.ToString ("0");
+        arrowsLeftTextt.text = "Arrows Left: " + arrowsLeft.ToString ("0");
 
     }
 }

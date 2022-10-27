@@ -2099,7 +2099,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Arrows Left: 30'
+  m_Text: 'Arrows Left: 20'
 --- !u!222 &966636030
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2120,7 +2120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d17243ca434e014280f89d0eefc2b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowsLeftText: {fileID: 966636029}
+  arrowsLeftTextt: {fileID: 966636029}
 --- !u!1 &1076093360
 GameObject:
   m_ObjectHideFlags: 0
