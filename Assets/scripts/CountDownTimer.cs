@@ -11,6 +11,8 @@ public class CountDownTimer : MonoBehaviour
     static float curTime;
     float startingTime = 120f;
     public Text CountDownText;
+    public float minutes;
+    public float seconds;
 
     private CountDownTimer ()
     {
@@ -32,8 +34,9 @@ public class CountDownTimer : MonoBehaviour
     {
         // if (!GameOverScreen.gm.gameEnded) {
             curTime -= (1 * Time.deltaTime);
+            string curLevel = SceneChanger.sc.getCurrentScene ().name;
             if (curTime <= 0){
-                if (ScoreManager.sm.getFinalScore() >= 400) {
+                if (curLevel == "Level_1" && ScoreManager.sm.getFinalScore() >= 1000) {
                     SceneChanger.sc.switchToNextLevel();
                     // Scene scene = SceneChanger.sc.getCurrentScene();
                     // string level = scene.name.Split("_")[1];
@@ -43,14 +46,23 @@ public class CountDownTimer : MonoBehaviour
                     //     // Change this to call loadNextLevel or something
                     // SceneChanger.sc.switchToScene("Level_2");
                     // }
+                } else if (curLevel == "Level_2" && ScoreManager.sm.getFinalScore() >= 2000) {
+                    SceneChanger.sc.switchToNextLevel();
+                } else if (curLevel == "Level_3" && ScoreManager.sm.getFinalScore() >= 3000) {
+                    SceneChanger.sc.switchToNextLevel();
+                } else if (curLevel == "Level_4" && ScoreManager.sm.getFinalScore() >= 4000) {
+                    SceneChanger.sc.switchToNextLevel();
                 }
                 else {
                     AnalyticsManager.analyticsManager.SendEvent("Level failed");
                     GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
                 }
             }
+
+            minutes = (int) (curTime / 60f);
+            seconds = (int) (curTime % 60f);
                 
-            CountDownText.text = "Time Left: " + curTime.ToString ("0") + " Secs";
+            CountDownText.text = "Time Left: " + minutes.ToString ("00") + ":" + seconds.ToString ("00");
         // }
     }
 
