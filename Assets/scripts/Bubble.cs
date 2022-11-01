@@ -37,8 +37,8 @@ public class Bubble : MonoBehaviour
         }
         else if (sceneName == "Level_1")
         {
-            transform.position = vector3s[Random.Range(0,3)];
-            force = new Vector3(Random.Range(-30, 30), Random.Range(20, 50), 0);
+            //transform.position = vector3s[Random.Range(0,3)];
+            //force = new Vector3(Random.Range(-30, 30), Random.Range(20, 50), 0);
         }
         else
         {
