@@ -17,13 +17,20 @@ public class ShowProgress : MonoBehaviour
 
     public void showProgress() {
         Debug.Log (letterHolder.position.y);
+        Debug.Log (SceneChanger.sc.getCurLevel ());
+
         if (isUp){
-             
-            letterHolder.position = new Vector3(letterHolder.position.x, letterHolder.position.y - 2f, letterHolder.position.z);
+            if (SceneChanger.sc.getCurLevel () < 2)
+                letterHolder.position = new Vector3(letterHolder.position.x, letterHolder.position.y - 2.2f, letterHolder.position.z);
+            else
+                letterHolder.position = new Vector3(letterHolder.position.x, letterHolder.position.y - 100f, letterHolder.position.z);
             isUp = false;
         }
         else {
-            letterHolder.position = new Vector3(letterHolder.position.x, letterHolder.position.y + 2f, letterHolder.position.z);
+            if (SceneChanger.sc.getCurLevel () < 2)
+                letterHolder.position = new Vector3(letterHolder.position.x, letterHolder.position.y + 2.2f, letterHolder.position.z);
+            else
+                letterHolder.position = new Vector3(letterHolder.position.x, letterHolder.position.y + 100f, letterHolder.position.z);
             isUp = true;
         } 
     }

@@ -11,7 +11,7 @@ public class SceneChanger : MonoBehaviour
     //     //SceneManager.LoadScene("Level_1");
     // }
     public static SceneChanger sc;
-    public static int curLevel = 0;
+    public static int curLevel = 3;
 
     void Start()
     {
@@ -52,6 +52,10 @@ public class SceneChanger : MonoBehaviour
             SceneManager.LoadScene("Level_" + curLevel);
         }
         }
+    }
+
+    public int getCurLevel () {
+        return curLevel;
     }
 
     public Scene getCurrentScene() {
