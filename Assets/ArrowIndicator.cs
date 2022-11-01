@@ -29,6 +29,7 @@ public class ArrowIndicator : MonoBehaviour
     }
 
     void updateArrowCnt() {
+        Debug.Log ("start value is" + start);
         if(arrows >= 1) {
             arrowOnBow.SetActive(true);
             arrow1.SetActive(true);
