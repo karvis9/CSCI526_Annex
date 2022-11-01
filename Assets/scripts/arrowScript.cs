@@ -47,7 +47,8 @@ public class arrowScript : MonoBehaviour
             if (sceneName)
             {*/
 
-                WordBlanks.wb.TargetHit(textmeshPro.text[0]); 
+                WordBlanks.wb.TargetHit(textmeshPro.text[0]);
+            LetterSpawnerV2.ls.spawnBubbles(other.gameObject.transform.position);
             //}
         }
         else if(other.gameObject.tag == "extraArrow") {

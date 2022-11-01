@@ -148,6 +148,9 @@ public class LetterSpawnerV2 : MonoBehaviour
         filled_set.Remove(pos_idx);
         free_set.Add(pos_idx);
 
+        screen_bubble_popu_count -= 1;
+
+
         if (screen_bubble_popu_count > max_bubble_popu_count - 3)
             return;
 
