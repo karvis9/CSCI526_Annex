@@ -24,7 +24,7 @@ public class LetterSpawnerManager : MonoBehaviour
     {
         destroyCharacters();
         int children = transform.childCount;
-        for (int i = 0; i < children; ++i)
+        for (int i = 0; i < children && i < charList.Count; ++i)
         {
             Debug.Log("Chars : " + charList[i]);
             GameObject go = transform.GetChild(i).gameObject;

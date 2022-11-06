@@ -11,7 +11,6 @@ using System.IO;
 public class WordBlanks : MonoBehaviour
 {
     public static WordBlanks wb;
-
     private static string[] movies = {"avengers", "titanic", "zodiac", "godzilla", "deadpool", "scarface", "saw"};
     private static List<string> moviesList = new List<string>(movies);
 
@@ -60,6 +59,7 @@ public class WordBlanks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         char newlineChar = '\n';
         // string[] lines = File.ReadAllLines(moviesFile);
         string[] lines = movieDataFile.text.Split(newlineChar);
@@ -92,6 +92,7 @@ public class WordBlanks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
     }
 
@@ -175,7 +176,7 @@ public class WordBlanks : MonoBehaviour
                 Message.msg.SendMessage("Word guessed!", Color.green, 2f);
                 AnalyticsManager.analyticsManager.SendEvent("Word Guessed");
                 wb.Initialize();
-                ArrowIndicator.arrowIndicator.Add (10);
+                ArrowsLeftText.arrowsLeftTextObj.Add (10);
                 //GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), true, word);
             }
             else
@@ -227,6 +228,7 @@ public class WordBlanks : MonoBehaviour
             }
         }
         if(cnt == 0) {
+            HealthManager.health = HealthManager.health - 1;
             //Debug.Log("All " + c + "'s are revealed!");
             return;
         }
