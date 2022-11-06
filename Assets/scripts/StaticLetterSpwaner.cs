@@ -18,7 +18,10 @@ public class StaticLetterSpwaner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!go)
+        {
+            free = true;
+        }
     }
 
     public void spawnLetter(char letter)
