@@ -699,7 +699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6156382176879873695
 Transform:
   m_ObjectHideFlags: 0
@@ -733,6 +733,7 @@ MonoBehaviour:
   arrowOnBow: {fileID: 252283519577377046}
   arrow1: {fileID: 4513701710419455276}
   countText: {fileID: 6602394637255977842}
+  start: 0
 --- !u!1 &4513701710419455276
 GameObject:
   m_ObjectHideFlags: 0

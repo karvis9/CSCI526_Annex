@@ -176,7 +176,7 @@ public class WordBlanks : MonoBehaviour
                 Message.msg.SendMessage("Word guessed!", Color.green, 2f);
                 AnalyticsManager.analyticsManager.SendEvent("Word Guessed");
                 wb.Initialize();
-                ArrowIndicator.arrowIndicator.Add (10);
+                ArrowsLeftText.arrowsLeftTextObj.Add (10);
                 //GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), true, word);
             }
             else

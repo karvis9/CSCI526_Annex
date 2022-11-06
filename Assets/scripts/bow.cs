@@ -19,10 +19,10 @@ public class bow : MonoBehaviour
         Vector2 bowPos = transform.position;
         direction = mousePos - bowPos;
         // Bow rotation Logic
-        Vector2 parentTransform = transform.parent.gameObject.transform.position;
-        float factor = parentTransform.x / 8.0f; //negative or positive but between 0 & 1
+        //Vector2 parentTransform = transform.parent.gameObject.transform.position;
+        //float factor = parentTransform.x / 8.0f; //negative or positive but between 0 & 1
         //0.14 is offset of bow
-        transform.localPosition = new Vector2(-factor * 0.2f, (1 - Mathf.Abs(factor)) * 0.2f + 0.14f);
+        //transform.localPosition = new Vector2(-factor * 0.2f, (1 - Mathf.Abs(factor)) * 0.2f + 0.14f);
         StartCoroutine(faceMouse());
     }
 

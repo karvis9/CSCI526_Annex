@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: fcf55204f80884ffe9738055a7481834
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - freezePowerup: {fileID: 2671981873035018145, guid: 182726e7ba60447c7a631719619470e5, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

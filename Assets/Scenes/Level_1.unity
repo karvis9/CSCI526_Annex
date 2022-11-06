@@ -2039,6 +2039,7 @@ GameObject:
   - component: {fileID: 966636030}
   - component: {fileID: 966636029}
   - component: {fileID: 966636031}
+  - component: {fileID: 966636032}
   m_Layer: 5
   m_Name: ArrowsLeftText Legacy
   m_TagString: Untagged
@@ -2120,7 +2121,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d17243ca434e014280f89d0eefc2b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &966636032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966636026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae765dbb80f874100900826192356e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   arrowsLeftTextt: {fileID: 966636029}
+  start: 0
 --- !u!1 &1076093360
 GameObject:
   m_ObjectHideFlags: 0
