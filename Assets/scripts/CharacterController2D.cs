@@ -23,8 +23,13 @@ public class CharacterController2D : MonoBehaviour
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 	}
 
+    private void Start()
+    {
+		m_FacingRight = true;
+    }
 
-	private void FixedUpdate()
+
+    private void FixedUpdate()
 	{
 		m_Grounded = false;
 
