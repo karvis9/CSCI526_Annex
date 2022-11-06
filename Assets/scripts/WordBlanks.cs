@@ -7,6 +7,7 @@ using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using Random=UnityEngine.Random;
 using System.IO;
+using UnityEngine.UI;
 
 public class WordBlanks : MonoBehaviour
 {
@@ -57,6 +58,12 @@ public class WordBlanks : MonoBehaviour
     public string word;
     private List<GameObject> letterObjectList;
 
+    public GameObject indicator;
+    public GameObject redindicator;
+
+    public AudioSource correctAudioPlayer;
+    public AudioSource incorrectAudioPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,7 +99,24 @@ public class WordBlanks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(indicator !=null)
+        {
+            if(indicator.GetComponent<Image>().color.a > 0)
+            {
+                var color = indicator.GetComponent<Image>().color;
+                color.a -= 0.01f;
+                indicator.GetComponent<Image>().color = color;
+            }
+        }
+        if(redindicator !=null)
+        {
+            if(redindicator.GetComponent<Image>().color.a > 0)
+            {
+                var color = redindicator.GetComponent<Image>().color;
+                color.a -= 0.01f;
+                redindicator.GetComponent<Image>().color = color;
+            }
+        }
     }
 
     public static void callback(string category) {
@@ -158,8 +182,22 @@ public class WordBlanks : MonoBehaviour
         letterList[index].transform.localScale = baseline;
         
     }
+    public void redIndicator()
+    {
+        var color = redindicator.GetComponent<Image>().color;
+        color.a = 0.6f;
+        redindicator.GetComponent<Image>().color = color;
+    }
     
     private void _reveal_index(int index) {
+        var color = indicator.GetComponent<Image>().color;
+        color.a = 0.6f;
+        indicator.GetComponent<Image>().color = color;
+        correctAudioPlayer.Play();
+
+        // redIndicator();
+        // incorrectAudioPlayer.Play();
+
         if(!masked[index]) {
             Debug.Log("This letter is already revealed");
             return;
