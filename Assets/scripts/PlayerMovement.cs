@@ -27,19 +27,18 @@ public class PlayerMovement : MonoBehaviour {
     }
     void Update () {
 		
-		if(sceneName.Equals("Level_0") || sceneName.Equals("Level_3") || sceneName.Equals("Level_1"))
+		if(sceneName.Equals("Level_2") || sceneName.Equals("Level_4"))
         {
+			movement.y = Input.GetAxisRaw("Vertical");
+			movement.x = Input.GetAxisRaw("Horizontal");
+		}
+		else{
 			horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
 			if (Input.GetButtonDown("JumpPlayer"))
 			{
 				jump = true;
 			}
-		}
-		else if(sceneName.Equals("Level_2") || sceneName.Equals("Level_4"))
-        {
-			movement.y = Input.GetAxisRaw("Vertical");
-			movement.x = Input.GetAxisRaw("Horizontal");
 		}
 
 		//bow.bw.transform.RotateAround(transform.position, transform.up, 10 * Time.deltaTime);
@@ -49,12 +48,7 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate ()
 	{
 		// Move our character
-		if(sceneName.Equals("Level_0")  || sceneName.Equals("Level_3") || sceneName.Equals("Level_1"))
-        {
-			controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
-			jump = false;
-		}
-		else if(sceneName.Equals("Level_2") || sceneName.Equals("Level_4"))
+		if(sceneName.Equals("Level_2") || sceneName.Equals("Level_4"))
         {
 			Vector3 pos = rb.position + movement * verticalSpeed * Time.fixedDeltaTime;
 			if (pos.x > 7f)
@@ -77,6 +71,10 @@ public class PlayerMovement : MonoBehaviour {
 
 			rb.MovePosition(pos);
 
+		}
+		else{
+			controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+			jump = false;
 		}
 	}
 }
