@@ -7,11 +7,11 @@ using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using Random=UnityEngine.Random;
 using System.IO;
+using UnityEngine.UI;
 
 public class WordBlanks : MonoBehaviour
 {
     public static WordBlanks wb;
-
     private static string[] movies = {"avengers", "titanic", "zodiac", "godzilla", "deadpool", "scarface", "saw"};
     private static List<string> moviesList = new List<string>(movies);
 
@@ -57,9 +57,16 @@ public class WordBlanks : MonoBehaviour
     public string word;
     private List<GameObject> letterObjectList;
 
+    public GameObject correctIndicator;
+    public GameObject incorrectIndicator;
+
+    public AudioSource correctIndicatorSound;
+    public AudioSource incorrectIndicatorSound;
+
     // Start is called before the first frame update
     void Start()
     {
+        
         char newlineChar = '\n';
         // string[] lines = File.ReadAllLines(moviesFile);
         string[] lines = movieDataFile.text.Split(newlineChar);
@@ -92,6 +99,15 @@ public class WordBlanks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(correctIndicator !=null)
+        {
+            if(correctIndicator.GetComponent<Image>().color.a > 0)
+            {
+                var color = correctIndicator.GetComponent<Image>().color;
+                color.a -= 0.01f;
+                correctIndicator.GetComponent<Image>().color = color;
+            }
+        }
 
     }
 
@@ -158,8 +174,20 @@ public class WordBlanks : MonoBehaviour
         letterList[index].transform.localScale = baseline;
         
     }
+    public void incorrectBubbleIndicator()
+    {
+        var color = incorrectIndicator.GetComponent<Image>().color;
+        color.a = 1.2f;
+        incorrectIndicator.GetComponent<Image>().color = color;
+    }
     
     private void _reveal_index(int index) {
+        var color = correctIndicator.GetComponent<Image>().color;
+        color.a = 1.2f;
+        correctIndicator.GetComponent<Image>().color = color;
+        correctIndicatorSound.Play();
+        // incorrectBubbleIndicator();
+        // incorrectIndicatorSound.Play();
         if(!masked[index]) {
             Debug.Log("This letter is already revealed");
             return;
@@ -175,7 +203,7 @@ public class WordBlanks : MonoBehaviour
                 Message.msg.SendMessage("Word guessed!", Color.green, 2f);
                 AnalyticsManager.analyticsManager.SendEvent("Word Guessed");
                 wb.Initialize();
-                ArrowIndicator.arrowIndicator.Add (10);
+                ArrowsLeftText.arrowsLeftTextObj.Add (10);
                 //GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), true, word);
             }
             else
@@ -227,6 +255,7 @@ public class WordBlanks : MonoBehaviour
             }
         }
         if(cnt == 0) {
+            HealthManager.health = HealthManager.health - 1;
             //Debug.Log("All " + c + "'s are revealed!");
             return;
         }

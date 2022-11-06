@@ -51,7 +51,8 @@ public class arrowScript : MonoBehaviour
             //}
         }
         else if(other.gameObject.tag == "extraArrow") {
-            ArrowIndicator.arrowIndicator.Add(3);
+            Debug.Log("Extra arrow");
+            ArrowsLeftText.arrowsLeftTextObj.Add(3);
         }
     }
 

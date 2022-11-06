@@ -56,7 +56,7 @@ public class shoot : MonoBehaviour
     void Update()
     {   
         // Debug.Log("Ready to shoot " + readyToShoot);
-        if(ArrowIndicator.arrowIndicator.Get() == 0) {
+        if(ArrowsLeftText.arrowsLeftTextObj.Get() == 0) {
             return;
         }
         if (Input.GetKey(KeyCode.Space))
@@ -99,7 +99,7 @@ public class shoot : MonoBehaviour
             if (!readyToShoot)
                 return;
             Shoot();
-            ArrowIndicator.arrowIndicator.Remove(1);
+            ArrowsLeftText.arrowsLeftTextObj.Remove(1);
             powerBar.fillAmount = 0;
             LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
@@ -114,7 +114,7 @@ public class shoot : MonoBehaviour
             if (!readyToShoot)
                 return;
             Shoot();
-            ArrowIndicator.arrowIndicator.Remove(1);
+            ArrowsLeftText.arrowsLeftTextObj.Remove(1);
             powerBar.fillAmount = 0;
             LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
