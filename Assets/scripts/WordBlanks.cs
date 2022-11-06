@@ -7,6 +7,7 @@ using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using Random=UnityEngine.Random;
 using System.IO;
+using UnityEngine.UI;
 
 public class WordBlanks : MonoBehaviour
 {
@@ -56,6 +57,12 @@ public class WordBlanks : MonoBehaviour
     public string word;
     private List<GameObject> letterObjectList;
 
+    public GameObject correctIndicator;
+    public GameObject incorrectIndicator;
+
+    public AudioSource correctIndicatorSound;
+    public AudioSource incorrectIndicatorSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,7 +99,15 @@ public class WordBlanks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(correctIndicator !=null)
+        {
+            if(correctIndicator.GetComponent<Image>().color.a > 0)
+            {
+                var color = correctIndicator.GetComponent<Image>().color;
+                color.a -= 0.01f;
+                correctIndicator.GetComponent<Image>().color = color;
+            }
+        }
 
     }
 
@@ -159,8 +174,20 @@ public class WordBlanks : MonoBehaviour
         letterList[index].transform.localScale = baseline;
         
     }
+    public void incorrectBubbleIndicator()
+    {
+        var color = incorrectIndicator.GetComponent<Image>().color;
+        color.a = 1.2f;
+        incorrectIndicator.GetComponent<Image>().color = color;
+    }
     
     private void _reveal_index(int index) {
+        var color = correctIndicator.GetComponent<Image>().color;
+        color.a = 1.2f;
+        correctIndicator.GetComponent<Image>().color = color;
+        // correctIndicatorSound.Play();
+        // incorrectBubbleIndicator();
+        // incorrectIndicatorSound.Play();
         if(!masked[index]) {
             Debug.Log("This letter is already revealed");
             return;
