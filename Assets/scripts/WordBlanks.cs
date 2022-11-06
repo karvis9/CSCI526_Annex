@@ -185,7 +185,7 @@ public class WordBlanks : MonoBehaviour
         var color = correctIndicator.GetComponent<Image>().color;
         color.a = 1.2f;
         correctIndicator.GetComponent<Image>().color = color;
-        // correctIndicatorSound.Play();
+        correctIndicatorSound.Play();
         // incorrectBubbleIndicator();
         // incorrectIndicatorSound.Play();
         if(!masked[index]) {
