@@ -11074,7 +11074,7 @@ PrefabInstance:
     - target: {fileID: 252283519031862433, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
       propertyPath: powerBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 955541733}
     - target: {fileID: 252283520558926300, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
       propertyPath: m_Name
       value: Player
