@@ -58,3 +58,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: SidePanel
+    uniqueID: 215309317
+    locked: 0
