@@ -76,6 +76,11 @@ public class shoot : MonoBehaviour
         }
         if (Input.GetKey("mouse 0"))
         {
+            Vector3 mousePos = Input.mousePosition;
+            {
+                if(mousePos.x>550)
+                    return;
+            }
             vcam.m_Priority = 1;
             if(!readyToShoot)
                 return;
@@ -107,6 +112,11 @@ public class shoot : MonoBehaviour
 
         if (Input.GetKeyUp("mouse 0"))
         {
+            Vector3 mousePos = Input.mousePosition;
+            {
+                if(mousePos.x>550)
+                    return;
+            }
             for (int i = 0; i < Points.Length; i++)
             {
                 Points[i].SetActive(false);
