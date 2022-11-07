@@ -85,9 +85,16 @@ public class OptionBubble : MonoBehaviour
     public void Submit(){
         List<char> chars = new List<char>();
         selectingState = false;
-        //List<string> spawnList= selectedList.ToList();
         //call the letter spawner manager to spawn the characters
-        //LSM.spawnCharacters(selectedList);
+
+        foreach (var item in selectedList) {
+            Debug.Log ("selected item " + item);
+
+            char alphabet = item[0];
+            chars.Add (alphabet);
+        }
+
+        LetterSpawnerManager.lsm.spawnCharacters (chars);
     }
     public void TurnRed()
      {
