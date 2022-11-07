@@ -30,7 +30,6 @@ public class OptionBubble : MonoBehaviour
         badSet = new HashSet<string>();
         myButton = GetComponent<Button>();
         myChar = this.gameObject.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text.ToLower();
-        badSet.Add("b");
     }
 
     // Update is called once per frame
@@ -56,19 +55,22 @@ public class OptionBubble : MonoBehaviour
         }
     }
 
+    public int getSelectedCount(){
+        return selectedList.Count;
+    }
+
     public void StartSelecting(){
         selectingState = true;
     }
-    public void AddCharacters(string ch){
-        if(selectedList.Count>9){
-            return;
-        }
-            
+    public void AddCharacters(string ch){    
         
         if(!selectingState)
             return;
         
         if(!buttonPressed){
+            if(selectedList.Count>9){
+                return;
+            }
             buttonPressed = true;
             selectedList.Add(myChar);
         }   
@@ -81,9 +83,6 @@ public class OptionBubble : MonoBehaviour
 
     public void Submit(){
         selectingState = false;
-        foreach (object o in selectedList){
-            Debug.Log(o);
-        }
         //List<string> spawnList= selectedList.ToList();
         //call the letter spawner manager to spawn the characters
         //LSM.spawnCharacters(selectedList);
