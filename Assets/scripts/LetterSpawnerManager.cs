@@ -48,7 +48,7 @@ public class LetterSpawnerManager : MonoBehaviour
             GameObject go = transform.GetChild(i).gameObject;
             StaticLetterSpwaner other = (StaticLetterSpwaner)go.GetComponent(typeof(StaticLetterSpwaner));
 
-            if (other.free)
+            if (!other.free)
             {
                 other.destroy();
             }

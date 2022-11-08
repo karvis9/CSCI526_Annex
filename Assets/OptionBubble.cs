@@ -82,7 +82,8 @@ public class OptionBubble : MonoBehaviour
         
     }
 
-    public void Submit(){
+
+    public static void Submit(){
         Debug.Log("submit called");
         List<char> chars = new List<char>();
         selectingState = false;
@@ -95,7 +96,7 @@ public class OptionBubble : MonoBehaviour
             chars.Add (alphabet);
         }
 
-        LetterSpawnerManager.lsm.spawnCharacters (chars);
+        LetterSpawnerManager.lsm.spawnCharacters(chars);
     }
     public void TurnRed()
      {

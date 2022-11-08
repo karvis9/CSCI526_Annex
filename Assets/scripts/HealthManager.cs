@@ -69,6 +69,7 @@ public class HealthManager : MonoBehaviour
                 heart_health_3.gameObject.SetActive(false);
                 heart_health_4.gameObject.SetActive(false);
                 heart_health_5.gameObject.SetActive(false);
+                Debug.Log("End screen called");
                 GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
                 Time.timeScale = 0;
                 break;

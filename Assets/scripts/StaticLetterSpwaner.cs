@@ -26,6 +26,7 @@ public class StaticLetterSpwaner : MonoBehaviour
 
     public void spawnLetter(char letter)
     {
+        Debug.Log("Spawning new character " + letter);
         go = Instantiate(bubblePrefab, transform.position, transform.rotation);
         go.SetActive(true);
         GameObject child = go.transform.GetChild(0).gameObject;

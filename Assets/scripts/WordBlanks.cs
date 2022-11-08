@@ -255,6 +255,7 @@ public class WordBlanks : MonoBehaviour
             }
         }
         if(cnt == 0) {
+            Debug.Log("health= " + HealthManager.health);
             HealthManager.health = HealthManager.health - 1;
             //Debug.Log("All " + c + "'s are revealed!");
             return;
