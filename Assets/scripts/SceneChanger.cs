@@ -17,7 +17,9 @@ public class SceneChanger : MonoBehaviour
     {
         sc = this;
     }
-
+    void Awake() {
+        sc = this;
+    }
     public void switchToScene(string SceneName) {
         Debug.Log("Switching to scene " + SceneName);
         if (SceneName == "FirstScene") {
