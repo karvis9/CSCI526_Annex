@@ -83,6 +83,7 @@ public class OptionBubble : MonoBehaviour
     }
 
     public void Submit(){
+        Debug.Log("submit called");
         List<char> chars = new List<char>();
         selectingState = false;
         //call the letter spawner manager to spawn the characters
