@@ -27,6 +27,7 @@ public class CountDownTimer : MonoBehaviour
             startingTime = 60f;
         curTime = startingTime;
         countDownTimerObj = this;
+        Debug.Log(countDownTimerObj);
     }
 
     // Update is called once per frame

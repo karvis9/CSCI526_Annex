@@ -37,7 +37,7 @@ public class ArrowsLeftText : MonoBehaviour
     public void updateArrowsLeft(int arrows)
     {
         arrowsLeft = arrows;
-        arrowsLeftTextt.text = "Arrows Left: " + arrowsLeft.ToString ("0");
+        arrowsLeftTextt.text = arrowsLeft.ToString ("0");
 
     }
 
@@ -45,14 +45,14 @@ public class ArrowsLeftText : MonoBehaviour
     {
         if (arrowsLeft >= 1)
         {
-            arrowsLeftTextt.text = "Arrows Left: " + arrowsLeft.ToString("0");
+            arrowsLeftTextt.text = arrowsLeft.ToString("0");
             if (start == false)
                 updateArrowsLeft(arrowsLeft);
             return;
         }
         else
         {
-            arrowsLeftTextt.text = "Arrows Left: 0";
+            arrowsLeftTextt.text = "0";
         }
     }
 
