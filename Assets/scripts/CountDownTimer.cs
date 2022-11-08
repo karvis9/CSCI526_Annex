@@ -48,7 +48,7 @@ public class CountDownTimer : MonoBehaviour
                 }
             }
                 
-            CountDownText.text = "Time Left: " + curTime.ToString ("0") + " Secs";
+            CountDownText.text = curTime.ToString ("0");
         // }
     }
 
