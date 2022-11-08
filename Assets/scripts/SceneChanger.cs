@@ -39,20 +39,21 @@ public class SceneChanger : MonoBehaviour
     }
 
     public void switchToNextLevel() {
-        if (SceneManager.GetActiveScene().name != "IntermediateScene" && SceneManager.GetActiveScene().name != "Level_0" && SceneManager.GetActiveScene().name != "Level_4"){
+        if (SceneManager.GetActiveScene().name != "IntermediateScene"){
             AnalyticsManager.analyticsManager.SendEvent("Level Cleared");
             SceneChanger.sc.switchToScene("IntermediateScene");
         }
         else {
             shoot.readyToShoot = true;
-        if (curLevel == 4) {
-            GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
-            curLevel = 0;
-        }
-        else {
-            curLevel += 1;
-            SceneManager.LoadScene("Level_" + curLevel);
-        }
+            SceneChanger.sc.switchToScene("Map_1");
+        // if (curLevel == 4) {
+        //     GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+        //     curLevel = 0;
+        // }
+        // else {
+        //     curLevel += 1;
+        //     SceneManager.LoadScene("Level_" + curLevel);
+        // }
         }
     }
 

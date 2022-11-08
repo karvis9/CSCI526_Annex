@@ -29,6 +29,7 @@ public class ScoreManager : MonoBehaviour
     public int getFinalScore()
     {
         int timeLeft = CountDownTimer.countDownTimerObj.getTimeLeft();
+        Debug.Log("Points " + points);
         return points + timeLeft * timeLeftWeightage;
     }
 

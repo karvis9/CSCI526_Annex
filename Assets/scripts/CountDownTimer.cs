@@ -31,6 +31,7 @@ public class CountDownTimer : MonoBehaviour
         // if (!GameOverScreen.gm.gameEnded) {
             curTime -= (1 * Time.deltaTime);
             if (curTime <= 0){
+                Debug.Log("MAcha " + ScoreManager.sm.getFinalScore());
                 if (ScoreManager.sm.getFinalScore() >= 400) {
                     SceneChanger.sc.switchToNextLevel();
                     // Scene scene = SceneChanger.sc.getCurrentScene();
@@ -48,7 +49,8 @@ public class CountDownTimer : MonoBehaviour
                 }
             }
                 
-            CountDownText.text = curTime.ToString ("0");
+            // CountDownText.text = "Time Left: " + curTime.ToString ("0") + " Secs";
+            CountDownText.text = curTime.ToString("0");
         // }
     }
 
