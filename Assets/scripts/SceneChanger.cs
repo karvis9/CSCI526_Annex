@@ -36,6 +36,7 @@ public class SceneChanger : MonoBehaviour
         Debug.Log("Switching from category scene to " + SceneName);
         PlayerPrefs.SetString("Category", Category);
         SceneManager.LoadScene(SceneName);
+        curLevel = 1;
     }
 
     public void switchToNextLevel() {
@@ -45,15 +46,31 @@ public class SceneChanger : MonoBehaviour
         }
         else {
             shoot.readyToShoot = true;
-            SceneChanger.sc.switchToScene("Map_1");
-        // if (curLevel == 4) {
-        //     GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
-        //     curLevel = 0;
-        // }
-        // else {
-        //     curLevel += 1;
-        //     SceneManager.LoadScene("Level_" + curLevel);
-        // }
+            //SceneChanger.sc.switchToScene("Map_1");
+         if (curLevel == 3)
+            {
+                GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+                curLevel = 0;
+            }
+         else if(curLevel == 0)
+            {
+                SceneChanger.sc.switchToScene("Map_New");
+                curLevel = 1;
+            }
+         else if (curLevel == 1)
+            {
+                SceneChanger.sc.switchToScene("Map_New_level2");
+                curLevel = 2;
+            }
+         else if (curLevel == 2)
+            {
+                SceneChanger.sc.switchToScene("Map_New_level3");
+                curLevel = 3;
+            }
+            // else {
+            //     curLevel += 1;
+            //     SceneManager.LoadScene("Level_" + curLevel);
+            // }
         }
     }
 

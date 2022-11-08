@@ -39,7 +39,8 @@ public class Shark : MonoBehaviour
         }
         freeze = false;
         freezeTime = 0;
-        Swarm();
+        if(!OptionBubble.selectingState)
+            Swarm();
     }
 
     private void setEnemyValues()

@@ -9,7 +9,8 @@ public class OptionBubble : MonoBehaviour
     public static OptionBubble oB;
     public static int currentLimit = 10;
     public static int currentSelected = 0; 
-    public static bool selectingState = false; 
+    public static bool selectingState = false;
+    public static int submit_cnt = 0;
     private static HashSet<string> selectedList;
     private static HashSet<string> badSet;
     public static Color disableColor;
@@ -30,6 +31,7 @@ public class OptionBubble : MonoBehaviour
         badSet = new HashSet<string>();
         myButton = GetComponent<Button>();
         myChar = this.gameObject.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text.ToLower();
+        submit_cnt = 0;
     }
 
     // Update is called once per frame
@@ -97,6 +99,7 @@ public class OptionBubble : MonoBehaviour
         }
 
         LetterSpawnerManager.lsm.spawnCharacters(chars);
+        submit_cnt += 1;
     }
     public void TurnRed()
      {

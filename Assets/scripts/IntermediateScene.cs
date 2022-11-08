@@ -12,7 +12,7 @@ public class IntermediateScene : MonoBehaviour
      int prevScore = PlayerPrefs.GetInt("Score");
      int curScore = ScoreManager.sm.getCurrentPoint();
      int total = prevScore + curScore;
-     score.text = "Your score is " + total;
+     //score.text = "Your score is " + total;
      PlayerPrefs.SetInt("Score", total);
      StartCoroutine(ChangeText(3));
     }

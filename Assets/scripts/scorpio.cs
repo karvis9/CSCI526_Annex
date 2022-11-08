@@ -5,13 +5,16 @@ using UnityEngine;
 public class scorpio : MonoBehaviour
 {
     private bool moveingRight;
-    public float speed = 1.6f;
+    public float speed = 1.0f;
     private Animator anim;
+    private Vector3 init_pos;
     // Start is called before the first frame update
     void Start()
     {
         moveingRight = true;
-        anim = GetComponent<Animator>(); 
+        anim = GetComponent<Animator>();
+        init_pos = transform.position;
+
     }
 
     // Update is called once per frame
@@ -22,14 +25,14 @@ public class scorpio : MonoBehaviour
         
         if (moveingRight == true) {
             this.transform.Translate(-1.0f*speed*Time.deltaTime,0,0);
-            if (transform.position.x <= -8.33) {
+            if (transform.position.x <= init_pos.x-3) {
                 transform.eulerAngles = new Vector3(0, 180, 0);
                 moveingRight = false;
             }       
         }
         else {
             this.transform.Translate(-1.0f*speed*Time.deltaTime,0,0);
-            if (transform.position.x >= 8.33) {
+            if (transform.position.x >= init_pos.x+3) {
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 moveingRight = true;
             }  
