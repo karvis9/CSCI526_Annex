@@ -22,9 +22,10 @@ public class Bubble : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = this.GetComponent<SpriteRenderer>();
         bubble = this.transform.GetChild(0).gameObject;
-        if(bubble)
+        if (bubble && bubble.GetComponent<TMP_Text>())
+        {
             symbol = bubble.GetComponent<TMP_Text>().text[0];
-
+        }
         vector3s[0] = new Vector3(-3.6f, -0.5f, transform.position.z);
         vector3s[1] = new Vector3(-1.04f, -0.98f, transform.position.z);
         vector3s[2] = new Vector3(6.6f, 0.4f, transform.position.z);

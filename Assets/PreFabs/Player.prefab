@@ -132,11 +132,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LaunchForce: 1
   Arrow: {fileID: 4729067003003144497, guid: bb9edaf7f31bc411db017039a36fad02, type: 3}
-  powerBar: {fileID: 0}
+  HintArrow: {fileID: 1730012272872973243, guid: d95badde9c6ff4ad899f7c443178d49f, type: 3}
+  powerBar: {fileID: 3330520511388577278, guid: c376a6dfb23e4044b9ddb5c87efa2d2f, type: 3}
   PointPrefab: {fileID: 3008133497324484187, guid: fb2235267a33f4e0f99707ccd4000b20, type: 3}
   Points: []
   numberofPoints: 10
-  vcam: {fileID: 0}
 --- !u!114 &252283519031862438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,7 +384,6 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 252283519000432580}
   m_CeilingCheck: {fileID: 252283519571837390}
   m_CrouchDisableCollider: {fileID: 0}
-  bowAnchor: {fileID: 6722208336616276396}
 --- !u!50 &252283520558926311
 Rigidbody2D:
   serializedVersion: 4

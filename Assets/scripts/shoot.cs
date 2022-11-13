@@ -84,7 +84,7 @@ public class shoot : MonoBehaviour
         {
             Vector3 mousePos = Input.mousePosition;
             {
-                if(mousePos.x>590)
+                if(mousePos.x>500)
                     return;
                 if(mousePos.x<45)
                     return;
