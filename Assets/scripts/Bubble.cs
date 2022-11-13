@@ -71,14 +71,14 @@ public class Bubble : MonoBehaviour
         }
         if(collision.gameObject.tag == "HintArrowTag")
         {
-            // anim.Play("BubblePop");
-            // if(WordBlanks.wb.isCorrect(symbol)){
-            //     turnGreen();
-            // }
-            // else
-            //     turnRed();
-            StartCoroutine(ChangeColor("red"));
-            // StartCoroutine(ChangeColor("green"));
+            if (WordBlanks.wb.isCorrect(symbol))
+            {
+                StartCoroutine(ChangeColor("green"));
+            }
+            else
+            {
+                StartCoroutine(ChangeColor("red"));
+            }
         }
     }
 
