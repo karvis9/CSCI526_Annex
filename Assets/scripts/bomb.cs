@@ -45,26 +45,35 @@ public class bomb : MonoBehaviour
         //    }
         //}
 
-        if (collision.gameObject.name == "Arrow(Clone)")
+        if (collision.gameObject.name == "Arrow(Clone)" || collision.gameObject.name == "Player" || collision.gameObject.tag == "destroyArrow")
         {
             AnalyticsManager.analyticsManager.SendEvent("Bomb hit");
 
-            bubbles = GameObject.FindGameObjectsWithTag("Letter");
-            //Debug.Log(bubbles.Length);
-            foreach (var bubble in bubbles)
-            {
-                Vector2 bubble_pos = bubble.gameObject.transform.position;
-                float dist = Vector2.Distance(bubble_pos, transform.position);
-                if (dist < 4)
-                {
-                    bubble.gameObject.SetActive(false);
-                }
-            }
+            //bubbles = GameObject.FindGameObjectsWithTag("Letter");
+            ////Debug.Log(bubbles.Length);
+            //foreach (var bubble in bubbles)
+            //{
+            //    Vector2 bubble_pos = bubble.gameObject.transform.position;
+            //    float dist = Vector2.Distance(bubble_pos, transform.position);
+            //    if (dist < 4)
+            //    {
+            //        bubble.gameObject.SetActive(false);
+            //    }
+            //}
             ps.Play();
             Destroy(this.gameObject, 0.2f);
+
+            GameObject player = GameObject.FindGameObjectWithTag("bow");
+
+            Vector2 player_pos = player.gameObject.transform.position;
+            float dist = Vector2.Distance(player_pos, transform.position);
+            if (dist < 4)
+            {
+                HealthManager.ht.decreaseHealth();
+            }
         }
         //ParticleSystem ps = Animator.gameObject.GetComponent<ParticleSystem>();
         //Debug.Log(ps);
-        
+
     }
 }
