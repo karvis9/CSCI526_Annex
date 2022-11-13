@@ -21,7 +21,7 @@ public class Plane : MonoBehaviour
         initLocation = transform.position; 
 
         rb = GetComponent<Rigidbody2D>();
-        force = new Vector3(40, 0, 0);
+        force = new Vector3(120, 0, 0);
         rb.AddForce(force);
     }
 
@@ -35,11 +35,8 @@ public class Plane : MonoBehaviour
             bomb = Instantiate(bombPrefab, pos, transform.rotation);
             bomb.SetActive(true);
         }
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "RightWall")
+        if (transform.position.x > 40f)
         {
             transform.position = initLocation;
         }
