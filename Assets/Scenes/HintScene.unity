@@ -287,9 +287,10 @@ GameObject:
   - component: {fileID: 340374946}
   - component: {fileID: 340374948}
   - component: {fileID: 340374947}
+  - component: {fileID: 340374949}
   m_Layer: 5
   m_Name: Hint
-  m_TagString: Untagged
+  m_TagString: HintTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,6 +353,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340374945}
   m_CullTransparentMesh: 1
+--- !u!114 &340374949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340374945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb92d43e0ff14f66bbcd85319eb0f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintGm: {fileID: 340374945}
 --- !u!1 &359516307
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +587,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 832928152}
-        m_TargetAssemblyTypeName: Hint, Assembly-CSharp
+        m_TargetAssemblyTypeName: Utils, Assembly-CSharp
         m_MethodName: closeHintScene
         m_Mode: 1
         m_Arguments:
@@ -631,10 +645,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 832928147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bb92d43e0ff14f66bbcd85319eb0f9d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f5a067a29c0e4dcd898c2aa221e7064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintGm: {fileID: 340374945}
 --- !u!1 &858931579
 GameObject:
   m_ObjectHideFlags: 0

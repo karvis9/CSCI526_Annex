@@ -19,6 +19,8 @@ TagManager:
   - extraArrow
   - collect_bow
   - HintArrowTag
+  - Hint
+  - HintTag
   layers:
   - Default
   - TransparentFX

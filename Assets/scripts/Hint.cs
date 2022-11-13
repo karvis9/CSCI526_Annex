@@ -1,42 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Hint : MonoBehaviour
 {
-    public GameObject hintGm;
-    private string curLevelScene;
-
-    private string imageName;
+    public GameObject gm;
+    public GameObject image;
+    void Awake() {
+        gm.SetActive(false);
+    }
     // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void showHint(string curLevel_imageName) {
-        Debug.Log("Loading hint");
-        curLevelScene = curLevel_imageName.Split(",")[0];
-        imageName = curLevel_imageName.Split(",")[1];
-        this.curLevelScene = curLevelScene;
+    public void showHint(string curLevel_imageName){
+        gm.SetActive(true);
+        string curLevelScene = curLevel_imageName.Split(",")[0];
+        string imageName = curLevel_imageName.Split(",")[1];
         Sprite hintImage = Resources.Load<Sprite>("Images/Hints/" + imageName);
-        Debug.Log("Got the image " + hintImage);
-        hintGm.GetComponent<Image>().sprite = hintImage;
+        image.GetComponent<Image>().sprite = hintImage;
+        // PlayerPrefs.SetString("curLevelScene", curLevelScene);
+        // PlayerPrefs.SetString("imageName", imageName);
+        // PlayerPrefs.SetInt("Level", SceneManager.GetActiveScene().buildIndex);
+        // PlayerPrefs.Save();
+        // SceneManager.LoadScene("HintScene");
     }
 
-    public void closeHintScene() {
+    public void closeHint() {
         Debug.Log("closing hint");
-        SceneManager.LoadScene(curLevelScene);
-    }
-
-    public void something(){
-
+        gm.SetActive(false);
     }
 }

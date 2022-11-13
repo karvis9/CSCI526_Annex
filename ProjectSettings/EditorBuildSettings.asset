@@ -45,6 +45,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Map_New_level2.unity
     guid: ae671d07ff177475497f0dc378cff21f
   - enabled: 1
+    path: Assets/Scenes/HintScene.unity
+    guid: 59d930f371a284b2a9234ae7ffb0a060
+  - enabled: 1
     path: Assets/Scenes/Map_New_level3.unity
     guid: e92320cb7f423cf40b2de46a27954345
   m_configObjects: {}
