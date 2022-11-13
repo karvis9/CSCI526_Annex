@@ -214,8 +214,8 @@ public class WordBlanks : MonoBehaviour
     }
 
     public void TargetHit(char c) { 
-        Reveal(c); //Switch between different modes of revealing
-        //RevealAll(c);
+        //Reveal(c); //Switch between different modes of revealing
+        RevealAll(c);
         //RevealRandom();
     }
 
@@ -286,10 +286,17 @@ public class WordBlanks : MonoBehaviour
     public void RevealAll(char c) // If you want one of a certain letter to show
     {
         c = Char.ToLower(c);
+        int counter = 0;
         for(int index = 0; index < masked.Count; index++) {
             if(c == word[index] && masked[index]) {
                 _reveal_index(index);
+                counter++;
             }
+        }
+        OptionBubble.oB.updateBadList("" + c);
+        if (counter==0)
+        {
+            HealthManager.health = HealthManager.health - 1;
         }
         //letterList[index].text = word[index].ToString().ToUpper();
     }
