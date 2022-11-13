@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Bubble : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Bubble : MonoBehaviour
     [SerializeField] Vector3 force;
 
     public char symbol;
+    private GameObject bubble;
+    private SpriteRenderer sr;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Animator anim;
@@ -16,6 +19,10 @@ public class Bubble : MonoBehaviour
 
     void Start()
     {
+        sr = this.GetComponent<SpriteRenderer>();
+        GameObject bubble = this.transform.GetChild(0).gameObject;
+        symbol = bubble.GetComponent<TMP_Text>().text[0];
+
         vector3s[0] = new Vector3(-3.6f, -0.5f, transform.position.z);
         vector3s[1] = new Vector3(-1.04f, -0.98f, transform.position.z);
         vector3s[2] = new Vector3(6.6f, 0.4f, transform.position.z);
@@ -61,6 +68,17 @@ public class Bubble : MonoBehaviour
             anim.Play("BubblePop");
             Destroy(this.gameObject,0.6f);
         }
+        if(collision.gameObject.tag == "HintArrowTag")
+        {
+            // anim.Play("BubblePop");
+            // if(WordBlanks.wb.isCorrect(symbol)){
+            //     turnGreen();
+            // }
+            // else
+            //     turnRed();
+            StartCoroutine(ChangeColor("red"));
+            // StartCoroutine(ChangeColor("green"));
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -74,4 +92,24 @@ public class Bubble : MonoBehaviour
     {
         
     }
+    IEnumerator ChangeColor(string color){
+        if(color=="red")
+            TurnRed();
+        else
+            TurnGreen();
+        yield return new WaitForSeconds(2);
+        TurnWhite();
+    }
+    public void TurnRed()
+     {
+        sr.color = Color.red;
+     }
+     public void TurnGreen()
+     {
+        sr.color = Color.green;
+     }
+     public void TurnWhite()
+     {
+        sr.color = Color.white;
+     }
 }

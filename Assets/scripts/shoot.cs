@@ -10,6 +10,7 @@ public class shoot : MonoBehaviour
     public float LaunchForce;
     private float MaxLaunchForce = 16;
     public GameObject Arrow;
+    public GameObject HintArrow;
     public static shoot shootController;
     private int _arrowsCount;
     public Image powerBar;
@@ -17,12 +18,14 @@ public class shoot : MonoBehaviour
     public GameObject PointPrefab;
     public GameObject[] Points;
     public int numberofPoints;
-    public CinemachineVirtualCamera vcam;
+    // public CinemachineVirtualCamera vcam;
     public static bool readyToShoot;
+    public static int ArrowMode;
 
     // Start is called before the first frame update
     void Start()
     {
+        ArrowMode = 0;
         readyToShoot = true;
         shootController = this;
         _arrowsCount = 0;
@@ -61,7 +64,7 @@ public class shoot : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            vcam.m_Priority = 1;
+            // vcam.m_Priority = 1;
             if(!readyToShoot)
                 return;
             LaunchForce += 8 * Time.deltaTime;
@@ -81,7 +84,7 @@ public class shoot : MonoBehaviour
                 if(mousePos.x>550)
                     return;
             }
-            vcam.m_Priority = 1;
+            // vcam.m_Priority = 1;
             if(!readyToShoot)
                 return;
             LaunchForce += 8 * Time.deltaTime;
@@ -143,12 +146,18 @@ public class shoot : MonoBehaviour
     }
     void Shoot()
     {
-        GameObject ArrowIns = Instantiate(Arrow, transform.position, transform.rotation);
+        GameObject ArrowIns = null;
+        if(ArrowMode == 0){
+            ArrowIns = Instantiate(Arrow, transform.position, transform.rotation);
+            _arrowsCount++;
+        }
+        else{
+            ArrowIns = Instantiate(HintArrow, transform.position, transform.rotation);
+        }
         readyToShoot = false;
         //ArrowIns.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
         ArrowIns.GetComponent<Rigidbody2D>().velocity = transform.right * LaunchForce;
-        _arrowsCount++;
-        vcam.m_Priority = 3;
+        //vcam.m_Priority = 3;
     }
 
     public int getArrowsCount() { return _arrowsCount; }
