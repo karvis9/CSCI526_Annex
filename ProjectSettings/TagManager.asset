@@ -18,6 +18,7 @@ TagManager:
   - bomb
   - extraArrow
   - collect_bow
+  - HintArrowTag
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - 
   - 
   - Arrows
-  - 
+  - Post
   - 
   - 
   - 

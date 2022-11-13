@@ -31,28 +31,30 @@ public class arrowScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
          Debug.Log("Entered the trigger");
-        if(other.gameObject.tag == "Letter"){
-            //char symbol = other.gameObject.GetComponent<Bubble>().symbol;// might fix this later
-            GameObject child = other.transform.GetChild(0).gameObject;
-            TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
-            Debug.Log("Hit: "+textmeshPro.text);
-            if(textmeshPro.text.Equals("+5"))
-            {
-                Message.msg.SendMessage("+5 Seconds!", Color.green, 2f);
-                AnalyticsManager.analyticsManager.SendEvent("Power up: +5");
-                CountDownTimer.countDownTimerObj.updateTime();
-            }
-/*            Scene currentScene = SceneManager.GetActiveScene();
-            string sceneName = currentScene.name;
-            if (sceneName)
-            {*/
+        if(shoot.ArrowMode == 0){
+            if(other.gameObject.tag == "Letter"){
+                //char symbol = other.gameObject.GetComponent<Bubble>().symbol;// might fix this later
+                GameObject child = other.transform.GetChild(0).gameObject;
+                TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
+                Debug.Log("Hit: "+textmeshPro.text);
+                if(textmeshPro.text.Equals("+5"))
+                {
+                    Message.msg.SendMessage("+5 Seconds!", Color.green, 2f);
+                    AnalyticsManager.analyticsManager.SendEvent("Power up: +5");
+                    CountDownTimer.countDownTimerObj.updateTime();
+                }
+    /*            Scene currentScene = SceneManager.GetActiveScene();
+                string sceneName = currentScene.name;
+                if (sceneName)
+                {*/
 
-                WordBlanks.wb.TargetHit(textmeshPro.text[0]); 
-            //}
-        }
-        else if(other.gameObject.tag == "extraArrow") {
-            Debug.Log("Extra arrow");
-            ArrowsLeftText.arrowsLeftTextObj.Add(3);
+                    WordBlanks.wb.TargetHit(textmeshPro.text[0]); 
+                //}
+            }
+            else if(other.gameObject.tag == "extraArrow") {
+                Debug.Log("Extra arrow");
+                ArrowsLeftText.arrowsLeftTextObj.Add(3);
+            }
         }
     }
 
