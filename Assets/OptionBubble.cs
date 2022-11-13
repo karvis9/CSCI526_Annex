@@ -126,4 +126,10 @@ public class OptionBubble : MonoBehaviour
          colors.pressedColor = disableColor;
          myButton.colors = colors;
      }
+
+    public void updateBadList(string c)
+    {
+        selectedList.Remove(c);
+        badSet.Add(c);
+    }
 }
