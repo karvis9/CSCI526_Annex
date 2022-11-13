@@ -253,6 +253,9 @@ public class WordBlanks : MonoBehaviour
             if(c == word[i] && masked[i]) {
                 cnt++;
             }
+            else {
+                OptionBubble.oB.updateBadList("" + c);
+            }
         }
         if(cnt == 0) {
             Debug.Log("health= " + HealthManager.health);
@@ -308,5 +311,10 @@ public class WordBlanks : MonoBehaviour
     }
 
     public string getWord() { return word;}
+
+    public bool isCorrect(char c)
+    {
+        return word.Contains(c);
+    }
 }
 
