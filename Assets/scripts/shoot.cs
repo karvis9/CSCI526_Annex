@@ -84,9 +84,9 @@ public class shoot : MonoBehaviour
         {
             Vector3 mousePos = Input.mousePosition;
             {
-                if(mousePos.x>500)
+                if(mousePos.x / Screen.width > 0.8)
                     return;
-                if(mousePos.x<45)
+                if(mousePos.x/ Screen.width < 0.06)
                     return;
             }
             // vcam.m_Priority = 1;
@@ -127,9 +127,9 @@ public class shoot : MonoBehaviour
         {
             Vector3 mousePos = Input.mousePosition;
             {
-                if(mousePos.x>590)
+                if (mousePos.x / Screen.width > 0.8)
                     return;
-                if(mousePos.x<45)
+                if (mousePos.x / Screen.width < 0.06)
                     return;
             }
             for (int i = 0; i < Points.Length; i++)
