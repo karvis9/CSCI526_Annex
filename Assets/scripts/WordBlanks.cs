@@ -253,10 +253,13 @@ public class WordBlanks : MonoBehaviour
             if(c == word[i] && masked[i]) {
                 cnt++;
             }
+            else {
+                OptionBubble.oB.updateBadList("" + c);
+            }
         }
         if(cnt == 0) {
             Debug.Log("health= " + HealthManager.health);
-            HealthManager.health = HealthManager.health - 1;
+            //HealthManager.health = HealthManager.health - 1;
             //Debug.Log("All " + c + "'s are revealed!");
             return;
         }
