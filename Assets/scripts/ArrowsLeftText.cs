@@ -10,6 +10,7 @@ public class ArrowsLeftText : MonoBehaviour
     // Start is called before the first frame update
     
     int arrowsLeft = 20;
+    int hintArrowsLeft;
     public Text arrowsLeftTextt;
     public bool start;
 
@@ -22,6 +23,7 @@ public class ArrowsLeftText : MonoBehaviour
     void Start()
     {
         arrowsLeft = 20;
+        hintArrowsLeft = 3;
         arrowsLeftTextObj = this;
         start = true;
         updateArrowCnt();
@@ -37,7 +39,7 @@ public class ArrowsLeftText : MonoBehaviour
     public void updateArrowsLeft(int arrows)
     {
         arrowsLeft = arrows;
-        arrowsLeftTextt.text = arrowsLeft.ToString ("0");
+        arrowsLeftTextt.text = arrowsLeft.ToString("0") + "/"  + hintArrowsLeft.ToString("0");
 
     }
 
@@ -45,7 +47,7 @@ public class ArrowsLeftText : MonoBehaviour
     {
         if (arrowsLeft >= 1)
         {
-            arrowsLeftTextt.text = arrowsLeft.ToString("0");
+            arrowsLeftTextt.text = arrowsLeft.ToString("0")  + "/" + hintArrowsLeft.ToString("0");
             if (start == false)
                 updateArrowsLeft(arrowsLeft);
             return;
@@ -66,6 +68,7 @@ public class ArrowsLeftText : MonoBehaviour
     {
         arrowsLeft -= num;
         Debug.Log("arrows left " + arrowsLeft);
+        Debug.Log("hint left " + hintArrowsLeft);
         if (arrowsLeft <= 0)
         {
             arrowsLeft = 0;
@@ -109,6 +112,11 @@ public class ArrowsLeftText : MonoBehaviour
         updateArrowCnt();
     }
 
+    public void RemoveHint(int num){
+        hintArrowsLeft-=num;
+        this.Remove(0);
+    }
+
     public void Set(int num)
     {
         arrowsLeft = num;
@@ -122,5 +130,9 @@ public class ArrowsLeftText : MonoBehaviour
     public int Get()
     {
         return arrowsLeft;
+    }
+    public int GetHint()
+    {
+        return hintArrowsLeft;
     }
 }

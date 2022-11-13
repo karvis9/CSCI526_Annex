@@ -10,6 +10,7 @@ public class shoot : MonoBehaviour
     public float LaunchForce;
     private float MaxLaunchForce = 16;
     public GameObject Arrow;
+    public GameObject HintArrow;
     public static shoot shootController;
     private int _arrowsCount;
     public Image powerBar;
@@ -17,12 +18,14 @@ public class shoot : MonoBehaviour
     public GameObject PointPrefab;
     public GameObject[] Points;
     public int numberofPoints;
-    public CinemachineVirtualCamera vcam;
+    // public CinemachineVirtualCamera vcam;
     public static bool readyToShoot;
+    public static int ArrowMode;
 
     // Start is called before the first frame update
     void Start()
     {
+        ArrowMode = 0;
         readyToShoot = true;
         shootController = this;
         _arrowsCount = 0;
@@ -56,12 +59,15 @@ public class shoot : MonoBehaviour
     void Update()
     {   
         // Debug.Log("Ready to shoot " + readyToShoot);
+        if(ArrowMode == 1 && ArrowsLeftText.arrowsLeftTextObj.GetHint() == 0) {
+            return;
+        }
         if(ArrowsLeftText.arrowsLeftTextObj.Get() == 0) {
             return;
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            vcam.m_Priority = 1;
+            // vcam.m_Priority = 1;
             if(!readyToShoot)
                 return;
             LaunchForce += 8 * Time.deltaTime;
@@ -78,10 +84,12 @@ public class shoot : MonoBehaviour
         {
             Vector3 mousePos = Input.mousePosition;
             {
-                if(mousePos.x>550)
+                if(mousePos.x>590)
+                    return;
+                if(mousePos.x<45)
                     return;
             }
-            vcam.m_Priority = 1;
+            // vcam.m_Priority = 1;
             if(!readyToShoot)
                 return;
             LaunchForce += 8 * Time.deltaTime;
@@ -104,7 +112,12 @@ public class shoot : MonoBehaviour
             if (!readyToShoot)
                 return;
             Shoot();
-            ArrowsLeftText.arrowsLeftTextObj.Remove(1);
+            if(ArrowMode == 0){
+                ArrowsLeftText.arrowsLeftTextObj.Remove(1);
+            }
+            else{
+                ArrowsLeftText.arrowsLeftTextObj.RemoveHint(1);
+            }
             powerBar.fillAmount = 0;
             LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
@@ -114,7 +127,9 @@ public class shoot : MonoBehaviour
         {
             Vector3 mousePos = Input.mousePosition;
             {
-                if(mousePos.x>550)
+                if(mousePos.x>590)
+                    return;
+                if(mousePos.x<45)
                     return;
             }
             for (int i = 0; i < Points.Length; i++)
@@ -124,7 +139,12 @@ public class shoot : MonoBehaviour
             if (!readyToShoot)
                 return;
             Shoot();
-            ArrowsLeftText.arrowsLeftTextObj.Remove(1);
+            if(ArrowMode == 0){
+                ArrowsLeftText.arrowsLeftTextObj.Remove(1);
+            }
+            else{
+                ArrowsLeftText.arrowsLeftTextObj.RemoveHint(1);
+            }
             powerBar.fillAmount = 0;
             LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
@@ -143,12 +163,18 @@ public class shoot : MonoBehaviour
     }
     void Shoot()
     {
-        GameObject ArrowIns = Instantiate(Arrow, transform.position, transform.rotation);
+        GameObject ArrowIns = null;
+        if(ArrowMode == 0){
+            ArrowIns = Instantiate(Arrow, transform.position, transform.rotation);
+            _arrowsCount++;
+        }
+        else{
+            ArrowIns = Instantiate(HintArrow, transform.position, transform.rotation);
+        }
         readyToShoot = false;
         //ArrowIns.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
         ArrowIns.GetComponent<Rigidbody2D>().velocity = transform.right * LaunchForce;
-        _arrowsCount++;
-        vcam.m_Priority = 3;
+        //vcam.m_Priority = 3;
     }
 
     public int getArrowsCount() { return _arrowsCount; }
