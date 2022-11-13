@@ -19,9 +19,11 @@ public class Bubble : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         sr = this.GetComponent<SpriteRenderer>();
-        GameObject bubble = this.transform.GetChild(0).gameObject;
-        symbol = bubble.GetComponent<TMP_Text>().text[0];
+        bubble = this.transform.GetChild(0).gameObject;
+        if(bubble)
+            symbol = bubble.GetComponent<TMP_Text>().text[0];
 
         vector3s[0] = new Vector3(-3.6f, -0.5f, transform.position.z);
         vector3s[1] = new Vector3(-1.04f, -0.98f, transform.position.z);
@@ -53,7 +55,6 @@ public class Bubble : MonoBehaviour
         //    force = new Vector3(Random.Range(-30, 30), Random.Range(20, 50), 0);
         //}
         //rb.AddForce(force);
-        anim = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -59,6 +59,9 @@ public class shoot : MonoBehaviour
     void Update()
     {   
         // Debug.Log("Ready to shoot " + readyToShoot);
+        if(ArrowMode == 1 && ArrowsLeftText.arrowsLeftTextObj.GetHint() == 0) {
+            return;
+        }
         if(ArrowsLeftText.arrowsLeftTextObj.Get() == 0) {
             return;
         }
@@ -81,7 +84,9 @@ public class shoot : MonoBehaviour
         {
             Vector3 mousePos = Input.mousePosition;
             {
-                if(mousePos.x>550)
+                if(mousePos.x>590)
+                    return;
+                if(mousePos.x<45)
                     return;
             }
             // vcam.m_Priority = 1;
@@ -107,7 +112,12 @@ public class shoot : MonoBehaviour
             if (!readyToShoot)
                 return;
             Shoot();
-            ArrowsLeftText.arrowsLeftTextObj.Remove(1);
+            if(ArrowMode == 0){
+                ArrowsLeftText.arrowsLeftTextObj.Remove(1);
+            }
+            else{
+                ArrowsLeftText.arrowsLeftTextObj.RemoveHint(1);
+            }
             powerBar.fillAmount = 0;
             LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
@@ -117,7 +127,9 @@ public class shoot : MonoBehaviour
         {
             Vector3 mousePos = Input.mousePosition;
             {
-                if(mousePos.x>550)
+                if(mousePos.x>590)
+                    return;
+                if(mousePos.x<45)
                     return;
             }
             for (int i = 0; i < Points.Length; i++)
@@ -127,7 +139,12 @@ public class shoot : MonoBehaviour
             if (!readyToShoot)
                 return;
             Shoot();
-            ArrowsLeftText.arrowsLeftTextObj.Remove(1);
+            if(ArrowMode == 0){
+                ArrowsLeftText.arrowsLeftTextObj.Remove(1);
+            }
+            else{
+                ArrowsLeftText.arrowsLeftTextObj.RemoveHint(1);
+            }
             powerBar.fillAmount = 0;
             LaunchForce = 5;
             StopCoroutine(UpdatePowerBarCoRoutine);
