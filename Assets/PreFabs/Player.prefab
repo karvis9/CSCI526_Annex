@@ -58,13 +58,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252283519031862434}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0.08, z: 0}
+  m_LocalPosition: {x: 0.25, y: 0.080000006, z: 0}
   m_LocalScale: {x: 0.01666667, y: 0.03333334, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 252283519577377044}
-  m_Father: {fileID: 252283520558926307}
-  m_RootOrder: 2
+  m_Father: {fileID: 7663060470304422254}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &252283519031862435
 SpriteRenderer:
@@ -304,9 +304,9 @@ Transform:
   m_Children:
   - {fileID: 252283519571837390}
   - {fileID: 252283519000432580}
-  - {fileID: 252283519031862432}
   - {fileID: 765706751601061426}
   - {fileID: 6156382176879873695}
+  - {fileID: 7663060470304422254}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -384,6 +384,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 252283519000432580}
   m_CeilingCheck: {fileID: 252283519571837390}
   m_CrouchDisableCollider: {fileID: 0}
+  bowAnchor: {fileID: 6722208336616276396}
 --- !u!50 &252283520558926311
 Rigidbody2D:
   serializedVersion: 4
@@ -524,7 +525,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 252283520558926307}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -715,7 +716,7 @@ Transform:
   - {fileID: 8844888099882770168}
   - {fileID: 6469835128267856646}
   m_Father: {fileID: 252283520558926307}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2008252681447716037
 MonoBehaviour:
@@ -990,3 +991,35 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 7462686556577375193}
   m_maskType: 0
+--- !u!1 &6722208336616276396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7663060470304422254}
+  m_Layer: 3
+  m_Name: Bow Anchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7663060470304422254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6722208336616276396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 252283519031862432}
+  m_Father: {fileID: 252283520558926307}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

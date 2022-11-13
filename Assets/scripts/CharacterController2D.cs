@@ -115,18 +115,23 @@ public class CharacterController2D : MonoBehaviour
 	}
 
 
+	//public GameObject bowAnchor;
 	private void Flip()
 	{
 		// Switch the way the player is labelled as facing.
 		m_FacingRight = !m_FacingRight;
-
+		
 		// Multiply the player's x local scale by -1.
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
 		// Bow flip logic -> not needed with the existing code.
-		Vector3 bowScale = bow.bw.transform.localScale;
+		Vector3 bowScale = bow.bw.transform.parent.transform.localScale;
         bowScale.x *= -1;
-        bow.bw.transform.localScale = bowScale;
+        bow.bw.transform.parent.transform.localScale = bowScale;
+		/*Vector3 bowScale = bowAnchor.transform.localScale;
+        bowScale.x *= -1;
+        bowAnchor.transform.localScale = bowScale;*/
+
 	}
 }
