@@ -10,6 +10,7 @@ public class HealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ht = this;
         health = 5;
         heart_health_1.gameObject.SetActive(true);
         heart_health_2.gameObject.SetActive(true);
@@ -71,7 +72,7 @@ public class HealthManager : MonoBehaviour
                 heart_health_5.gameObject.SetActive(false);
                 Debug.Log("End screen called");
                 GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
                 break;
 
         }
