@@ -33,7 +33,8 @@ public class CountDownTimer : MonoBehaviour
             if (curTime <= 0){
                 Debug.Log("MAcha " + ScoreManager.sm.getFinalScore());
                 if (ScoreManager.sm.getFinalScore() >= 400) {
-                    SceneChanger.sc.switchToNextLevel();
+                    Debug.Log("Points crossed 400");
+                    //SceneChanger.sc.switchToNextLevel();
                     // Scene scene = SceneChanger.sc.getCurrentScene();
                     // string level = scene.name.Split("_")[1];
                     // if (level == "2"){
@@ -45,8 +46,9 @@ public class CountDownTimer : MonoBehaviour
                 }
                 else {
                     AnalyticsManager.analyticsManager.SendEvent("Level failed");
-                    GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
+                    //GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
                 }
+                GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
             }
                 
             // CountDownText.text = "Time Left: " + curTime.ToString ("0") + " Secs";
