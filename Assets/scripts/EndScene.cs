@@ -13,7 +13,7 @@ public class EndScene : MonoBehaviour
      int Score = PlayerPrefs.GetInt("Score");
      Debug.Log("Got the score " + Score);
     //  string playerWon = PlayerPrefs.GetString("PlayerWon");
-    pointsText.text = Score.ToString() + " points";
+    //pointsText.text = Score.ToString() + " points";
     }
 
     public void PlayAgain()
