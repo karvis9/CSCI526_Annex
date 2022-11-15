@@ -10,6 +10,7 @@ public class ArrowsLeftText : MonoBehaviour
     // Start is called before the first frame update
     
     int arrowsLeft = 20;
+    int arrowsUsed = 0;
     int hintArrowsLeft;
     public Text arrowsLeftTextt;
     public bool start;
@@ -23,6 +24,7 @@ public class ArrowsLeftText : MonoBehaviour
     void Start()
     {
         arrowsLeft = 20;
+        arrowsUsed = 0;
         hintArrowsLeft = 3;
         arrowsLeftTextObj = this;
         start = true;
@@ -67,6 +69,7 @@ public class ArrowsLeftText : MonoBehaviour
     public void Remove(int num)
     {
         arrowsLeft -= num;
+        arrowsUsed += num;
         Debug.Log("arrows left " + arrowsLeft);
         Debug.Log("hint left " + hintArrowsLeft);
         if (arrowsLeft <= 0)
@@ -104,6 +107,10 @@ public class ArrowsLeftText : MonoBehaviour
     public int Get()
     {
         return arrowsLeft;
+    }
+    public int GetUsed()
+    {
+        return arrowsUsed;
     }
     public int GetHint()
     {
