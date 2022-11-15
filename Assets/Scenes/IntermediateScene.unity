@@ -326,8 +326,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -41.3, y: 0.6819}
-  m_SizeDelta: {x: 77.8985, y: 55.028}
+  m_AnchoredPosition: {x: -54, y: 4.5479}
+  m_SizeDelta: {x: 63.9809, y: 47.296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &81426240
 MonoBehaviour:
@@ -341,6 +341,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d49501115184048a58ebca7b5a4585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowsLeftT: {fileID: 0}
+  timeLeftT: {fileID: 0}
+  star1: {fileID: 0}
+  star2: {fileID: 0}
+  star3: {fileID: 0}
 --- !u!114 &81426241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1489,8 +1494,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 46.2, y: 0.6819}
-  m_SizeDelta: {x: 77.8985, y: 55.028}
+  m_AnchoredPosition: {x: 54.546417, y: 4.5479035}
+  m_SizeDelta: {x: 63.9808, y: 47.296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1333200465
 MonoBehaviour:
@@ -1504,6 +1509,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d49501115184048a58ebca7b5a4585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowsLeftT: {fileID: 0}
+  timeLeftT: {fileID: 0}
+  star1: {fileID: 0}
+  star2: {fileID: 0}
+  star3: {fileID: 0}
 --- !u!114 &1333200466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1899,6 +1909,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d49501115184048a58ebca7b5a4585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowsLeftT: {fileID: 887092951}
+  timeLeftT: {fileID: 8898810}
+  star1: {fileID: 434029453}
+  star2: {fileID: 1451364426}
+  star3: {fileID: 507147721}
 --- !u!1 &1962942532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,7 +1968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7421151, g: 0.745283, b: 0.48865256, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
