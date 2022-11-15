@@ -142,17 +142,17 @@ public class WordBlanks : MonoBehaviour
 
             word = words[index].ToLower();
         }
+        
         Debug.Log("Selected word " + word.ToString() + " from category " + category);
 
-        char[] tokens = word.ToCharArray();
-
-        foreach (char letter in tokens)
+        for (int i = 0; i < word.Length - 1; i++)
         {
             GameObject go = Instantiate(textPrefab, letterHolder, false);
             letterObjectList.Add(go);
             letterList.Add(go.GetComponent<TMP_Text>());
-            masked.Add(true);
+            masked.Add(true); 
         }
+
         maskedCnt = masked.Count;
     }
 
