@@ -40,6 +40,8 @@ public class SceneChanger : MonoBehaviour
     }
 
     public void switchToNextLevel() {
+        
+        Debug.Log ("current level " + curLevel);
         if (SceneManager.GetActiveScene().name != "IntermediateScene"){
             AnalyticsManager.analyticsManager.SendEvent("Level Cleared");
             SceneChanger.sc.switchToScene("IntermediateScene");
@@ -71,6 +73,35 @@ public class SceneChanger : MonoBehaviour
             //     curLevel += 1;
             //     SceneManager.LoadScene("Level_" + curLevel);
             // }
+        }
+    }
+
+    public void replaySameLevel() {
+        
+        Debug.Log ("current level " + curLevel);
+        if (SceneManager.GetActiveScene().name != "IntermediateScene"){
+            AnalyticsManager.analyticsManager.SendEvent("Level Cleared");
+            SceneChanger.sc.switchToScene("IntermediateScene");
+        }
+        else {
+            shoot.readyToShoot = true;
+            //SceneChanger.sc.switchToScene("Map_1");
+         
+            if(curLevel == 1)
+            {
+                SceneChanger.sc.switchToScene("Map_New");
+                curLevel = 1;
+            }
+            else if (curLevel == 2)
+            {
+                SceneChanger.sc.switchToScene("Map_New_level2");
+                curLevel = 2;
+            }
+            else if (curLevel == 3)
+            {
+                SceneChanger.sc.switchToScene("Map_New_level3");
+                curLevel = 3;
+            }
         }
     }
 

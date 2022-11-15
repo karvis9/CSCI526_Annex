@@ -74,34 +74,8 @@ public class ArrowsLeftText : MonoBehaviour
             arrowsLeft = 0;
             Debug.Log("No more arrows left");
             string curLevel = SceneChanger.sc.getCurrentScene().name;
-            if (curLevel == "Level_0")
-            {
-                // SceneChanger.sc.switchToScene("Level_1");
-                SceneChanger.sc.switchToNextLevel();
-            }
-            else if (curLevel == "Level_1" && ScoreManager.sm.getFinalScore() >= 1000)
-            {
-                SceneChanger.sc.switchToNextLevel();
-                // Scene scene = SceneChanger.sc.getCurrentScene();
-                // string level = scene.name.Split("_")[1];
-                // if (level == "2"){
-                //     GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
-                // } else {
-                //     // Change this to call loadNextLevel or something
-                // SceneChanger.sc.switchToScene("Level_2");
-                // }
-            }
-            else if (curLevel == "Level_2" && ScoreManager.sm.getFinalScore() >= 2000)
-            {
-                SceneChanger.sc.switchToNextLevel();
-            }
-            else if (curLevel == "Level_3" && ScoreManager.sm.getFinalScore() >= 3000)
-            {
-                SceneChanger.sc.switchToNextLevel();
-            }
-            else if (curLevel == "Level_4" && ScoreManager.sm.getFinalScore() >= 4000)
-            {
-                SceneChanger.sc.switchToNextLevel();
+            if (ScoreManager.sm.getFinalScore() >= 400) {
+                    SceneChanger.sc.switchToNextLevel();
             }
             else
             {

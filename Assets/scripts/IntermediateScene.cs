@@ -5,7 +5,7 @@ using TMPro;
 
 public class IntermediateScene : MonoBehaviour
 {
-    public TextMeshProUGUI score;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +18,17 @@ public class IntermediateScene : MonoBehaviour
     }
 
     IEnumerator ChangeText(int halt)
-  {
+    {
         yield return new WaitForSeconds(halt);
-        SceneChanger.sc.switchToNextLevel();
+    }
+
+  public static void Submit()
+  {
+    SceneChanger.sc.switchToNextLevel();
+  }
+
+  public static void ReplaySubmit()
+  {
+    SceneChanger.sc.replaySameLevel();
   }
 }
