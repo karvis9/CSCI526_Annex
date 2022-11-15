@@ -145,7 +145,7 @@ public class WordBlanks : MonoBehaviour
         
         Debug.Log("Selected word " + word.ToString() + " from category " + category);
 
-        for (int i = 0; i < word.Length - 1; i++)
+        for (int i = 0; i < word.Length; i++)
         {
             GameObject go = Instantiate(textPrefab, letterHolder, false);
             letterObjectList.Add(go);
