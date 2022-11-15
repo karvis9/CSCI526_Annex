@@ -202,8 +202,9 @@ public class WordBlanks : MonoBehaviour
             if (maskedCnt == 0) {
                 Message.msg.SendMessage("Word guessed!", Color.green, 2f);
                 AnalyticsManager.analyticsManager.SendEvent("Word Guessed");
-                wb.Initialize();
-                ArrowsLeftText.arrowsLeftTextObj.Add (10);
+                //wb.Initialize();
+                SceneChanger.sc.switchToNextLevel ();
+                //ArrowsLeftText.arrowsLeftTextObj.Add (10);
                 //GameOverScreen.gm.EndGame(ScoreManager.sm.getFinalScore(), true, word);
             }
             else
