@@ -61,12 +61,12 @@ public class SceneChanger : MonoBehaviour
             }
          else if (curLevel == 1)
             {
-                SceneChanger.sc.switchToScene("Map_New_level2");
+                SceneChanger.sc.switchToScene("Map_New_level3");
                 curLevel = 2;
             }
          else if (curLevel == 2)
             {
-                SceneChanger.sc.switchToScene("Map_New_level3");
+                SceneChanger.sc.switchToScene("Map_New_level2");
                 curLevel = 3;
             }
             // else {
@@ -94,12 +94,12 @@ public class SceneChanger : MonoBehaviour
             }
             else if (curLevel == 2)
             {
-                SceneChanger.sc.switchToScene("Map_New_level2");
+                SceneChanger.sc.switchToScene("Map_New_level3");
                 curLevel = 2;
             }
             else if (curLevel == 3)
             {
-                SceneChanger.sc.switchToScene("Map_New_level3");
+                SceneChanger.sc.switchToScene("Map_New_level2");
                 curLevel = 3;
             }
         }
