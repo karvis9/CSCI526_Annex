@@ -12,16 +12,16 @@ using UnityEngine.UI;
 public class WordBlanks : MonoBehaviour
 {
     public static WordBlanks wb;
-    private static string[] movies = {"avengers", "titanic", "zodiac", "godzilla", "deadpool", "scarface", "saw"};
+    private static string[] movies = {};
     private static List<string> moviesList = new List<string>(movies);
 
-    private static string[] fruits = {"apple", "grapes", "orange", "pear", "mango", "berry", "kiwi", "banana", "honeydew"};
+    private static string[] fruits = {};
     private static List<string> fruitsList = new List<string>(fruits);
 
-    private static string[] places = {"california", "texas", "india", "canada", "ethiopia", "taiwan", "london"};
+    private static string[] places = {};
     private static List<string> placesList = new List<string>(places);
 
-    private static string[] animals = {"cat", "dog", "frog", "cheetah", "horse", "tiger"};
+    private static string[] animals = {};
     private static List<string> animalsList = new List<string>(animals);
     
     //private static string moviesFile = "Assets/wordlist/movies.txt";
