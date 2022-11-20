@@ -66,7 +66,9 @@ public class WordBlanks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        correctIndicator.SetActive(false);
+        incorrectIndicator.SetActive(false);
         char newlineChar = '\n';
         // string[] lines = File.ReadAllLines(moviesFile);
         string[] lines = movieDataFile.text.Split(newlineChar);
@@ -99,13 +101,30 @@ public class WordBlanks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(correctIndicator !=null)
+        if (correctIndicator != null)
         {
-            if(correctIndicator.GetComponent<Image>().color.a > 0)
+            if (correctIndicator.GetComponent<Image>().color.a > 0)
             {
                 var color = correctIndicator.GetComponent<Image>().color;
                 color.a -= 0.01f;
                 correctIndicator.GetComponent<Image>().color = color;
+                if (color.a == 0)
+                {
+                    correctIndicator.SetActive(false);
+                }
+            }
+        }
+        if (incorrectIndicator != null)
+        {
+            if (incorrectIndicator.GetComponent<Image>().color.a > 0)
+            {
+                var color = incorrectIndicator.GetComponent<Image>().color;
+                color.a -= 0.01f;
+                incorrectIndicator.GetComponent<Image>().color = color;
+                if (color.a == 0)
+                {
+                    incorrectIndicator.SetActive(false);
+                }
             }
         }
 
@@ -176,19 +195,22 @@ public class WordBlanks : MonoBehaviour
     }
     public void incorrectBubbleIndicator()
     {
+        incorrectIndicator.SetActive(true);
         var color = incorrectIndicator.GetComponent<Image>().color;
-        color.a = 1.2f;
+        color.a = 1.5f;
         incorrectIndicator.GetComponent<Image>().color = color;
     }
-    
+
     private void _reveal_index(int index) {
+        correctIndicator.SetActive(true);
         var color = correctIndicator.GetComponent<Image>().color;
-        color.a = 1.2f;
+        color.a = 1.5f;
         correctIndicator.GetComponent<Image>().color = color;
+
         correctIndicatorSound.Play();
         // incorrectBubbleIndicator();
         // incorrectIndicatorSound.Play();
-        if(!masked[index]) {
+        if (!masked[index]) {
             Debug.Log("This letter is already revealed");
             return;
         }
@@ -295,8 +317,11 @@ public class WordBlanks : MonoBehaviour
             }
         }
         OptionBubble.oB.updateBadList("" + c);
-        if (counter==0)
+        if (counter == 0)
         {
+
+            incorrectBubbleIndicator();
+            incorrectIndicatorSound.Play();
             HealthManager.health = HealthManager.health - 1;
         }
         //letterList[index].text = word[index].ToString().ToUpper();
