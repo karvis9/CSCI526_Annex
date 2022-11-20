@@ -55,7 +55,7 @@ MonoBehaviour:
   maskedCnt: 0
   letterHolder: {fileID: 0}
   word: 
-  correctIndicator: {fileID: 5270890891263034685, guid: 62d23efb76cdacd4eb2fc3ed576b93d2, type: 3}
-  incorrectIndicator: {fileID: 6375271566317029658, guid: 77299db807a01ba4d82fc59f11ada5e4, type: 3}
-  correctIndicatorSound: {fileID: 2316981900022020025, guid: 9205f024984f072498e448da2ee5cc80, type: 3}
-  incorrectIndicatorSound: {fileID: 2614704615191063916, guid: 879a998499b24ea42adbca04719b998b, type: 3}
+  correctIndicator: {fileID: 9062334097415058553, guid: 8ef22cb67ccd0441ab9f99ba8fe3e5ff, type: 3}
+  incorrectIndicator: {fileID: 1112903407048427753, guid: 861a52c9a39b644fca7c57049eeed9cf, type: 3}
+  correctIndicatorSound: {fileID: 7019142053131973269, guid: 735da4e4f080f4b208fdc1d2470043f1, type: 3}
+  incorrectIndicatorSound: {fileID: 5307051374782915565, guid: df7b1ca538ad147b1a521fbf883efe0e, type: 3}
