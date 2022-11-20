@@ -39,17 +39,6 @@ public class Enemy : MonoBehaviour {
 
 	}
 
-
-	void OnTriggerEnter2D(Collider2D other){
-
-		if(other.tag == "Player"){
-			CountDownTimer.countDownTimerObj.reduceTime(10);
-			Message.msg.SendMessage("-5 Seconds!", Color.red, 2f);
-            AnalyticsManager.analyticsManager.SendEvent("Fish Touched");
-		}
-
-	}
-
 	void turnAround(){
 		if (transform.localScale.x == 1) {
 			transform.localScale = new Vector3 (-1f, 1f, 1f);
