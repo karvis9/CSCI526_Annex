@@ -13,7 +13,10 @@ public class HurtPlayer : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Player"){
-			thePlayer.hurt ();	 
+			CountDownTimer.countDownTimerObj.reduceTime(10);
+			Message.msg.SendMessage("-10 Seconds!", Color.red, 2f);
+            AnalyticsManager.analyticsManager.SendEvent("Mine Touched");
+			//thePlayer.hurt ();	 
 		}
 
 	}

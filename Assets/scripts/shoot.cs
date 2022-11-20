@@ -8,7 +8,8 @@ using Cinemachine;
 public class shoot : MonoBehaviour
 {
     public float LaunchForce;
-    private float MaxLaunchForce = 16;
+    public float DefaultLaunchForce = 5;
+    public float MaxLaunchForce = 16;
     public GameObject Arrow;
     public GameObject HintArrow;
     public static shoot shootController;
@@ -21,6 +22,8 @@ public class shoot : MonoBehaviour
     // public CinemachineVirtualCamera vcam;
     public static bool readyToShoot;
     public static int ArrowMode;
+    public float pointPadding = 0.05f;
+    public float LaunchForceIntensity = 8;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +32,7 @@ public class shoot : MonoBehaviour
         readyToShoot = true;
         shootController = this;
         _arrowsCount = 0;
-        LaunchForce = 5;
+        LaunchForce = DefaultLaunchForce;
         UpdatePowerBarCoRoutine = UpdatePowerBar();
         Points = new GameObject[numberofPoints];
         for (int i = 0; i < numberofPoints; i++)
@@ -70,13 +73,13 @@ public class shoot : MonoBehaviour
             // vcam.m_Priority = 1;
             if(!readyToShoot)
                 return;
-            LaunchForce += 8 * Time.deltaTime;
+            LaunchForce += LaunchForceIntensity * Time.deltaTime;
             LaunchForce = Mathf.Min(MaxLaunchForce, LaunchForce);
             StartCoroutine(UpdatePowerBarCoRoutine);
             for (int i = 0; i < Points.Length; i++)
             {
                 Points[i].SetActive(true);
-                Vector2 pos = PointPosition(i * 0.05f);
+                Vector2 pos = PointPosition(i * pointPadding);
                 Points[i].transform.position = pos;
             }
         }
@@ -92,13 +95,13 @@ public class shoot : MonoBehaviour
             // vcam.m_Priority = 1;
             if(!readyToShoot)
                 return;
-            LaunchForce += 8 * Time.deltaTime;
+            LaunchForce += LaunchForceIntensity * Time.deltaTime;
             LaunchForce = Mathf.Min(MaxLaunchForce, LaunchForce);
             StartCoroutine(UpdatePowerBarCoRoutine);
             for (int i = 0; i < Points.Length; i++)
             {
                 Points[i].SetActive(true);
-                Vector2 pos = PointPosition(i * 0.05f);
+                Vector2 pos = PointPosition(i * pointPadding);
                 Points[i].transform.position = pos;
             }
         }
@@ -119,7 +122,7 @@ public class shoot : MonoBehaviour
                 ArrowsLeftText.arrowsLeftTextObj.RemoveHint(1);
             }
             powerBar.fillAmount = 0;
-            LaunchForce = 5;
+            LaunchForce = DefaultLaunchForce;
             StopCoroutine(UpdatePowerBarCoRoutine);
         }
 
@@ -146,7 +149,7 @@ public class shoot : MonoBehaviour
                 ArrowsLeftText.arrowsLeftTextObj.RemoveHint(1);
             }
             powerBar.fillAmount = 0;
-            LaunchForce = 5;
+            LaunchForce = DefaultLaunchForce;
             StopCoroutine(UpdatePowerBarCoRoutine);
         }
     }

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-
-	private PlayerController thePlayer;
 	public GameObject death;
 
 	public float speed = 0.3f;
@@ -20,7 +18,6 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		thePlayer = FindObjectOfType<PlayerController> ();	
 		myRigidbody = GetComponent<Rigidbody2D> ();
 
 		turnTimer = 0;
@@ -45,9 +42,10 @@ public class Enemy : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 
-		if(other.tag == "Player" && thePlayer.rushing){
-			Instantiate (death, gameObject.transform.position, gameObject.transform.rotation);
-			Destroy (gameObject);
+		if(other.tag == "Player"){
+			CountDownTimer.countDownTimerObj.reduceTime(10);
+			Message.msg.SendMessage("-5 Seconds!", Color.red, 2f);
+            AnalyticsManager.analyticsManager.SendEvent("Fish Touched");
 		}
 
 	}
