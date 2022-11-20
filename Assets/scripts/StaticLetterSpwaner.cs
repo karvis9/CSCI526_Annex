@@ -31,7 +31,7 @@ public class StaticLetterSpwaner : MonoBehaviour
         go.SetActive(true);
         GameObject child = go.transform.GetChild(0).gameObject;
         TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
-        textmeshPro.text = "" + letter;
+        textmeshPro.text = "" + char.ToUpper(letter);
         Debug.Log("Char :- " + textmeshPro.text);
         free = false;
     }

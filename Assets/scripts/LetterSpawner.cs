@@ -120,7 +120,7 @@ public class LetterSpawner : MonoBehaviour
             go.SetActive(true);
             GameObject child = go.transform.GetChild(0).gameObject;
             TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
-            textmeshPro.text = alphabet.ToString();
+            textmeshPro.text = alphabet.ToString().ToUpper();
         }
 
         /*if(seconds >= 20)
@@ -149,7 +149,7 @@ public class LetterSpawner : MonoBehaviour
             go.SetActive(true);
             GameObject child = go.transform.GetChild(0).gameObject;
             TMP_Text textmeshPro = child.GetComponent<TMP_Text>();
-            textmeshPro.text = alphabet.ToString();
+            textmeshPro.text = alphabet.ToString().ToUpper();
         }
     }
 }
