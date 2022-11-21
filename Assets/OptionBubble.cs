@@ -16,6 +16,8 @@ public class OptionBubble : MonoBehaviour
     public static Color disableColor;
     public static Color normalColor;
     public static Color selectedColor;
+    public static ColorBlock normalStateColors;
+    public static Color changeStateColor;
     private Button myButton;
     private bool buttonPressed;
     private string myChar;
@@ -25,6 +27,7 @@ public class OptionBubble : MonoBehaviour
         disableColor = Color.grey;
         normalColor = Color.white;
         selectedColor = Color.red;
+        changeStateColor = Color.green;
         buttonPressed = false;
         oB = this;
         selectedList = new HashSet<string>();
@@ -32,6 +35,7 @@ public class OptionBubble : MonoBehaviour
         myButton = GetComponent<Button>();
         myChar = this.gameObject.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text.ToLower();
         submit_cnt = 0;
+        normalStateColors = myButton.colors;
     }
 
     // Update is called once per frame
@@ -42,14 +46,19 @@ public class OptionBubble : MonoBehaviour
         }
         else{
             if(!selectingState){
-                if(myChar.Equals("select")||myChar.Equals("submit"))
-                    TurnWhite();
+                if(myChar.Equals("select")||myChar.Equals("submit")) {
+                    //TurnWhite();
+                    ;
+                }
                 else
                     TurnDisable();
             }
             else if(selectedList.Contains(myChar)){
                 buttonPressed = true;
                 TurnRed();
+            }
+            else if(myChar.Equals("select")) {
+                ;
             }
             else{
                 TurnWhite();
@@ -61,9 +70,19 @@ public class OptionBubble : MonoBehaviour
         return selectedList.Count;
     }
 
-    public void StartSelecting(){
-        Debug.Log("Start Selecting");
-        selectingState = true;
+    public void SelectingPressed(){
+        if(!selectingState) {
+            Debug.Log("Start Selecting");
+            StateTurnGreen();
+            this.gameObject.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = "Submit";
+            selectingState = true;
+        }
+        else {
+            StateTurnBack();
+            Submit();
+            this.gameObject.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = "Select";
+            selectingState = false;
+        }
     }
     public void AddCharacters(string ch){    
         
@@ -102,30 +121,45 @@ public class OptionBubble : MonoBehaviour
         submit_cnt += 1;
     }
     public void TurnRed()
-     {
-         ColorBlock colors = myButton.colors;
-         colors.normalColor = selectedColor;
-         colors.highlightedColor = selectedColor;
-         colors.pressedColor = selectedColor;
-         myButton.colors = colors;
-     }
+    {
+        ColorBlock colors = myButton.colors;
+        colors.normalColor = selectedColor;
+        colors.highlightedColor = selectedColor;
+        colors.pressedColor = selectedColor;
+        myButton.colors = colors;
+    }
+
+    public void StateTurnGreen()
+    {
+        ColorBlock colors = myButton.colors;
+        colors.normalColor = changeStateColor;
+        colors.highlightedColor = changeStateColor;
+        colors.pressedColor = changeStateColor;
+        myButton.colors = colors;
+        Debug.Log("Color Green");
+    }
+
+    public void StateTurnBack()
+    {
+        myButton.colors = normalStateColors;
+    }
      
-     public void TurnWhite()
-     {
-         ColorBlock colors = myButton.colors;
-         colors.normalColor = normalColor;
-         colors.highlightedColor = normalColor;
-         colors.pressedColor = normalColor;
-         myButton.colors = colors;
-     }
-     public void TurnDisable()
-     {
-         ColorBlock colors = myButton.colors;
-         colors.normalColor = disableColor;
-         colors.highlightedColor = disableColor;
-         colors.pressedColor = disableColor;
-         myButton.colors = colors;
-     }
+    public void TurnWhite()
+    {
+        ColorBlock colors = myButton.colors;
+        colors.normalColor = normalColor;
+        colors.highlightedColor = normalColor;
+        colors.pressedColor = normalColor;
+        myButton.colors = colors;
+    }
+    public void TurnDisable()
+    {
+        ColorBlock colors = myButton.colors;
+        colors.normalColor = disableColor;
+        colors.highlightedColor = disableColor;
+        colors.pressedColor = disableColor;
+        myButton.colors = colors;
+    }
 
     public void updateBadList(string c)
     {

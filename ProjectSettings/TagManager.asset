@@ -64,3 +64,6 @@ TagManager:
   - name: SidePanel
     uniqueID: 215309317
     locked: 0
+  - name: Player
+    uniqueID: 3515530189
+    locked: 0
