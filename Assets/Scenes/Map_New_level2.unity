@@ -212,8 +212,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -57.79}
-  m_SizeDelta: {x: 956.36, y: 482.59}
+  m_AnchoredPosition: {x: -99.20002, y: -82.088}
+  m_SizeDelta: {x: 757.96, y: 433.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &170661858
 MonoBehaviour:
@@ -331,7 +331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209052474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.355156, y: 3.89, z: -10}
+  m_LocalPosition: {x: -1.3484917, y: 3.89, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3161,7 +3161,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: X
+  m_text: Close Hint
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3313,8 +3313,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -459.23, y: 198.51}
-  m_SizeDelta: {x: 37.9, y: 30}
+  m_AnchoredPosition: {x: 219.33, y: 253}
+  m_SizeDelta: {x: 120.9, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &814346500
 MonoBehaviour:
@@ -3332,6 +3332,7 @@ MonoBehaviour:
   image: {fileID: 170661856}
   blur: {fileID: 1557458246}
   blurSize: 0
+  hintButton: {fileID: 1913021689}
 --- !u!114 &814346501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4729,8 +4730,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -57.78999}
-  m_SizeDelta: {x: 956.36, y: 482.59}
+  m_AnchoredPosition: {x: -99.2, y: -82.09}
+  m_SizeDelta: {x: 757.96, y: 434}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1587413711
 PrefabInstance:
@@ -5522,6 +5523,7 @@ MonoBehaviour:
   image: {fileID: 170661856}
   blur: {fileID: 1557458246}
   blurSize: 0
+  hintButton: {fileID: 1913021689}
 --- !u!114 &1913021692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5679,7 +5681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953411623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.355156, y: 3.89, z: -10}
+  m_LocalPosition: {x: -1.3484917, y: 3.89, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
