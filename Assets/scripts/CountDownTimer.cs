@@ -71,6 +71,9 @@ public class CountDownTimer : MonoBehaviour
         Debug.Log("current time is " + curTime);
     }
 
+    public float getStartingTime() {
+        return startingTime;
+    }
     public int getTimeLeft()
     {
         if (curTime > 0)
