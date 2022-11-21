@@ -1,2 +1,5 @@
-Donkey
-Rabbit
+Goldfish
+Leopard
+Seahorse
+Squirrel
+Turtle
