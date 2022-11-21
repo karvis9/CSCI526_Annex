@@ -9,7 +9,7 @@ public class CountDownTimer : MonoBehaviour
 
     // Start is called before the first frame update
     static float curTime;
-    float startingTime = 120f;
+    float startingTime = 30f;
     public Text CountDownText;
 
     private CountDownTimer ()
