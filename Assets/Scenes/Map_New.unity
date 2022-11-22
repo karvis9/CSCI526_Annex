@@ -282,6 +282,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 931419848783679021, guid: f36920505f179544d943cb3902046cd3, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 1226386144}
+    - target: {fileID: 931419848783679021, guid: f36920505f179544d943cb3902046cd3, type: 3}
       propertyPath: textbox
       value: 
       objectReference: {fileID: 996402230}
@@ -467,7 +471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209052474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3490834, y: 3.89, z: -10}
+  m_LocalPosition: {x: -1.3539939, y: 3.89, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3428,7 +3432,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3613,6 +3617,11 @@ SpriteRenderer:
 Transform:
   m_CorrespondingSourceObject: {fileID: 252283520558926307, guid: 4eb6efd8d4ae3493f882a3becb0957e1, type: 3}
   m_PrefabInstance: {fileID: 1587413711}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1226386144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 931419848783679024, guid: f36920505f179544d943cb3902046cd3, type: 3}
+  m_PrefabInstance: {fileID: 141063055}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1240751546
 GameObject:
@@ -4481,7 +4490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953411623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3490834, y: 3.89, z: -10}
+  m_LocalPosition: {x: -1.3539939, y: 3.89, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

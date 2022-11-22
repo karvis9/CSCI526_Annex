@@ -8,6 +8,7 @@ public class TutorialController : MonoBehaviour
     public GameObject mask;
     public GameObject textbox;
     public GameObject pointer;
+    public GameObject sprite;
 
     public HashSet<char> motionKey = new HashSet<char>();
 
@@ -47,6 +48,9 @@ public class TutorialController : MonoBehaviour
                 pointer.SetActive(true);
                 visibleController = "Canvas";
                 //PauseGame(3f);
+
+                // Cleanup 
+                StartCoroutine(cleanup(5));
             }
         }
 
@@ -94,5 +98,13 @@ public class TutorialController : MonoBehaviour
         while (Time.realtimeSinceStartup < pauseEndTime) ;
         Time.timeScale = 1f;
         Debug.Log("Done with my pause");
+    }
+ 
+    IEnumerator cleanup(int secs)
+    {
+        yield return new WaitForSeconds(secs);
+        sprite.SetActive(false);
+        textbox.GetComponent<TMP_Text>().text = "";
+        pointer.SetActive(false);
     }
 }
