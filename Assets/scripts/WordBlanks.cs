@@ -159,7 +159,7 @@ public class WordBlanks : MonoBehaviour
             List<string> words = categoryWords[category];
             int index = Random.Range(0, words.Count);
 
-            word = words[index].ToLower();
+            word = words[index].ToLower().Trim();
         }
         
         Debug.Log("Selected word " + word.ToString() + " from category " + category);
