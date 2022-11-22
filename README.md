@@ -16,3 +16,6 @@ For generating the corpus of words, we plan on scraping the English dictionary f
 
 GDD : https://docs.google.com/document/d/1HRto0uA2G6PbvSqq6L8PJw33nUCTbYQKOtgvwyj9xgM/edit
 
+Game : https://play.unity.com/mg/other/hangmanshooter-1
+
+
