@@ -87,7 +87,7 @@ public class TutorialController : MonoBehaviour
         {
             motionKey.Add('d');
         }
-        return motionKey.Count == 4;
+        return motionKey.Count == 2;
     }
 
     public void PauseGame(float pauseTIme)
