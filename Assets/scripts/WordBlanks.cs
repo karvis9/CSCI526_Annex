@@ -346,8 +346,8 @@ public class WordBlanks : MonoBehaviour
     public string getWord() { return word;}
 
     public bool isCorrect(char c)
-    {
-        return word.Contains(c);
+    {   
+        return word.Contains(Char.ToLower(c));
     }
 }
 
