@@ -19,6 +19,8 @@ TagManager:
   - extraArrow
   - collect_bow
   - HintArrowTag
+  - Canvas_Master
+  - Health
   layers:
   - Default
   - TransparentFX
