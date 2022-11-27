@@ -9,7 +9,7 @@ public class OptionBubble : MonoBehaviour
     public static OptionBubble oB;
     public static int currentLimit = 10;
     public static int currentSelected = 0; 
-    public static bool selectingState = false;
+    public static bool selectingState = true;
     public static int submit_cnt = 0;
     private static HashSet<string> selectedList;
     private static HashSet<string> badSet;
@@ -86,8 +86,8 @@ public class OptionBubble : MonoBehaviour
     }
     public void AddCharacters(string ch){    
         
-        if(!selectingState)
-            return;
+        // if(!selectingState)
+        //     return;
         
         if(!buttonPressed){
             if(selectedList.Count>9){
@@ -100,19 +100,18 @@ public class OptionBubble : MonoBehaviour
             buttonPressed = false;
             selectedList.Remove(myChar);
         }
-        
+        Submit();
     }
 
 
     public static void Submit(){
         Debug.Log("submit called");
         List<char> chars = new List<char>();
-        selectingState = false;
+        // selectingState = false;
         //call the letter spawner manager to spawn the characters
 
         foreach (var item in selectedList) {
             Debug.Log ("selected item " + item);
-
             char alphabet = item[0];
             chars.Add (alphabet);
         }

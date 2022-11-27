@@ -5,7 +5,7 @@ using UnityEngine;
 public class scorpio : MonoBehaviour
 {
     private bool moveingRight;
-    public float speed = 1.0f;
+    public float speed = 2f;
     private Animator anim;
     private Vector3 init_pos;
     // Start is called before the first frame update
@@ -25,14 +25,14 @@ public class scorpio : MonoBehaviour
         
         if (moveingRight == true) {
             this.transform.Translate(-1.0f*speed*Time.deltaTime,0,0);
-            if (transform.position.x <= init_pos.x-3) {
+            if (transform.position.x <= init_pos.x-4) {
                 transform.eulerAngles = new Vector3(0, 180, 0);
                 moveingRight = false;
             }       
         }
         else {
             this.transform.Translate(-1.0f*speed*Time.deltaTime,0,0);
-            if (transform.position.x >= init_pos.x+3) {
+            if (transform.position.x >= init_pos.x+4) {
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 moveingRight = true;
             }  

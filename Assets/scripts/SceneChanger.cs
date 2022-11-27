@@ -28,6 +28,16 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene(SceneName);
     }
 
+    public void switchToLevel(string category, string SceneName)
+    {
+        Debug.Log("category is  " + category);
+        if (SceneName == "FirstScene")
+        {
+            curLevel = 0;
+        }
+        SceneManager.LoadScene(SceneName);
+    }
+
     public void switchFromCategoryScene(string CategoryAndSceneName) {
         // This takes a string with Category selected and Scene to switch after the selection in the comma seperated fashion.
         // For example : Movies,Level_0
