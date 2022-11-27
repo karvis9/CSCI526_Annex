@@ -40,23 +40,27 @@ public class enemySpawner : MonoBehaviour
 
         x_pos_list.Sort();
         //Debug.Log(spawnedChildren);
-        float enemySpawn_x1 = x_pos_list[(int)(0.25 * spawnedChildren)];
-        float enemySpawn_x2 = x_pos_list[(int)(0.75 * spawnedChildren)];
-        Vector3 enemySpawn_pos1 = new Vector3(enemySpawn_x1, -3, 0);
-        Instantiate(enemyPrefab, enemySpawn_pos1, transform.rotation);
+        float enemySpawn_x1 = -10;// x_pos_list[(int)(0.25 * spawnedChildren)];
+        float enemySpawn_x2 = 20;// x_pos_list[(int)(0.85 * spawnedChildren)];
+        //Vector3 enemySpawn_pos1 = new Vector3(enemySpawn_x1, -3, 0);
+        //Instantiate(enemyPrefab, enemySpawn_pos1, transform.rotation);
+        Debug.Log("enemy spawn 1 " + enemySpawn_x1);
+        Debug.Log("enemy spawn 2 " + enemySpawn_x2);
 
-        //if (enemySpawn_x2 > enemySpawn_x1 + 9)
-        //{
-        //    Vector3 enemySpawn_pos1 = new Vector3(enemySpawn_x1, -3, 0);
-        //    Instantiate(enemyPrefab, enemySpawn_pos1, transform.rotation);
-        //    Vector3 enemySpawn_pos2 = new Vector3(enemySpawn_x2, -3, 0);
-        //    Instantiate(enemyPrefab, enemySpawn_pos2, transform.rotation);
-        //}
-        //else
-        //{
-        //    Vector3 enemySpawn_pos2 = new Vector3(enemySpawn_x2, -3, 0);
-        //    Instantiate(enemyPrefab, enemySpawn_pos2, transform.rotation);
-        //}
+        if (enemySpawn_x2 > enemySpawn_x1 + 5)
+        {
+            Debug.Log("here1");
+            Vector3 enemySpawn_pos1 = new Vector3(enemySpawn_x1, -3, 0);
+            Instantiate(enemyPrefab, enemySpawn_pos1, transform.rotation);
+            Vector3 enemySpawn_pos2 = new Vector3(enemySpawn_x2, -3, 0);
+            Instantiate(enemyPrefab, enemySpawn_pos2, transform.rotation);
+        }
+        else
+        {
+            Debug.Log("here2");
+            Vector3 enemySpawn_pos2 = new Vector3(enemySpawn_x2, -3, 0);
+            Instantiate(enemyPrefab, enemySpawn_pos2, transform.rotation);
+        }
 
     }
 }
