@@ -4408,6 +4408,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1781019713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 900427360477857535, guid: 2cebf203067244cf992f4fc7b5263370, type: 3}
+  m_PrefabInstance: {fileID: 1884434086629407789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1842471486
 GameObject:
   m_ObjectHideFlags: 0
@@ -4584,6 +4589,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1970845842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6295966829991581742, guid: 2cebf203067244cf992f4fc7b5263370, type: 3}
+  m_PrefabInstance: {fileID: 1884434086629407789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1971145616
 GameObject:
   m_ObjectHideFlags: 0
@@ -5167,6 +5177,9 @@ MonoBehaviour:
   pointer: {fileID: 931419847441581059}
   sprite: {fileID: 931419848911076799}
   timer: {fileID: 226100550}
+  home: {fileID: 1970845842}
+  arrowCount: {fileID: 1781019713}
+  hint: {fileID: 247765886}
 --- !u!212 &931419848911076796
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5834,6 +5847,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4960568638238600941, guid: 2cebf203067244cf992f4fc7b5263370, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 6030610436773442300, guid: 2cebf203067244cf992f4fc7b5263370, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5945,6 +5962,10 @@ PrefabInstance:
     - target: {fileID: 7180914102844114114, guid: 2cebf203067244cf992f4fc7b5263370, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7341643123740208762, guid: 2cebf203067244cf992f4fc7b5263370, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7787097591682090284, guid: 2cebf203067244cf992f4fc7b5263370, type: 3}
       propertyPath: m_AnchorMax.y
