@@ -31,7 +31,7 @@ public class arrowScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
          Debug.Log("Entered the trigger");
-        if(shoot.ArrowMode == 0){
+        if(this.gameObject.tag != "HintArrowTag"){
             if(other.gameObject.tag == "Letter"){
                 //char symbol = other.gameObject.GetComponent<Bubble>().symbol;// might fix this later
                 GameObject child = other.transform.GetChild(0).gameObject;
