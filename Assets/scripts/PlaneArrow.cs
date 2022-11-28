@@ -14,54 +14,44 @@ public class PlaneArrow : MonoBehaviour
     void Start()
     {
         initLocation = transform.position; 
-
         rb = GetComponent<Rigidbody2D>();
         force = new Vector3(120, 0, 0);
         rb.AddForce(force);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("rain shwoer");
-        if (collision.gameObject.tag == "Arrow")
-        {
-            //rainShower();
-        }
-    }
+    
 
         // Update is called once per frame
     void Update()
     {
-        isFalling = true;
-        Debug.Log("Drop hints");
-        for (int i = 1; i <= 1; i += 1)
-        {
-            Vector3 pos = new Vector3(transform.position.x + 2, transform.position.y, 0);
-            GameObject hintArrowTemp = null;
-
-            hintArrowTemp = Instantiate(hintArrow, pos, transform.rotation);
-            hintArrowTemp.GetComponent<Rigidbody2D>().velocity = transform.right * 5 * Random.Range(0.1f, 2f);
-            hintArrowTemp.SetActive(true);
-        }
-        isFalling = false;
         if (transform.position.x > 40f)
         {
+            if(isFalling)
+                Destroy(this.gameObject);
             transform.position = initLocation;
         }
     }
-    /*public void rainShower()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        isFalling = true;
-        Debug.Log("Drop hints");
-        for (int i = 1; i < 2; i += 1)
+        if (collision.gameObject.tag == "Arrow")
         {
-            Vector3 pos = new Vector3(transform.position.x + 2, transform.position.y, 0);
-            GameObject hintArrowTemp = null;
-
-            hintArrowTemp = Instantiate(hintArrow, pos, transform.rotation);
-            hintArrowTemp.GetComponent<Rigidbody2D>().velocity = transform.right * 5 * Random.Range(0.1f, 2f);
-            hintArrowTemp.SetActive(true);
+            Destroy(collision.gameObject);
+            rainShower();
         }
-        isFalling = false;
-    }*/
+    }
+    public void rainShower()
+    {
+        if(!isFalling){
+            for (int i = 1; i < 40; i += 1)
+            {
+                Vector3 pos = new Vector3(transform.position.x + 2, transform.position.y, 0);
+                GameObject hintArrowTemp = null;
+
+                hintArrowTemp = Instantiate(hintArrow, pos, transform.rotation);
+                hintArrowTemp.GetComponent<Rigidbody2D>().velocity = transform.right * 6 * Random.Range(0.1f, 2f);
+                hintArrowTemp.SetActive(true);
+            }
+        }
+        isFalling = true;
+    }
 }
