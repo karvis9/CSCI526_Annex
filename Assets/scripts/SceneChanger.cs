@@ -59,7 +59,7 @@ public class SceneChanger : MonoBehaviour
         else {
             shoot.readyToShoot = true;
             //SceneChanger.sc.switchToScene("Map_1");
-         if (curLevel == 5)
+         if (curLevel == 6)
             {
                 GameOverScreen.EndGame(ScoreManager.sm.getFinalScore(), false, WordBlanks.wb.word);
                 curLevel = 0;
@@ -88,6 +88,11 @@ public class SceneChanger : MonoBehaviour
             {
                 SceneChanger.sc.switchToScene("Map_New_level2");
                 curLevel = 5;
+            }
+        else if (curLevel == 5)
+            {
+                SceneChanger.sc.switchToScene("Map_New_level6");
+                curLevel = 6;
             }
             // else {
             //     curLevel += 1;
@@ -131,6 +136,11 @@ public class SceneChanger : MonoBehaviour
             {
                 SceneChanger.sc.switchToScene("Map_New_level2");
                 curLevel = 5;
+            }
+            else if (curLevel == 6)
+            {
+                SceneChanger.sc.switchToScene("Map_New_level6");
+                curLevel = 6;
             }
         }
     }
