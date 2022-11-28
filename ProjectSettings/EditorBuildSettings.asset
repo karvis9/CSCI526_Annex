@@ -54,6 +54,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelScene.unity
     guid: f8e9eaa934e3db345a0ad062978ac3ed
   - enabled: 1
+    path: Assets/Scenes/Map_New_Level5.unity
+    guid: a8ebcd7f680a545c5b81ad1aa1316cbe
+  - enabled: 1
     path: Assets/Scenes/Map_New_level6.unity
     guid: 93f0a3796c528d441a1d3c020779d62a
   m_configObjects: {}
