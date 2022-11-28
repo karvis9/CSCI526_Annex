@@ -14,8 +14,9 @@ public class TutorialController : MonoBehaviour
     public GameObject home;
     public GameObject arrowCount;
     public GameObject hint;
-
-
+    public GameObject health;
+    public GameObject powerBar;
+    public GameObject hintArrow;
 
     public HashSet<char> motionKey = new HashSet<char>();
 
@@ -46,11 +47,10 @@ public class TutorialController : MonoBehaviour
                 mask.transform.position = player.transform.position;
                 mask.transform.localScale = new Vector3(0.1f, 0.1f, 0);
 
-                if (motionChecker())
-                {
-                    visibleController = "Player";
-                    tutorialNumber++;
-                }
+                
+                visibleController = "Player";
+                tutorialNumber++;
+                PauseGame(3);
             }
         }
 
@@ -128,7 +128,7 @@ public class TutorialController : MonoBehaviour
         else if (tutorialNumber == 6)
         {
             Vector3 position = hint.transform.position;
-            position.x -= 2;
+            position.x += 2;
             pointer.transform.position = position;
             //PauseGame(3f);
 
@@ -140,10 +140,78 @@ public class TutorialController : MonoBehaviour
             mask.transform.position = pointer.transform.position;
             mask.transform.localScale = new Vector3(0.2f, 0.2f, 0);
 
+            Vector3 theScale = pointer.transform.localScale;
+            theScale.x *= -1;
+            pointer.transform.localScale = theScale;
+
             PauseGame(3);
             tutorialNumber++;
         }
+        else if (tutorialNumber == 7)
+        {
+            Vector3 position = health.transform.position;
+            position.x += 3;
+            pointer.transform.position = position;
 
+            mask.SetActive(true);
+            textbox.GetComponent<TMP_Text>().text = "Your remaining health";
+            mask.transform.position = pointer.transform.position;
+            mask.transform.localScale = new Vector3(0.2f, 0.2f, 0);
+
+            PauseGame(3);
+            tutorialNumber++;
+        }
+        else if (tutorialNumber == 8)
+        {
+            Vector3 position = hintArrow.transform.position;
+            position.x += 2;
+            pointer.transform.position = position;
+
+            mask.SetActive(true);
+            textbox.GetComponent<TMP_Text>().text = "Click to toggle between hint and normal arrow";
+            mask.transform.position = pointer.transform.position;
+            mask.transform.localScale = new Vector3(0.2f, 0.2f, 0);
+
+            PauseGame(3);
+            tutorialNumber++;
+        }
+        else if (tutorialNumber == 9)
+        {
+            Vector3 position = hintArrow.transform.position;
+            position.x += 2;
+            pointer.transform.position = position;
+
+            mask.SetActive(true);
+            textbox.GetComponent<TMP_Text>().text = "Hint arrow : Shoot to get feedback without losing health.";
+            mask.transform.position = pointer.transform.position;
+            mask.transform.localScale = new Vector3(0.2f, 0.2f, 0);
+
+            PauseGame(3);
+            tutorialNumber++;
+        }
+        else if (tutorialNumber == 10)
+        {
+            Vector3 position = powerBar.transform.position;
+            position.x += 2;
+            pointer.transform.position = position;
+
+            mask.SetActive(true);
+            textbox.GetComponent<TMP_Text>().text = "Hold \"SPACE\" to increase shooting force.";
+            mask.transform.position = pointer.transform.position;
+            mask.transform.localScale = new Vector3(0.2f, 0.2f, 0);
+
+            PauseGame(3);
+            tutorialNumber++;
+        } 
+        else
+        {
+            PauseGame(3);
+            pointer.SetActive(false);
+            mask.SetActive(false);
+            textmask.SetActive(false);
+            textbox.SetActive(false);
+            sprite.SetActive(false);
+        }
         //else if (visibleController.Equals("Canvas"))
         //{
         //    if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
