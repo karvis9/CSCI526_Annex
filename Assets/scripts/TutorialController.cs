@@ -14,8 +14,10 @@ public class TutorialController : MonoBehaviour
     public GameObject home;
     public GameObject arrowCount;
     public GameObject hint;
-
-
+    public GameObject health;
+    public GameObject powerBar;
+    public GameObject hintArrow;
+    public GameObject panel;
 
     public HashSet<char> motionKey = new HashSet<char>();
 
@@ -39,18 +41,22 @@ public class TutorialController : MonoBehaviour
             {
                 textbox.GetComponent<TMP_Text>().text = "WASD for player motion.";
                 Vector3 textPosition = textbox.transform.position;
-                textPosition.x -= 6;
+                textPosition.x -= 1;
+                
                 textmask.transform.position = textPosition;
                 textmask.transform.localScale = new Vector3(0.4f, 0.3f, 0);
-
+                textPosition.x += 5;
+                //textPosition.y -= 1;
+                textbox.transform.position = textPosition;
                 mask.transform.position = player.transform.position;
-                mask.transform.localScale = new Vector3(0.1f, 0.1f, 0);
+                mask.transform.localScale = new Vector3(0.2f, 0.2f, 0);
+                Vector3 position = panel.transform.position;
+                position.x -= 2;
+                pointer.transform.position = position;
 
-                if (motionChecker())
-                {
-                    visibleController = "Player";
-                    tutorialNumber++;
-                }
+                visibleController = "Player";
+                tutorialNumber++;
+                PauseGame(3);
             }
         }
 
@@ -58,11 +64,21 @@ public class TutorialController : MonoBehaviour
         {
             //if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
             {
+                Vector3 textPosition = textbox.transform.position;
+                textPosition.y += 1;
+                textbox.transform.position = textPosition;
                 mask.SetActive(false);
                 textbox.GetComponent<TMP_Text>().text = "Select upto 10 characters to spawn for shooting.";
                 pointer.SetActive(true);
                 visibleController = "Canvas";
                 //PauseGame(3f);
+                Vector3 position = timer.transform.position;
+                position.x -= 2;
+                position.y -= 8;
+                pointer.transform.position = position;
+                mask.SetActive(true);
+                mask.transform.position = pointer.transform.position;
+                mask.transform.localScale = new Vector3(0.2f, 0.2f, 0);
 
                 // Cleanup 
                 //StartCoroutine(cleanup(5));
@@ -72,6 +88,9 @@ public class TutorialController : MonoBehaviour
         }
         else if (tutorialNumber == 3)
         {
+            Vector3 textPosition = textbox.transform.position;
+            textPosition.y -= 1;
+            textbox.transform.position = textPosition;
             Vector3 position = timer.transform.position;
             position.x -= 2;
             pointer.transform.position = position;
@@ -128,7 +147,7 @@ public class TutorialController : MonoBehaviour
         else if (tutorialNumber == 6)
         {
             Vector3 position = hint.transform.position;
-            position.x -= 2;
+            position.x += 2;
             pointer.transform.position = position;
             //PauseGame(3f);
 
@@ -140,10 +159,81 @@ public class TutorialController : MonoBehaviour
             mask.transform.position = pointer.transform.position;
             mask.transform.localScale = new Vector3(0.2f, 0.2f, 0);
 
+            Vector3 theScale = pointer.transform.localScale;
+            theScale.x *= -1;
+            pointer.transform.localScale = theScale;
+
             PauseGame(3);
             tutorialNumber++;
         }
+        else if (tutorialNumber == 7)
+        {
+            Vector3 position = health.transform.position;
+            position.x += 3;
+            pointer.transform.position = position;
 
+            mask.SetActive(true);
+            textbox.GetComponent<TMP_Text>().text = "Your remaining health";
+            mask.transform.position = pointer.transform.position;
+            mask.transform.localScale = new Vector3(0.2f, 0.2f, 0);
+
+            PauseGame(3);
+            tutorialNumber++;
+        }
+        else if (tutorialNumber == 8)
+        {
+            Vector3 textPosition = textbox.transform.position;
+            textPosition.y += 1;
+            textbox.transform.position = textPosition;
+            Vector3 position = hintArrow.transform.position;
+            position.x += 2;
+            pointer.transform.position = position;
+
+            mask.SetActive(true);
+            textbox.GetComponent<TMP_Text>().text = "Click to toggle between hint and normal arrow";
+            mask.transform.position = pointer.transform.position;
+            mask.transform.localScale = new Vector3(0.2f, 0.2f, 0);
+
+            PauseGame(3);
+            tutorialNumber++;
+        }
+        else if (tutorialNumber == 9)
+        {
+            Vector3 position = hintArrow.transform.position;
+            position.x += 2;
+            pointer.transform.position = position;
+
+            mask.SetActive(true);
+            textbox.GetComponent<TMP_Text>().text = "Hint arrow : Shoot to get feedback without losing health.";
+            mask.transform.position = pointer.transform.position;
+            mask.transform.localScale = new Vector3(0.2f, 0.2f, 0);
+
+            PauseGame(3);
+            tutorialNumber++;
+        }
+        else if (tutorialNumber == 10)
+        {
+            Vector3 position = powerBar.transform.position;
+            position.x += 2;
+            pointer.transform.position = position;
+
+            mask.SetActive(true);
+            textbox.GetComponent<TMP_Text>().text = "Hold \"SPACE\" to increase shooting force.";
+            mask.transform.position = pointer.transform.position;
+            mask.transform.localScale = new Vector3(0.2f, 0.2f, 0);
+
+            PauseGame(3);
+            tutorialNumber++;
+        } 
+        else
+        {
+            PauseGame(3);
+            pointer.SetActive(false);
+            mask.SetActive(false);
+            textmask.SetActive(false);
+            textbox.SetActive(false);
+            sprite.SetActive(false);
+        }
         //else if (visibleController.Equals("Canvas"))
         //{
         //    if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))

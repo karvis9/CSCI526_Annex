@@ -139,6 +139,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &150942613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8126896913386872262, guid: 2cebf203067244cf992f4fc7b5263370, type: 3}
+  m_PrefabInstance: {fileID: 1884434086629407789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &152867382
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209052474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3499551, y: 3.89, z: -10}
+  m_LocalPosition: {x: -1.3485317, y: 3.89, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2760,6 +2765,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &522602060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7293547480072295558, guid: 2cebf203067244cf992f4fc7b5263370, type: 3}
+  m_PrefabInstance: {fileID: 1884434086629407789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &854430497
 GameObject:
   m_ObjectHideFlags: 0
@@ -4051,7 +4061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953411623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3499551, y: 3.89, z: -10}
+  m_LocalPosition: {x: -1.3485317, y: 3.89, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4319,6 +4329,9 @@ MonoBehaviour:
   home: {fileID: 1970845842}
   arrowCount: {fileID: 1781019713}
   hint: {fileID: 1312754392}
+  health: {fileID: 150942613}
+  powerBar: {fileID: 522602060}
+  hintArrow: {fileID: 1312754392}
 --- !u!212 &931419848911076796
 SpriteRenderer:
   m_ObjectHideFlags: 0
