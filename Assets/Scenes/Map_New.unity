@@ -2770,6 +2770,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7293547480072295558, guid: 2cebf203067244cf992f4fc7b5263370, type: 3}
   m_PrefabInstance: {fileID: 1884434086629407789}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &832269295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4846531476291452580, guid: 2cebf203067244cf992f4fc7b5263370, type: 3}
+  m_PrefabInstance: {fileID: 1884434086629407789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &854430497
 GameObject:
   m_ObjectHideFlags: 0
@@ -4332,6 +4337,7 @@ MonoBehaviour:
   health: {fileID: 150942613}
   powerBar: {fileID: 522602060}
   hintArrow: {fileID: 1312754392}
+  panel: {fileID: 832269295}
 --- !u!212 &931419848911076796
 SpriteRenderer:
   m_ObjectHideFlags: 0
