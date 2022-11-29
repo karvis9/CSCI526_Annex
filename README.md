@@ -18,4 +18,6 @@ GDD : https://docs.google.com/document/d/1HRto0uA2G6PbvSqq6L8PJw33nUCTbYQKOtgvwy
 
 Game : https://play.unity.com/mg/other/hangmanshooter-1
 
+Final Analytics : https://drive.google.com/file/d/1uuoY0fi1GURn2A4niPV2sJwGw36CZduW/view
+
 
